@@ -1,0 +1,4342 @@
+	._LANG	'C','5.31.30.005','REV.F'
+
+;##    C Compiler		 OUTPUT
+;## ccom30 Version 5.31.30.005
+;## Copyright(C) 2001(2003,2004). Renesas Technology Corp.
+;## and Renesas Solutions Corp., All rights reserved.
+;## Compile Start Time Fri Apr 22 17:16:41 2016
+
+;## COMMAND_LINE: ccom30  D:\TEST\12、RN8302B\HT7038 CODE_backup20160225_2016-4-22\HT7038 CODE\Release_Code\MB4_64A\Debug\Flash_API_M16C.i -o D:\TEST\12、RN8302B\HT7038 CODE_backup20160225_2016-4-22\HT7038 CODE\Release_Code\MB4_64A\Debug\Flash_API_M16C.a30 -finfo -O3 -WNP -WUV -WCMW=6
+
+
+;## Normal Optimize		ON
+;## ROM size Optimize		OFF
+;## Speed Optimize		OFF
+;## Default ROM is		far
+;## Default RAM is		near
+
+	.GLB	__SB__
+	.SB	__SB__
+	.FB	0
+	._aopt	OFF
+
+	._inspect	'M', "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/Flash_API_M16C.c", "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/Flash_API_M16C"
+
+	._inspect	'M', "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/Flash_API_M16C.h", "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/Flash_API_M16C"
+	._inspect	'F', 'p', "FlashErase", "$FlashErase", 'G', 24, 0, 00h, 0
+	._inspect	'F', 'p', "FlashWrite", "_FlashWrite", 'G', 27, 0, 00h, 0
+	._inspect	'F', 'p', "FlashRead", "_FlashRead", 'G', 30, 0, 00h, 0
+	._inspect	'F', 'p', "FlashEraseEW1", "$FlashEraseEW1", 'G', 169, 0, 00h, 0
+	._inspect	'F', 'p', "FlashWriteEW1", "_FlashWriteEW1", 'G', 173, 0, 00h, 0
+	._inspect	'F', 'p', "FlashReadEW1", "_FlashReadEW1", 'G', 177, 0, 00h, 0
+
+	._inspect	'M', "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/sfr64a.h", "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/Flash_API_M16C"
+_pm0_addr	.equ	0004h
+	._inspect	'V', 'd', "pm0_addr", "_pm0_addr", 'G', 141, 1, 1, 0, 00h
+_pm1_addr	.equ	0005h
+	._inspect	'V', 'd', "pm1_addr", "_pm1_addr", 'G', 157, 1, 1, 0, 00h
+_cm0_addr	.equ	0006h
+	._inspect	'V', 'd', "cm0_addr", "_cm0_addr", 'G', 172, 1, 1, 0, 00h
+_cm1_addr	.equ	0007h
+	._inspect	'V', 'd', "cm1_addr", "_cm1_addr", 'G', 188, 1, 1, 0, 00h
+_csr_addr	.equ	0008h
+	._inspect	'V', 'd', "csr_addr", "_csr_addr", 'G', 203, 1, 1, 0, 00h
+_prcr_addr	.equ	000Ah
+	._inspect	'V', 'd', "prcr_addr", "_prcr_addr", 'G', 219, 1, 1, 0, 00h
+_dbr_addr	.equ	000Bh
+	._inspect	'V', 'd', "dbr_addr", "_dbr_addr", 'G', 232, 1, 1, 0, 00h
+_cm2_addr	.equ	000Ch
+	._inspect	'V', 'd', "cm2_addr", "_cm2_addr", 'G', 244, 1, 1, 0, 00h
+_prg2c_addr	.equ	0010h
+	._inspect	'V', 'd', "prg2c_addr", "_prg2c_addr", 'G', 257, 1, 1, 0, 00h
+_pclkr_addr	.equ	0012h
+	._inspect	'V', 'd', "pclkr_addr", "_pclkr_addr", 'G', 266, 1, 1, 0, 00h
+_cpsrf_addr	.equ	0015h
+	._inspect	'V', 'd', "cpsrf_addr", "_cpsrf_addr", 'G', 277, 1, 1, 0, 00h
+_rstfr_addr	.equ	0018h
+	._inspect	'V', 'd', "rstfr_addr", "_rstfr_addr", 'G', 286, 1, 1, 0, 00h
+_vcr1_addr	.equ	0019h
+	._inspect	'V', 'd', "vcr1_addr", "_vcr1_addr", 'G', 301, 1, 1, 0, 00h
+_vcr2_addr	.equ	001Ah
+	._inspect	'V', 'd', "vcr2_addr", "_vcr2_addr", 'G', 310, 1, 1, 0, 00h
+_cse_addr	.equ	001Bh
+	._inspect	'V', 'd', "cse_addr", "_cse_addr", 'G', 321, 1, 1, 0, 00h
+_plc0_addr	.equ	001Ch
+	._inspect	'V', 'd', "plc0_addr", "_plc0_addr", 'G', 337, 1, 1, 0, 00h
+_pm2_addr	.equ	001Eh
+	._inspect	'V', 'd', "pm2_addr", "_pm2_addr", 'G', 351, 1, 1, 0, 00h
+_vwce_addr	.equ	0026h
+	._inspect	'V', 'd', "vwce_addr", "_vwce_addr", 'G', 362, 1, 1, 0, 00h
+_vd1ls_addr	.equ	0028h
+	._inspect	'V', 'd', "vd1ls_addr", "_vd1ls_addr", 'G', 371, 1, 1, 0, 00h
+_vw0c_addr	.equ	002Ah
+	._inspect	'V', 'd', "vw0c_addr", "_vw0c_addr", 'G', 383, 1, 1, 0, 00h
+_vw1c_addr	.equ	002Bh
+	._inspect	'V', 'd', "vw1c_addr", "_vw1c_addr", 'G', 395, 1, 1, 0, 00h
+_vw2c_addr	.equ	002Ch
+	._inspect	'V', 'd', "vw2c_addr", "_vw2c_addr", 'G', 411, 1, 1, 0, 00h
+_int7ic_addr	.equ	0042h
+	._inspect	'V', 'd', "int7ic_addr", "_int7ic_addr", 'G', 427, 1, 1, 0, 00h
+_int6ic_addr	.equ	0043h
+	._inspect	'V', 'd', "int6ic_addr", "_int6ic_addr", 'G', 440, 1, 1, 0, 00h
+_int3ic_addr	.equ	0044h
+	._inspect	'V', 'd', "int3ic_addr", "_int3ic_addr", 'G', 453, 1, 1, 0, 00h
+_tb5ic_addr	.equ	0045h
+	._inspect	'V', 'd', "tb5ic_addr", "_tb5ic_addr", 'G', 466, 1, 1, 0, 00h
+_tb4ic_addr	.equ	0046h
+	._inspect	'V', 'd', "tb4ic_addr", "_tb4ic_addr", 'G', 478, 1, 1, 0, 00h
+_u1bcnic_addr	.equ	0046h
+	._inspect	'V', 'd', "u1bcnic_addr", "_u1bcnic_addr", 'G', 490, 1, 1, 0, 00h
+_tb3ic_addr	.equ	0047h
+	._inspect	'V', 'd', "tb3ic_addr", "_tb3ic_addr", 'G', 502, 1, 1, 0, 00h
+_u0bcnic_addr	.equ	0047h
+	._inspect	'V', 'd', "u0bcnic_addr", "_u0bcnic_addr", 'G', 514, 1, 1, 0, 00h
+_s4ic_addr	.equ	0048h
+	._inspect	'V', 'd', "s4ic_addr", "_s4ic_addr", 'G', 526, 1, 1, 0, 00h
+_int5ic_addr	.equ	0048h
+	._inspect	'V', 'd', "int5ic_addr", "_int5ic_addr", 'G', 539, 1, 1, 0, 00h
+_s3ic_addr	.equ	0049h
+	._inspect	'V', 'd', "s3ic_addr", "_s3ic_addr", 'G', 552, 1, 1, 0, 00h
+_int4ic_addr	.equ	0049h
+	._inspect	'V', 'd', "int4ic_addr", "_int4ic_addr", 'G', 565, 1, 1, 0, 00h
+_bcnic_addr	.equ	004Ah
+	._inspect	'V', 'd', "bcnic_addr", "_bcnic_addr", 'G', 578, 1, 1, 0, 00h
+_dm0ic_addr	.equ	004Bh
+	._inspect	'V', 'd', "dm0ic_addr", "_dm0ic_addr", 'G', 590, 1, 1, 0, 00h
+_dm1ic_addr	.equ	004Ch
+	._inspect	'V', 'd', "dm1ic_addr", "_dm1ic_addr", 'G', 602, 1, 1, 0, 00h
+_kupic_addr	.equ	004Dh
+	._inspect	'V', 'd', "kupic_addr", "_kupic_addr", 'G', 614, 1, 1, 0, 00h
+_adic_addr	.equ	004Eh
+	._inspect	'V', 'd', "adic_addr", "_adic_addr", 'G', 626, 1, 1, 0, 00h
+_s2tic_addr	.equ	004Fh
+	._inspect	'V', 'd', "s2tic_addr", "_s2tic_addr", 'G', 638, 1, 1, 0, 00h
+_s2ric_addr	.equ	0050h
+	._inspect	'V', 'd', "s2ric_addr", "_s2ric_addr", 'G', 650, 1, 1, 0, 00h
+_s0tic_addr	.equ	0051h
+	._inspect	'V', 'd', "s0tic_addr", "_s0tic_addr", 'G', 662, 1, 1, 0, 00h
+_s0ric_addr	.equ	0052h
+	._inspect	'V', 'd', "s0ric_addr", "_s0ric_addr", 'G', 674, 1, 1, 0, 00h
+_s1tic_addr	.equ	0053h
+	._inspect	'V', 'd', "s1tic_addr", "_s1tic_addr", 'G', 686, 1, 1, 0, 00h
+_s1ric_addr	.equ	0054h
+	._inspect	'V', 'd', "s1ric_addr", "_s1ric_addr", 'G', 698, 1, 1, 0, 00h
+_ta0ic_addr	.equ	0055h
+	._inspect	'V', 'd', "ta0ic_addr", "_ta0ic_addr", 'G', 710, 1, 1, 0, 00h
+_ta1ic_addr	.equ	0056h
+	._inspect	'V', 'd', "ta1ic_addr", "_ta1ic_addr", 'G', 722, 1, 1, 0, 00h
+_ta2ic_addr	.equ	0057h
+	._inspect	'V', 'd', "ta2ic_addr", "_ta2ic_addr", 'G', 734, 1, 1, 0, 00h
+_ta3ic_addr	.equ	0058h
+	._inspect	'V', 'd', "ta3ic_addr", "_ta3ic_addr", 'G', 746, 1, 1, 0, 00h
+_ta4ic_addr	.equ	0059h
+	._inspect	'V', 'd', "ta4ic_addr", "_ta4ic_addr", 'G', 758, 1, 1, 0, 00h
+_tb0ic_addr	.equ	005Ah
+	._inspect	'V', 'd', "tb0ic_addr", "_tb0ic_addr", 'G', 770, 1, 1, 0, 00h
+_tb1ic_addr	.equ	005Bh
+	._inspect	'V', 'd', "tb1ic_addr", "_tb1ic_addr", 'G', 782, 1, 1, 0, 00h
+_tb2ic_addr	.equ	005Ch
+	._inspect	'V', 'd', "tb2ic_addr", "_tb2ic_addr", 'G', 794, 1, 1, 0, 00h
+_int0ic_addr	.equ	005Dh
+	._inspect	'V', 'd', "int0ic_addr", "_int0ic_addr", 'G', 806, 1, 1, 0, 00h
+_int1ic_addr	.equ	005Eh
+	._inspect	'V', 'd', "int1ic_addr", "_int1ic_addr", 'G', 819, 1, 1, 0, 00h
+_int2ic_addr	.equ	005Fh
+	._inspect	'V', 'd', "int2ic_addr", "_int2ic_addr", 'G', 832, 1, 1, 0, 00h
+_dm2ic_addr	.equ	0069h
+	._inspect	'V', 'd', "dm2ic_addr", "_dm2ic_addr", 'G', 845, 1, 1, 0, 00h
+_dm3ic_addr	.equ	006Ah
+	._inspect	'V', 'd', "dm3ic_addr", "_dm3ic_addr", 'G', 857, 1, 1, 0, 00h
+_u5bcnic_addr	.equ	006Bh
+	._inspect	'V', 'd', "u5bcnic_addr", "_u5bcnic_addr", 'G', 869, 1, 1, 0, 00h
+_cec1ic_addr	.equ	006Bh
+	._inspect	'V', 'd', "cec1ic_addr", "_cec1ic_addr", 'G', 881, 1, 1, 0, 00h
+_s5tic_addr	.equ	006Ch
+	._inspect	'V', 'd', "s5tic_addr", "_s5tic_addr", 'G', 893, 1, 1, 0, 00h
+_cec2ic_addr	.equ	006Ch
+	._inspect	'V', 'd', "cec2ic_addr", "_cec2ic_addr", 'G', 905, 1, 1, 0, 00h
+_s5ric_addr	.equ	006Dh
+	._inspect	'V', 'd', "s5ric_addr", "_s5ric_addr", 'G', 917, 1, 1, 0, 00h
+_u6bcnic_addr	.equ	006Eh
+	._inspect	'V', 'd', "u6bcnic_addr", "_u6bcnic_addr", 'G', 929, 1, 1, 0, 00h
+_rtctic_addr	.equ	006Eh
+	._inspect	'V', 'd', "rtctic_addr", "_rtctic_addr", 'G', 941, 1, 1, 0, 00h
+_s6tic_addr	.equ	006Fh
+	._inspect	'V', 'd', "s6tic_addr", "_s6tic_addr", 'G', 953, 1, 1, 0, 00h
+_rtccic_addr	.equ	006Fh
+	._inspect	'V', 'd', "rtccic_addr", "_rtccic_addr", 'G', 965, 1, 1, 0, 00h
+_s6ric_addr	.equ	0070h
+	._inspect	'V', 'd', "s6ric_addr", "_s6ric_addr", 'G', 977, 1, 1, 0, 00h
+_u7bcnic_addr	.equ	0071h
+	._inspect	'V', 'd', "u7bcnic_addr", "_u7bcnic_addr", 'G', 989, 1, 1, 0, 00h
+_pmc0ic_addr	.equ	0071h
+	._inspect	'V', 'd', "pmc0ic_addr", "_pmc0ic_addr", 'G', 1001, 1, 1, 0, 00h
+_s7tic_addr	.equ	0072h
+	._inspect	'V', 'd', "s7tic_addr", "_s7tic_addr", 'G', 1013, 1, 1, 0, 00h
+_pmc1ic_addr	.equ	0072h
+	._inspect	'V', 'd', "pmc1ic_addr", "_pmc1ic_addr", 'G', 1025, 1, 1, 0, 00h
+_s7ric_addr	.equ	0073h
+	._inspect	'V', 'd', "s7ric_addr", "_s7ric_addr", 'G', 1037, 1, 1, 0, 00h
+_iicic_addr	.equ	007Bh
+	._inspect	'V', 'd', "iicic_addr", "_iicic_addr", 'G', 1049, 1, 1, 0, 00h
+_scldaic_addr	.equ	007Ch
+	._inspect	'V', 'd', "scldaic_addr", "_scldaic_addr", 'G', 1061, 1, 1, 0, 00h
+_sar0_addr	.equ	0180h
+	._inspect	'V', 'd', "sar0_addr", "_sar0_addr", 'G', 1073, 4, 1, 0, 00h
+_dar0_addr	.equ	0184h
+	._inspect	'V', 'd', "dar0_addr", "_dar0_addr", 'G', 1083, 4, 1, 0, 00h
+_tcr0_addr	.equ	0188h
+	._inspect	'V', 'd', "tcr0_addr", "_tcr0_addr", 'G', 1093, 2, 1, 0, 00h
+_dm0con_addr	.equ	018Ch
+	._inspect	'V', 'd', "dm0con_addr", "_dm0con_addr", 'G', 1102, 1, 1, 0, 00h
+_sar1_addr	.equ	0190h
+	._inspect	'V', 'd', "sar1_addr", "_sar1_addr", 'G', 1116, 4, 1, 0, 00h
+_dar1_addr	.equ	0194h
+	._inspect	'V', 'd', "dar1_addr", "_dar1_addr", 'G', 1126, 4, 1, 0, 00h
+_tcr1_addr	.equ	0198h
+	._inspect	'V', 'd', "tcr1_addr", "_tcr1_addr", 'G', 1136, 2, 1, 0, 00h
+_dm1con_addr	.equ	019Ch
+	._inspect	'V', 'd', "dm1con_addr", "_dm1con_addr", 'G', 1145, 1, 1, 0, 00h
+_sar2_addr	.equ	01A0h
+	._inspect	'V', 'd', "sar2_addr", "_sar2_addr", 'G', 1159, 4, 1, 0, 00h
+_dar2_addr	.equ	01A4h
+	._inspect	'V', 'd', "dar2_addr", "_dar2_addr", 'G', 1169, 4, 1, 0, 00h
+_tcr2_addr	.equ	01A8h
+	._inspect	'V', 'd', "tcr2_addr", "_tcr2_addr", 'G', 1179, 2, 1, 0, 00h
+_dm2con_addr	.equ	01ACh
+	._inspect	'V', 'd', "dm2con_addr", "_dm2con_addr", 'G', 1188, 1, 1, 0, 00h
+_sar3_addr	.equ	01B0h
+	._inspect	'V', 'd', "sar3_addr", "_sar3_addr", 'G', 1202, 4, 1, 0, 00h
+_dar3_addr	.equ	01B4h
+	._inspect	'V', 'd', "dar3_addr", "_dar3_addr", 'G', 1212, 4, 1, 0, 00h
+_tcr3_addr	.equ	01B8h
+	._inspect	'V', 'd', "tcr3_addr", "_tcr3_addr", 'G', 1222, 2, 1, 0, 00h
+_dm3con_addr	.equ	01BCh
+	._inspect	'V', 'd', "dm3con_addr", "_dm3con_addr", 'G', 1231, 1, 1, 0, 00h
+_tb01_addr	.equ	01C0h
+	._inspect	'V', 'd', "tb01_addr", "_tb01_addr", 'G', 1245, 2, 1, 0, 00h
+_tb11_addr	.equ	01C2h
+	._inspect	'V', 'd', "tb11_addr", "_tb11_addr", 'G', 1252, 2, 1, 0, 00h
+_tb21_addr	.equ	01C4h
+	._inspect	'V', 'd', "tb21_addr", "_tb21_addr", 'G', 1259, 2, 1, 0, 00h
+_ppwfs1_addr	.equ	01C6h
+	._inspect	'V', 'd', "ppwfs1_addr", "_ppwfs1_addr", 'G', 1266, 1, 1, 0, 00h
+_tbcs0_addr	.equ	01C8h
+	._inspect	'V', 'd', "tbcs0_addr", "_tbcs0_addr", 'G', 1277, 1, 1, 0, 00h
+_tbcs1_addr	.equ	01C9h
+	._inspect	'V', 'd', "tbcs1_addr", "_tbcs1_addr", 'G', 1293, 1, 1, 0, 00h
+_tacs0_addr	.equ	01D0h
+	._inspect	'V', 'd', "tacs0_addr", "_tacs0_addr", 'G', 1305, 1, 1, 0, 00h
+_tacs1_addr	.equ	01D1h
+	._inspect	'V', 'd', "tacs1_addr", "_tacs1_addr", 'G', 1321, 1, 1, 0, 00h
+_tacs2_addr	.equ	01D2h
+	._inspect	'V', 'd', "tacs2_addr", "_tacs2_addr", 'G', 1337, 1, 1, 0, 00h
+_pwmfs_addr	.equ	01D4h
+	._inspect	'V', 'd', "pwmfs_addr", "_pwmfs_addr", 'G', 1349, 1, 1, 0, 00h
+_tapofs_addr	.equ	01D5h
+	._inspect	'V', 'd', "tapofs_addr", "_tapofs_addr", 'G', 1360, 1, 1, 0, 00h
+_taow_addr	.equ	01D8h
+	._inspect	'V', 'd', "taow_addr", "_taow_addr", 'G', 1373, 1, 1, 0, 00h
+_tprc_addr	.equ	01DAh
+	._inspect	'V', 'd', "tprc_addr", "_tprc_addr", 'G', 1384, 1, 1, 0, 00h
+_tb31_addr	.equ	01E0h
+	._inspect	'V', 'd', "tb31_addr", "_tb31_addr", 'G', 1393, 2, 1, 0, 00h
+_tb41_addr	.equ	01E2h
+	._inspect	'V', 'd', "tb41_addr", "_tb41_addr", 'G', 1400, 2, 1, 0, 00h
+_tb51_addr	.equ	01E4h
+	._inspect	'V', 'd', "tb51_addr", "_tb51_addr", 'G', 1407, 2, 1, 0, 00h
+_ppwfs2_addr	.equ	01E6h
+	._inspect	'V', 'd', "ppwfs2_addr", "_ppwfs2_addr", 'G', 1414, 1, 1, 0, 00h
+_tbcs2_addr	.equ	01E8h
+	._inspect	'V', 'd', "tbcs2_addr", "_tbcs2_addr", 'G', 1425, 1, 1, 0, 00h
+_tbcs3_addr	.equ	01E9h
+	._inspect	'V', 'd', "tbcs3_addr", "_tbcs3_addr", 'G', 1441, 1, 1, 0, 00h
+_pmc0con0_addr	.equ	01F0h
+	._inspect	'V', 'd', "pmc0con0_addr", "_pmc0con0_addr", 'G', 1453, 1, 1, 0, 00h
+_pmc0con1_addr	.equ	01F1h
+	._inspect	'V', 'd', "pmc0con1_addr", "_pmc0con1_addr", 'G', 1469, 1, 1, 0, 00h
+_pmc0con2_addr	.equ	01F2h
+	._inspect	'V', 'd', "pmc0con2_addr", "_pmc0con2_addr", 'G', 1482, 1, 1, 0, 00h
+_pmc0con3_addr	.equ	01F3h
+	._inspect	'V', 'd', "pmc0con3_addr", "_pmc0con3_addr", 'G', 1496, 1, 1, 0, 00h
+_pmc0sts_addr	.equ	01F4h
+	._inspect	'V', 'd', "pmc0sts_addr", "_pmc0sts_addr", 'G', 1512, 1, 1, 0, 00h
+_pmc0int_addr	.equ	01F5h
+	._inspect	'V', 'd', "pmc0int_addr", "_pmc0int_addr", 'G', 1528, 1, 1, 0, 00h
+_pmc0cpc_addr	.equ	01F6h
+	._inspect	'V', 'd', "pmc0cpc_addr", "_pmc0cpc_addr", 'G', 1544, 1, 1, 0, 00h
+_pmc0cpd_addr	.equ	01F7h
+	._inspect	'V', 'd', "pmc0cpd_addr", "_pmc0cpd_addr", 'G', 1556, 1, 1, 0, 00h
+_pmc1con0_addr	.equ	01F8h
+	._inspect	'V', 'd', "pmc1con0_addr", "_pmc1con0_addr", 'G', 1563, 1, 1, 0, 00h
+_pmc1con1_addr	.equ	01F9h
+	._inspect	'V', 'd', "pmc1con1_addr", "_pmc1con1_addr", 'G', 1575, 1, 1, 0, 00h
+_pmc1con2_addr	.equ	01FAh
+	._inspect	'V', 'd', "pmc1con2_addr", "_pmc1con2_addr", 'G', 1585, 1, 1, 0, 00h
+_pmc1con3_addr	.equ	01FBh
+	._inspect	'V', 'd', "pmc1con3_addr", "_pmc1con3_addr", 'G', 1599, 1, 1, 0, 00h
+_pmc1sts_addr	.equ	01FCh
+	._inspect	'V', 'd', "pmc1sts_addr", "_pmc1sts_addr", 'G', 1615, 1, 1, 0, 00h
+_pmc1int_addr	.equ	01FDh
+	._inspect	'V', 'd', "pmc1int_addr", "_pmc1int_addr", 'G', 1628, 1, 1, 0, 00h
+_ifsr3a_addr	.equ	0205h
+	._inspect	'V', 'd', "ifsr3a_addr", "_ifsr3a_addr", 'G', 1641, 1, 1, 0, 00h
+_ifsr2a_addr	.equ	0206h
+	._inspect	'V', 'd', "ifsr2a_addr", "_ifsr2a_addr", 'G', 1655, 1, 1, 0, 00h
+_ifsr_addr	.equ	0207h
+	._inspect	'V', 'd', "ifsr_addr", "_ifsr_addr", 'G', 1669, 1, 1, 0, 00h
+_aier_addr	.equ	020Eh
+	._inspect	'V', 'd', "aier_addr", "_aier_addr", 'G', 1685, 1, 1, 0, 00h
+_aier2_addr	.equ	020Fh
+	._inspect	'V', 'd', "aier2_addr", "_aier2_addr", 'G', 1695, 1, 1, 0, 00h
+_rmad0_addr	.equ	0210h
+	._inspect	'V', 'd', "rmad0_addr", "_rmad0_addr", 'G', 1705, 4, 1, 0, 00h
+_rmad1_addr	.equ	0214h
+	._inspect	'V', 'd', "rmad1_addr", "_rmad1_addr", 'G', 1715, 4, 1, 0, 00h
+_rmad2_addr	.equ	0218h
+	._inspect	'V', 'd', "rmad2_addr", "_rmad2_addr", 'G', 1725, 4, 1, 0, 00h
+_rmad3_addr	.equ	021Ch
+	._inspect	'V', 'd', "rmad3_addr", "_rmad3_addr", 'G', 1735, 4, 1, 0, 00h
+_fmr0_addr	.equ	0220h
+	._inspect	'V', 'd', "fmr0_addr", "_fmr0_addr", 'G', 1745, 1, 1, 0, 00h
+_fmr1_addr	.equ	0221h
+	._inspect	'V', 'd', "fmr1_addr", "_fmr1_addr", 'G', 1759, 1, 1, 0, 00h
+_fmr2_addr	.equ	0222h
+	._inspect	'V', 'd', "fmr2_addr", "_fmr2_addr", 'G', 1770, 1, 1, 0, 00h
+_fmr6_addr	.equ	0230h
+	._inspect	'V', 'd', "fmr6_addr", "_fmr6_addr", 'G', 1780, 1, 1, 0, 00h
+_u0smr4_addr	.equ	0244h
+	._inspect	'V', 'd', "u0smr4_addr", "_u0smr4_addr", 'G', 1790, 1, 1, 0, 00h
+_u0smr3_addr	.equ	0245h
+	._inspect	'V', 'd', "u0smr3_addr", "_u0smr3_addr", 'G', 1806, 1, 1, 0, 00h
+_u0smr2_addr	.equ	0246h
+	._inspect	'V', 'd', "u0smr2_addr", "_u0smr2_addr", 'G', 1819, 1, 1, 0, 00h
+_u0smr_addr	.equ	0247h
+	._inspect	'V', 'd', "u0smr_addr", "_u0smr_addr", 'G', 1834, 1, 1, 0, 00h
+_u0mr_addr	.equ	0248h
+	._inspect	'V', 'd', "u0mr_addr", "_u0mr_addr", 'G', 1848, 1, 1, 0, 00h
+_u0brg_addr	.equ	0249h
+	._inspect	'V', 'd', "u0brg_addr", "_u0brg_addr", 'G', 1864, 1, 1, 0, 00h
+_u0tb_addr	.equ	024Ah
+	._inspect	'V', 'd', "u0tb_addr", "_u0tb_addr", 'G', 1871, 2, 1, 0, 00h
+_u0c0_addr	.equ	024Ch
+	._inspect	'V', 'd', "u0c0_addr", "_u0c0_addr", 'G', 1880, 1, 1, 0, 00h
+_u0c1_addr	.equ	024Dh
+	._inspect	'V', 'd', "u0c1_addr", "_u0c1_addr", 'G', 1896, 1, 1, 0, 00h
+_u0rb_addr	.equ	024Eh
+	._inspect	'V', 'd', "u0rb_addr", "_u0rb_addr", 'G', 1910, 2, 1, 0, 00h
+_ucon_addr	.equ	0250h
+	._inspect	'V', 'd', "ucon_addr", "_ucon_addr", 'G', 1925, 1, 1, 0, 00h
+_u1smr4_addr	.equ	0254h
+	._inspect	'V', 'd', "u1smr4_addr", "_u1smr4_addr", 'G', 1940, 1, 1, 0, 00h
+_u1smr3_addr	.equ	0255h
+	._inspect	'V', 'd', "u1smr3_addr", "_u1smr3_addr", 'G', 1956, 1, 1, 0, 00h
+_u1smr2_addr	.equ	0256h
+	._inspect	'V', 'd', "u1smr2_addr", "_u1smr2_addr", 'G', 1969, 1, 1, 0, 00h
+_u1smr_addr	.equ	0257h
+	._inspect	'V', 'd', "u1smr_addr", "_u1smr_addr", 'G', 1984, 1, 1, 0, 00h
+_u1mr_addr	.equ	0258h
+	._inspect	'V', 'd', "u1mr_addr", "_u1mr_addr", 'G', 1998, 1, 1, 0, 00h
+_u1brg_addr	.equ	0259h
+	._inspect	'V', 'd', "u1brg_addr", "_u1brg_addr", 'G', 2014, 1, 1, 0, 00h
+_u1tb_addr	.equ	025Ah
+	._inspect	'V', 'd', "u1tb_addr", "_u1tb_addr", 'G', 2021, 2, 1, 0, 00h
+_u1c0_addr	.equ	025Ch
+	._inspect	'V', 'd', "u1c0_addr", "_u1c0_addr", 'G', 2030, 1, 1, 0, 00h
+_u1c1_addr	.equ	025Dh
+	._inspect	'V', 'd', "u1c1_addr", "_u1c1_addr", 'G', 2046, 1, 1, 0, 00h
+_u1rb_addr	.equ	025Eh
+	._inspect	'V', 'd', "u1rb_addr", "_u1rb_addr", 'G', 2060, 2, 1, 0, 00h
+_u2smr4_addr	.equ	0264h
+	._inspect	'V', 'd', "u2smr4_addr", "_u2smr4_addr", 'G', 2075, 1, 1, 0, 00h
+_u2smr3_addr	.equ	0265h
+	._inspect	'V', 'd', "u2smr3_addr", "_u2smr3_addr", 'G', 2091, 1, 1, 0, 00h
+_u2smr2_addr	.equ	0266h
+	._inspect	'V', 'd', "u2smr2_addr", "_u2smr2_addr", 'G', 2104, 1, 1, 0, 00h
+_u2smr_addr	.equ	0267h
+	._inspect	'V', 'd', "u2smr_addr", "_u2smr_addr", 'G', 2119, 1, 1, 0, 00h
+_u2mr_addr	.equ	0268h
+	._inspect	'V', 'd', "u2mr_addr", "_u2mr_addr", 'G', 2133, 1, 1, 0, 00h
+_u2brg_addr	.equ	0269h
+	._inspect	'V', 'd', "u2brg_addr", "_u2brg_addr", 'G', 2149, 1, 1, 0, 00h
+_u2tb_addr	.equ	026Ah
+	._inspect	'V', 'd', "u2tb_addr", "_u2tb_addr", 'G', 2156, 2, 1, 0, 00h
+_u2c0_addr	.equ	026Ch
+	._inspect	'V', 'd', "u2c0_addr", "_u2c0_addr", 'G', 2165, 1, 1, 0, 00h
+_u2c1_addr	.equ	026Dh
+	._inspect	'V', 'd', "u2c1_addr", "_u2c1_addr", 'G', 2181, 1, 1, 0, 00h
+_u2rb_addr	.equ	026Eh
+	._inspect	'V', 'd', "u2rb_addr", "_u2rb_addr", 'G', 2197, 2, 1, 0, 00h
+_s3trr_addr	.equ	0270h
+	._inspect	'V', 'd', "s3trr_addr", "_s3trr_addr", 'G', 2212, 1, 1, 0, 00h
+_s3c_addr	.equ	0272h
+	._inspect	'V', 'd', "s3c_addr", "_s3c_addr", 'G', 2219, 1, 1, 0, 00h
+_s3brg_addr	.equ	0273h
+	._inspect	'V', 'd', "s3brg_addr", "_s3brg_addr", 'G', 2235, 1, 1, 0, 00h
+_s4trr_addr	.equ	0274h
+	._inspect	'V', 'd', "s4trr_addr", "_s4trr_addr", 'G', 2242, 1, 1, 0, 00h
+_s4c_addr	.equ	0276h
+	._inspect	'V', 'd', "s4c_addr", "_s4c_addr", 'G', 2249, 1, 1, 0, 00h
+_s4brg_addr	.equ	0277h
+	._inspect	'V', 'd', "s4brg_addr", "_s4brg_addr", 'G', 2265, 1, 1, 0, 00h
+_s34c2_addr	.equ	0278h
+	._inspect	'V', 'd', "s34c2_addr", "_s34c2_addr", 'G', 2272, 1, 1, 0, 00h
+_u5smr4_addr	.equ	0284h
+	._inspect	'V', 'd', "u5smr4_addr", "_u5smr4_addr", 'G', 2282, 1, 1, 0, 00h
+_u5smr3_addr	.equ	0285h
+	._inspect	'V', 'd', "u5smr3_addr", "_u5smr3_addr", 'G', 2298, 1, 1, 0, 00h
+_u5smr2_addr	.equ	0286h
+	._inspect	'V', 'd', "u5smr2_addr", "_u5smr2_addr", 'G', 2311, 1, 1, 0, 00h
+_u5smr_addr	.equ	0287h
+	._inspect	'V', 'd', "u5smr_addr", "_u5smr_addr", 'G', 2326, 1, 1, 0, 00h
+_u5mr_addr	.equ	0288h
+	._inspect	'V', 'd', "u5mr_addr", "_u5mr_addr", 'G', 2340, 1, 1, 0, 00h
+_u5brg_addr	.equ	0289h
+	._inspect	'V', 'd', "u5brg_addr", "_u5brg_addr", 'G', 2356, 1, 1, 0, 00h
+_u5tb_addr	.equ	028Ah
+	._inspect	'V', 'd', "u5tb_addr", "_u5tb_addr", 'G', 2363, 2, 1, 0, 00h
+_u5c0_addr	.equ	028Ch
+	._inspect	'V', 'd', "u5c0_addr", "_u5c0_addr", 'G', 2372, 1, 1, 0, 00h
+_u5c1_addr	.equ	028Dh
+	._inspect	'V', 'd', "u5c1_addr", "_u5c1_addr", 'G', 2388, 1, 1, 0, 00h
+_u5rb_addr	.equ	028Eh
+	._inspect	'V', 'd', "u5rb_addr", "_u5rb_addr", 'G', 2404, 2, 1, 0, 00h
+_u6smr4_addr	.equ	0294h
+	._inspect	'V', 'd', "u6smr4_addr", "_u6smr4_addr", 'G', 2419, 1, 1, 0, 00h
+_u6smr3_addr	.equ	0295h
+	._inspect	'V', 'd', "u6smr3_addr", "_u6smr3_addr", 'G', 2435, 1, 1, 0, 00h
+_u6smr2_addr	.equ	0296h
+	._inspect	'V', 'd', "u6smr2_addr", "_u6smr2_addr", 'G', 2448, 1, 1, 0, 00h
+_u6smr_addr	.equ	0297h
+	._inspect	'V', 'd', "u6smr_addr", "_u6smr_addr", 'G', 2463, 1, 1, 0, 00h
+_u6mr_addr	.equ	0298h
+	._inspect	'V', 'd', "u6mr_addr", "_u6mr_addr", 'G', 2477, 1, 1, 0, 00h
+_u6brg_addr	.equ	0299h
+	._inspect	'V', 'd', "u6brg_addr", "_u6brg_addr", 'G', 2493, 1, 1, 0, 00h
+_u6tb_addr	.equ	029Ah
+	._inspect	'V', 'd', "u6tb_addr", "_u6tb_addr", 'G', 2500, 2, 1, 0, 00h
+_u6c0_addr	.equ	029Ch
+	._inspect	'V', 'd', "u6c0_addr", "_u6c0_addr", 'G', 2509, 1, 1, 0, 00h
+_u6c1_addr	.equ	029Dh
+	._inspect	'V', 'd', "u6c1_addr", "_u6c1_addr", 'G', 2525, 1, 1, 0, 00h
+_u6rb_addr	.equ	029Eh
+	._inspect	'V', 'd', "u6rb_addr", "_u6rb_addr", 'G', 2541, 2, 1, 0, 00h
+_u7smr4_addr	.equ	02A4h
+	._inspect	'V', 'd', "u7smr4_addr", "_u7smr4_addr", 'G', 2556, 1, 1, 0, 00h
+_u7smr3_addr	.equ	02A5h
+	._inspect	'V', 'd', "u7smr3_addr", "_u7smr3_addr", 'G', 2572, 1, 1, 0, 00h
+_u7smr2_addr	.equ	02A6h
+	._inspect	'V', 'd', "u7smr2_addr", "_u7smr2_addr", 'G', 2585, 1, 1, 0, 00h
+_u7smr_addr	.equ	02A7h
+	._inspect	'V', 'd', "u7smr_addr", "_u7smr_addr", 'G', 2600, 1, 1, 0, 00h
+_u7mr_addr	.equ	02A8h
+	._inspect	'V', 'd', "u7mr_addr", "_u7mr_addr", 'G', 2614, 1, 1, 0, 00h
+_u7brg_addr	.equ	02A9h
+	._inspect	'V', 'd', "u7brg_addr", "_u7brg_addr", 'G', 2630, 1, 1, 0, 00h
+_u7tb_addr	.equ	02AAh
+	._inspect	'V', 'd', "u7tb_addr", "_u7tb_addr", 'G', 2637, 2, 1, 0, 00h
+_u7c0_addr	.equ	02ACh
+	._inspect	'V', 'd', "u7c0_addr", "_u7c0_addr", 'G', 2646, 1, 1, 0, 00h
+_u7c1_addr	.equ	02ADh
+	._inspect	'V', 'd', "u7c1_addr", "_u7c1_addr", 'G', 2662, 1, 1, 0, 00h
+_u7rb_addr	.equ	02AEh
+	._inspect	'V', 'd', "u7rb_addr", "_u7rb_addr", 'G', 2678, 2, 1, 0, 00h
+_s00_addr	.equ	02B0h
+	._inspect	'V', 'd', "s00_addr", "_s00_addr", 'G', 2693, 1, 1, 0, 00h
+_s0d0_addr	.equ	02B2h
+	._inspect	'V', 'd', "s0d0_addr", "_s0d0_addr", 'G', 2700, 1, 1, 0, 00h
+_s1d0_addr	.equ	02B3h
+	._inspect	'V', 'd', "s1d0_addr", "_s1d0_addr", 'G', 2715, 1, 1, 0, 00h
+_s20_addr	.equ	02B4h
+	._inspect	'V', 'd', "s20_addr", "_s20_addr", 'G', 2730, 1, 1, 0, 00h
+_s2d0_addr	.equ	02B5h
+	._inspect	'V', 'd', "s2d0_addr", "_s2d0_addr", 'G', 2746, 1, 1, 0, 00h
+_s3d0_addr	.equ	02B6h
+	._inspect	'V', 'd', "s3d0_addr", "_s3d0_addr", 'G', 2762, 1, 1, 0, 00h
+_s4d0_addr	.equ	02B7h
+	._inspect	'V', 'd', "s4d0_addr", "_s4d0_addr", 'G', 2778, 1, 1, 0, 00h
+_s10_addr	.equ	02B8h
+	._inspect	'V', 'd', "s10_addr", "_s10_addr", 'G', 2794, 1, 1, 0, 00h
+_s11_addr	.equ	02B9h
+	._inspect	'V', 'd', "s11_addr", "_s11_addr", 'G', 2810, 1, 1, 0, 00h
+_s0d1_addr	.equ	02BAh
+	._inspect	'V', 'd', "s0d1_addr", "_s0d1_addr", 'G', 2821, 1, 1, 0, 00h
+_s0d2_addr	.equ	02BBh
+	._inspect	'V', 'd', "s0d2_addr", "_s0d2_addr", 'G', 2836, 1, 1, 0, 00h
+_tbsr_addr	.equ	0300h
+	._inspect	'V', 'd', "tbsr_addr", "_tbsr_addr", 'G', 2851, 1, 1, 0, 00h
+_ta11_addr	.equ	0302h
+	._inspect	'V', 'd', "ta11_addr", "_ta11_addr", 'G', 2862, 2, 1, 0, 00h
+_ta21_addr	.equ	0304h
+	._inspect	'V', 'd', "ta21_addr", "_ta21_addr", 'G', 2869, 2, 1, 0, 00h
+_ta41_addr	.equ	0306h
+	._inspect	'V', 'd', "ta41_addr", "_ta41_addr", 'G', 2876, 2, 1, 0, 00h
+_invc0_addr	.equ	0308h
+	._inspect	'V', 'd', "invc0_addr", "_invc0_addr", 'G', 2883, 1, 1, 0, 00h
+_invc1_addr	.equ	0309h
+	._inspect	'V', 'd', "invc1_addr", "_invc1_addr", 'G', 2899, 1, 1, 0, 00h
+_idb0_addr	.equ	030Ah
+	._inspect	'V', 'd', "idb0_addr", "_idb0_addr", 'G', 2914, 1, 1, 0, 00h
+_idb1_addr	.equ	030Bh
+	._inspect	'V', 'd', "idb1_addr", "_idb1_addr", 'G', 2928, 1, 1, 0, 00h
+_dtt_addr	.equ	030Ch
+	._inspect	'V', 'd', "dtt_addr", "_dtt_addr", 'G', 2942, 1, 1, 0, 00h
+_ictb2_addr	.equ	030Dh
+	._inspect	'V', 'd', "ictb2_addr", "_ictb2_addr", 'G', 2949, 1, 1, 0, 00h
+_pdrf_addr	.equ	030Eh
+	._inspect	'V', 'd', "pdrf_addr", "_pdrf_addr", 'G', 2956, 1, 1, 0, 00h
+_tb3_addr	.equ	0310h
+	._inspect	'V', 'd', "tb3_addr", "_tb3_addr", 'G', 2968, 2, 1, 0, 00h
+_tb4_addr	.equ	0312h
+	._inspect	'V', 'd', "tb4_addr", "_tb4_addr", 'G', 2975, 2, 1, 0, 00h
+_tb5_addr	.equ	0314h
+	._inspect	'V', 'd', "tb5_addr", "_tb5_addr", 'G', 2982, 2, 1, 0, 00h
+_pfcr_addr	.equ	0318h
+	._inspect	'V', 'd', "pfcr_addr", "_pfcr_addr", 'G', 2989, 1, 1, 0, 00h
+_tb3mr_addr	.equ	031Bh
+	._inspect	'V', 'd', "tb3mr_addr", "_tb3mr_addr", 'G', 3003, 1, 1, 0, 00h
+_tb4mr_addr	.equ	031Ch
+	._inspect	'V', 'd', "tb4mr_addr", "_tb4mr_addr", 'G', 3018, 1, 1, 0, 00h
+_tb5mr_addr	.equ	031Dh
+	._inspect	'V', 'd', "tb5mr_addr", "_tb5mr_addr", 'G', 3033, 1, 1, 0, 00h
+_tabsr_addr	.equ	0320h
+	._inspect	'V', 'd', "tabsr_addr", "_tabsr_addr", 'G', 3048, 1, 1, 0, 00h
+_onsf_addr	.equ	0322h
+	._inspect	'V', 'd', "onsf_addr", "_onsf_addr", 'G', 3064, 1, 1, 0, 00h
+_trgsr_addr	.equ	0323h
+	._inspect	'V', 'd', "trgsr_addr", "_trgsr_addr", 'G', 3080, 1, 1, 0, 00h
+_udf_addr	.equ	0324h
+	._inspect	'V', 'd', "udf_addr", "_udf_addr", 'G', 3096, 1, 1, 0, 00h
+_ta0_addr	.equ	0326h
+	._inspect	'V', 'd', "ta0_addr", "_ta0_addr", 'G', 3112, 2, 1, 0, 00h
+_ta1_addr	.equ	0328h
+	._inspect	'V', 'd', "ta1_addr", "_ta1_addr", 'G', 3119, 2, 1, 0, 00h
+_ta2_addr	.equ	032Ah
+	._inspect	'V', 'd', "ta2_addr", "_ta2_addr", 'G', 3126, 2, 1, 0, 00h
+_ta3_addr	.equ	032Ch
+	._inspect	'V', 'd', "ta3_addr", "_ta3_addr", 'G', 3133, 2, 1, 0, 00h
+_ta4_addr	.equ	032Eh
+	._inspect	'V', 'd', "ta4_addr", "_ta4_addr", 'G', 3140, 2, 1, 0, 00h
+_tb0_addr	.equ	0330h
+	._inspect	'V', 'd', "tb0_addr", "_tb0_addr", 'G', 3147, 2, 1, 0, 00h
+_tb1_addr	.equ	0332h
+	._inspect	'V', 'd', "tb1_addr", "_tb1_addr", 'G', 3154, 2, 1, 0, 00h
+_tb2_addr	.equ	0334h
+	._inspect	'V', 'd', "tb2_addr", "_tb2_addr", 'G', 3161, 2, 1, 0, 00h
+_ta0mr_addr	.equ	0336h
+	._inspect	'V', 'd', "ta0mr_addr", "_ta0mr_addr", 'G', 3168, 1, 1, 0, 00h
+_ta1mr_addr	.equ	0337h
+	._inspect	'V', 'd', "ta1mr_addr", "_ta1mr_addr", 'G', 3184, 1, 1, 0, 00h
+_ta2mr_addr	.equ	0338h
+	._inspect	'V', 'd', "ta2mr_addr", "_ta2mr_addr", 'G', 3200, 1, 1, 0, 00h
+_ta3mr_addr	.equ	0339h
+	._inspect	'V', 'd', "ta3mr_addr", "_ta3mr_addr", 'G', 3216, 1, 1, 0, 00h
+_ta4mr_addr	.equ	033Ah
+	._inspect	'V', 'd', "ta4mr_addr", "_ta4mr_addr", 'G', 3232, 1, 1, 0, 00h
+_tb0mr_addr	.equ	033Bh
+	._inspect	'V', 'd', "tb0mr_addr", "_tb0mr_addr", 'G', 3248, 1, 1, 0, 00h
+_tb1mr_addr	.equ	033Ch
+	._inspect	'V', 'd', "tb1mr_addr", "_tb1mr_addr", 'G', 3263, 1, 1, 0, 00h
+_tb2mr_addr	.equ	033Dh
+	._inspect	'V', 'd', "tb2mr_addr", "_tb2mr_addr", 'G', 3278, 1, 1, 0, 00h
+_tb2sc_addr	.equ	033Eh
+	._inspect	'V', 'd', "tb2sc_addr", "_tb2sc_addr", 'G', 3293, 1, 1, 0, 00h
+_rtcsec_addr	.equ	0340h
+	._inspect	'V', 'd', "rtcsec_addr", "_rtcsec_addr", 'G', 3303, 1, 1, 0, 00h
+_rtcmin_addr	.equ	0341h
+	._inspect	'V', 'd', "rtcmin_addr", "_rtcmin_addr", 'G', 3319, 1, 1, 0, 00h
+_rtchr_addr	.equ	0342h
+	._inspect	'V', 'd', "rtchr_addr", "_rtchr_addr", 'G', 3334, 1, 1, 0, 00h
+_rtcwk_addr	.equ	0343h
+	._inspect	'V', 'd', "rtcwk_addr", "_rtcwk_addr", 'G', 3348, 1, 1, 0, 00h
+_rtccr1_addr	.equ	0344h
+	._inspect	'V', 'd', "rtccr1_addr", "_rtccr1_addr", 'G', 3359, 1, 1, 0, 00h
+_rtccr2_addr	.equ	0345h
+	._inspect	'V', 'd', "rtccr2_addr", "_rtccr2_addr", 'G', 3373, 1, 1, 0, 00h
+_rtccsr_addr	.equ	0346h
+	._inspect	'V', 'd', "rtccsr_addr", "_rtccsr_addr", 'G', 3388, 1, 1, 0, 00h
+_rtccsec_addr	.equ	0348h
+	._inspect	'V', 'd', "rtccsec_addr", "_rtccsec_addr", 'G', 3401, 1, 1, 0, 00h
+_rtccmin_addr	.equ	0349h
+	._inspect	'V', 'd', "rtccmin_addr", "_rtccmin_addr", 'G', 3416, 1, 1, 0, 00h
+_rtcchr_addr	.equ	034Ah
+	._inspect	'V', 'd', "rtcchr_addr", "_rtcchr_addr", 'G', 3431, 1, 1, 0, 00h
+_cecc1_addr	.equ	0350h
+	._inspect	'V', 'd', "cecc1_addr", "_cecc1_addr", 'G', 3446, 1, 1, 0, 00h
+_cecc2_addr	.equ	0351h
+	._inspect	'V', 'd', "cecc2_addr", "_cecc2_addr", 'G', 3457, 1, 1, 0, 00h
+_cecc3_addr	.equ	0352h
+	._inspect	'V', 'd', "cecc3_addr", "_cecc3_addr", 'G', 3473, 1, 1, 0, 00h
+_cecc4_addr	.equ	0353h
+	._inspect	'V', 'd', "cecc4_addr", "_cecc4_addr", 'G', 3485, 1, 1, 0, 00h
+_cecflg_addr	.equ	0354h
+	._inspect	'V', 'd', "cecflg_addr", "_cecflg_addr", 'G', 3501, 1, 1, 0, 00h
+_cisel_addr	.equ	0355h
+	._inspect	'V', 'd', "cisel_addr", "_cisel_addr", 'G', 3517, 1, 1, 0, 00h
+_cctb1_addr	.equ	0356h
+	._inspect	'V', 'd', "cctb1_addr", "_cctb1_addr", 'G', 3533, 1, 1, 0, 00h
+_cctb2_addr	.equ	0357h
+	._inspect	'V', 'd', "cctb2_addr", "_cctb2_addr", 'G', 3540, 1, 1, 0, 00h
+_ccrb1_addr	.equ	0358h
+	._inspect	'V', 'd', "ccrb1_addr", "_ccrb1_addr", 'G', 3550, 1, 1, 0, 00h
+_ccrb2_addr	.equ	0359h
+	._inspect	'V', 'd', "ccrb2_addr", "_ccrb2_addr", 'G', 3557, 1, 1, 0, 00h
+_cradri1_addr	.equ	035Ah
+	._inspect	'V', 'd', "cradri1_addr", "_cradri1_addr", 'G', 3568, 1, 1, 0, 00h
+_cradri2_addr	.equ	035Bh
+	._inspect	'V', 'd', "cradri2_addr", "_cradri2_addr", 'G', 3584, 1, 1, 0, 00h
+_pur0_addr	.equ	0360h
+	._inspect	'V', 'd', "pur0_addr", "_pur0_addr", 'G', 3600, 1, 1, 0, 00h
+_pur1_addr	.equ	0361h
+	._inspect	'V', 'd', "pur1_addr", "_pur1_addr", 'G', 3616, 1, 1, 0, 00h
+_pur2_addr	.equ	0362h
+	._inspect	'V', 'd', "pur2_addr", "_pur2_addr", 'G', 3632, 1, 1, 0, 00h
+_pcr_addr	.equ	0366h
+	._inspect	'V', 'd', "pcr_addr", "_pcr_addr", 'G', 3646, 1, 1, 0, 00h
+_nmidf_addr	.equ	0369h
+	._inspect	'V', 'd', "nmidf_addr", "_nmidf_addr", 'G', 3659, 1, 1, 0, 00h
+_pwmcon0_addr	.equ	0370h
+	._inspect	'V', 'd', "pwmcon0_addr", "_pwmcon0_addr", 'G', 3670, 1, 1, 0, 00h
+_pwmpre0_addr	.equ	0372h
+	._inspect	'V', 'd', "pwmpre0_addr", "_pwmpre0_addr", 'G', 3682, 1, 1, 0, 00h
+_pwmreg0_addr	.equ	0373h
+	._inspect	'V', 'd', "pwmreg0_addr", "_pwmreg0_addr", 'G', 3689, 1, 1, 0, 00h
+_pwmpre1_addr	.equ	0374h
+	._inspect	'V', 'd', "pwmpre1_addr", "_pwmpre1_addr", 'G', 3696, 1, 1, 0, 00h
+_pwmreg1_addr	.equ	0375h
+	._inspect	'V', 'd', "pwmreg1_addr", "_pwmreg1_addr", 'G', 3703, 1, 1, 0, 00h
+_pwmcon1_addr	.equ	0376h
+	._inspect	'V', 'd', "pwmcon1_addr", "_pwmcon1_addr", 'G', 3710, 1, 1, 0, 00h
+_cspr_addr	.equ	037Ch
+	._inspect	'V', 'd', "cspr_addr", "_cspr_addr", 'G', 3722, 1, 1, 0, 00h
+_wdtr_addr	.equ	037Dh
+	._inspect	'V', 'd', "wdtr_addr", "_wdtr_addr", 'G', 3731, 1, 1, 0, 00h
+_wdts_addr	.equ	037Eh
+	._inspect	'V', 'd', "wdts_addr", "_wdts_addr", 'G', 3738, 1, 1, 0, 00h
+_wdc_addr	.equ	037Fh
+	._inspect	'V', 'd', "wdc_addr", "_wdc_addr", 'G', 3745, 1, 1, 0, 00h
+_dm2sl_addr	.equ	0390h
+	._inspect	'V', 'd', "dm2sl_addr", "_dm2sl_addr", 'G', 3759, 1, 1, 0, 00h
+_dm3sl_addr	.equ	0392h
+	._inspect	'V', 'd', "dm3sl_addr", "_dm3sl_addr", 'G', 3774, 1, 1, 0, 00h
+_dm0sl_addr	.equ	0398h
+	._inspect	'V', 'd', "dm0sl_addr", "_dm0sl_addr", 'G', 3789, 1, 1, 0, 00h
+_dm1sl_addr	.equ	039Ah
+	._inspect	'V', 'd', "dm1sl_addr", "_dm1sl_addr", 'G', 3804, 1, 1, 0, 00h
+_ainrst_addr	.equ	03A2h
+	._inspect	'V', 'd', "ainrst_addr", "_ainrst_addr", 'G', 3819, 1, 1, 0, 00h
+_crcsar_addr	.equ	03B4h
+	._inspect	'V', 'd', "crcsar_addr", "_crcsar_addr", 'G', 3829, 2, 1, 0, 00h
+_crcmr_addr	.equ	03B6h
+	._inspect	'V', 'd', "crcmr_addr", "_crcmr_addr", 'G', 3851, 1, 1, 0, 00h
+_crcd_addr	.equ	03BCh
+	._inspect	'V', 'd', "crcd_addr", "_crcd_addr", 'G', 3861, 2, 1, 0, 00h
+_crcin_addr	.equ	03BEh
+	._inspect	'V', 'd', "crcin_addr", "_crcin_addr", 'G', 3870, 1, 1, 0, 00h
+_ad0_addr	.equ	03C0h
+	._inspect	'V', 'd', "ad0_addr", "_ad0_addr", 'G', 3877, 2, 1, 0, 00h
+_ad1_addr	.equ	03C2h
+	._inspect	'V', 'd', "ad1_addr", "_ad1_addr", 'G', 3886, 2, 1, 0, 00h
+_ad2_addr	.equ	03C4h
+	._inspect	'V', 'd', "ad2_addr", "_ad2_addr", 'G', 3895, 2, 1, 0, 00h
+_ad3_addr	.equ	03C6h
+	._inspect	'V', 'd', "ad3_addr", "_ad3_addr", 'G', 3904, 2, 1, 0, 00h
+_ad4_addr	.equ	03C8h
+	._inspect	'V', 'd', "ad4_addr", "_ad4_addr", 'G', 3913, 2, 1, 0, 00h
+_ad5_addr	.equ	03CAh
+	._inspect	'V', 'd', "ad5_addr", "_ad5_addr", 'G', 3922, 2, 1, 0, 00h
+_ad6_addr	.equ	03CCh
+	._inspect	'V', 'd', "ad6_addr", "_ad6_addr", 'G', 3931, 2, 1, 0, 00h
+_ad7_addr	.equ	03CEh
+	._inspect	'V', 'd', "ad7_addr", "_ad7_addr", 'G', 3940, 2, 1, 0, 00h
+_adcon2_addr	.equ	03D4h
+	._inspect	'V', 'd', "adcon2_addr", "_adcon2_addr", 'G', 3949, 1, 1, 0, 00h
+_adcon0_addr	.equ	03D6h
+	._inspect	'V', 'd', "adcon0_addr", "_adcon0_addr", 'G', 3960, 1, 1, 0, 00h
+_adcon1_addr	.equ	03D7h
+	._inspect	'V', 'd', "adcon1_addr", "_adcon1_addr", 'G', 3976, 1, 1, 0, 00h
+_da0_addr	.equ	03D8h
+	._inspect	'V', 'd', "da0_addr", "_da0_addr", 'G', 3991, 1, 1, 0, 00h
+_da1_addr	.equ	03DAh
+	._inspect	'V', 'd', "da1_addr", "_da1_addr", 'G', 3998, 1, 1, 0, 00h
+_dacon_addr	.equ	03DCh
+	._inspect	'V', 'd', "dacon_addr", "_dacon_addr", 'G', 4005, 1, 1, 0, 00h
+_p0_addr	.equ	03E0h
+	._inspect	'V', 'd', "p0_addr", "_p0_addr", 'G', 4015, 1, 1, 0, 00h
+_p1_addr	.equ	03E1h
+	._inspect	'V', 'd', "p1_addr", "_p1_addr", 'G', 4031, 1, 1, 0, 00h
+_pd0_addr	.equ	03E2h
+	._inspect	'V', 'd', "pd0_addr", "_pd0_addr", 'G', 4047, 1, 1, 0, 00h
+_pd1_addr	.equ	03E3h
+	._inspect	'V', 'd', "pd1_addr", "_pd1_addr", 'G', 4063, 1, 1, 0, 00h
+_p2_addr	.equ	03E4h
+	._inspect	'V', 'd', "p2_addr", "_p2_addr", 'G', 4079, 1, 1, 0, 00h
+_p3_addr	.equ	03E5h
+	._inspect	'V', 'd', "p3_addr", "_p3_addr", 'G', 4095, 1, 1, 0, 00h
+_pd2_addr	.equ	03E6h
+	._inspect	'V', 'd', "pd2_addr", "_pd2_addr", 'G', 4111, 1, 1, 0, 00h
+_pd3_addr	.equ	03E7h
+	._inspect	'V', 'd', "pd3_addr", "_pd3_addr", 'G', 4127, 1, 1, 0, 00h
+_p4_addr	.equ	03E8h
+	._inspect	'V', 'd', "p4_addr", "_p4_addr", 'G', 4143, 1, 1, 0, 00h
+_p5_addr	.equ	03E9h
+	._inspect	'V', 'd', "p5_addr", "_p5_addr", 'G', 4159, 1, 1, 0, 00h
+_pd4_addr	.equ	03EAh
+	._inspect	'V', 'd', "pd4_addr", "_pd4_addr", 'G', 4175, 1, 1, 0, 00h
+_pd5_addr	.equ	03EBh
+	._inspect	'V', 'd', "pd5_addr", "_pd5_addr", 'G', 4191, 1, 1, 0, 00h
+_p6_addr	.equ	03ECh
+	._inspect	'V', 'd', "p6_addr", "_p6_addr", 'G', 4207, 1, 1, 0, 00h
+_p7_addr	.equ	03EDh
+	._inspect	'V', 'd', "p7_addr", "_p7_addr", 'G', 4223, 1, 1, 0, 00h
+_pd6_addr	.equ	03EEh
+	._inspect	'V', 'd', "pd6_addr", "_pd6_addr", 'G', 4239, 1, 1, 0, 00h
+_pd7_addr	.equ	03EFh
+	._inspect	'V', 'd', "pd7_addr", "_pd7_addr", 'G', 4255, 1, 1, 0, 00h
+_p8_addr	.equ	03F0h
+	._inspect	'V', 'd', "p8_addr", "_p8_addr", 'G', 4271, 1, 1, 0, 00h
+_p9_addr	.equ	03F1h
+	._inspect	'V', 'd', "p9_addr", "_p9_addr", 'G', 4287, 1, 1, 0, 00h
+_pd8_addr	.equ	03F2h
+	._inspect	'V', 'd', "pd8_addr", "_pd8_addr", 'G', 4303, 1, 1, 0, 00h
+_pd9_addr	.equ	03F3h
+	._inspect	'V', 'd', "pd9_addr", "_pd9_addr", 'G', 4319, 1, 1, 0, 00h
+_p10_addr	.equ	03F4h
+	._inspect	'V', 'd', "p10_addr", "_p10_addr", 'G', 4335, 1, 1, 0, 00h
+_pd10_addr	.equ	03F6h
+	._inspect	'V', 'd', "pd10_addr", "_pd10_addr", 'G', 4351, 1, 1, 0, 00h
+_pmc0hdpmin_addr	.equ	0D080h
+	._inspect	'V', 'd', "pmc0hdpmin_addr", "_pmc0hdpmin_addr", 'G', 4367, 2, 1, 0, 00h
+_pmc0hdpmax_addr	.equ	0D082h
+	._inspect	'V', 'd', "pmc0hdpmax_addr", "_pmc0hdpmax_addr", 'G', 4374, 2, 1, 0, 00h
+_pmc0d0pmin_addr	.equ	0D084h
+	._inspect	'V', 'd', "pmc0d0pmin_addr", "_pmc0d0pmin_addr", 'G', 4381, 1, 1, 0, 00h
+_pmc0d0pmax_addr	.equ	0D085h
+	._inspect	'V', 'd', "pmc0d0pmax_addr", "_pmc0d0pmax_addr", 'G', 4388, 1, 1, 0, 00h
+_pmc0d1pmin_addr	.equ	0D086h
+	._inspect	'V', 'd', "pmc0d1pmin_addr", "_pmc0d1pmin_addr", 'G', 4395, 1, 1, 0, 00h
+_pmc0d1pmax_addr	.equ	0D087h
+	._inspect	'V', 'd', "pmc0d1pmax_addr", "_pmc0d1pmax_addr", 'G', 4402, 1, 1, 0, 00h
+_pmc0tim_addr	.equ	0D088h
+	._inspect	'V', 'd', "pmc0tim_addr", "_pmc0tim_addr", 'G', 4409, 2, 1, 0, 00h
+_pmc0bc_addr	.equ	0D08Ah
+	._inspect	'V', 'd', "pmc0bc_addr", "_pmc0bc_addr", 'G', 4416, 2, 1, 0, 00h
+_pmc0dat0_addr	.equ	0D08Ch
+	._inspect	'V', 'd', "pmc0dat0_addr", "_pmc0dat0_addr", 'G', 4423, 1, 1, 0, 00h
+_pmc0dat1_addr	.equ	0D08Dh
+	._inspect	'V', 'd', "pmc0dat1_addr", "_pmc0dat1_addr", 'G', 4430, 1, 1, 0, 00h
+_pmc0dat2_addr	.equ	0D08Eh
+	._inspect	'V', 'd', "pmc0dat2_addr", "_pmc0dat2_addr", 'G', 4437, 1, 1, 0, 00h
+_pmc0dat3_addr	.equ	0D08Fh
+	._inspect	'V', 'd', "pmc0dat3_addr", "_pmc0dat3_addr", 'G', 4444, 1, 1, 0, 00h
+_pmc0dat4_addr	.equ	0D090h
+	._inspect	'V', 'd', "pmc0dat4_addr", "_pmc0dat4_addr", 'G', 4451, 1, 1, 0, 00h
+_pmc0dat5_addr	.equ	0D091h
+	._inspect	'V', 'd', "pmc0dat5_addr", "_pmc0dat5_addr", 'G', 4458, 1, 1, 0, 00h
+_pmc0rbit_addr	.equ	0D092h
+	._inspect	'V', 'd', "pmc0rbit_addr", "_pmc0rbit_addr", 'G', 4465, 1, 1, 0, 00h
+_pmc1hdpmin_addr	.equ	0D094h
+	._inspect	'V', 'd', "pmc1hdpmin_addr", "_pmc1hdpmin_addr", 'G', 4472, 2, 1, 0, 00h
+_pmc1hdpmax_addr	.equ	0D096h
+	._inspect	'V', 'd', "pmc1hdpmax_addr", "_pmc1hdpmax_addr", 'G', 4479, 2, 1, 0, 00h
+_pmc1d0pmin_addr	.equ	0D098h
+	._inspect	'V', 'd', "pmc1d0pmin_addr", "_pmc1d0pmin_addr", 'G', 4486, 1, 1, 0, 00h
+_pmc1d0pmax_addr	.equ	0D099h
+	._inspect	'V', 'd', "pmc1d0pmax_addr", "_pmc1d0pmax_addr", 'G', 4493, 1, 1, 0, 00h
+_pmc1d1pmin_addr	.equ	0D09Ah
+	._inspect	'V', 'd', "pmc1d1pmin_addr", "_pmc1d1pmin_addr", 'G', 4500, 1, 1, 0, 00h
+_pmc1d1pmax_addr	.equ	0D09Bh
+	._inspect	'V', 'd', "pmc1d1pmax_addr", "_pmc1d1pmax_addr", 'G', 4507, 1, 1, 0, 00h
+_pmc1tim_addr	.equ	0D09Ch
+	._inspect	'V', 'd', "pmc1tim_addr", "_pmc1tim_addr", 'G', 4514, 2, 1, 0, 00h
+_pmc1bc_addr	.equ	0D09Eh
+	._inspect	'V', 'd', "pmc1bc_addr", "_pmc1bc_addr", 'G', 4521, 2, 1, 0, 00h
+
+	._inspect	'M', "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/eventdatadef.h", "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/Flash_API_M16C"
+
+	._inspect	'M', "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/eventnew.h", "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/Flash_API_M16C"
+	._inspect	'V', 'e', "Clear_Demand_Mode", 'G', 14, 1, 0, 0, 00h
+	._inspect	'V', 'e', "EventEnergyValid_Flag", 'G', 16, 1, 0, 0, 00h
+	._inspect	'V', 'e', "Event_AmpHour", 'G', 17, 12, 0, 0, 00h
+	._inspect	'V', 'e', "EventCriticalVoltage_Flag", 'G', 18, 1, 0, 0, 00h
+	._inspect	'V', 'e', "TempEventData", 'G', 19, 400, 0, 0, 00h
+	._inspect	'V', 'e', "lostvoltenergyall", 'G', 20, 8, 0, 0, 00h
+	._inspect	'V', 'e', "lostvoltenergy", 'G', 21, 24, 0, 0, 00h
+	._inspect	'F', 'p', "EventTimeAdd", "_EventTimeAdd", 'G', 28, 0, 00h, 0
+	._inspect	'F', 'p', "New2007_Event", "_New2007_Event", 'G', 31, 0, 00h, 0
+	._inspect	'F', 'p', "EventRecordAdjustEnergy", "_EventRecordAdjustEnergy", 'G', 32, 0, 00h, 0
+	._inspect	'F', 'p', "EventData_PowerDown_Save", "_EventData_PowerDown_Save", 'G', 33, 0, 00h, 0
+	._inspect	'F', 'p', "EventData_PowerOn_Check", "_EventData_PowerOn_Check", 'G', 34, 0, 00h, 0
+	._inspect	'F', 'p', "EventRecord_Poweron_Check", "_EventRecord_Poweron_Check", 'G', 35, 0, 00h, 0
+	._inspect	'F', 'p', "PowerDownEvent_OnCheck", "_PowerDownEvent_OnCheck", 'G', 36, 0, 00h, 0
+	._inspect	'F', 'p', "ProgrammeEvent", "_ProgrammeEvent", 'G', 37, 0, 00h, 0
+	._inspect	'F', 'p', "ClearMeterRecord", "_ClearMeterRecord", 'G', 38, 0, 00h, 0
+	._inspect	'F', 'p', "VoltStatSetDefault", "_VoltStatSetDefault", 'G', 40, 0, 00h, 0
+	._inspect	'F', 'p', "VoltStatInit", "_VoltStatInit", 'G', 41, 0, 00h, 0
+	._inspect	'F', 'p', "VoltStatisticCheck", "_VoltStatisticCheck", 'G', 42, 0, 00h, 0
+	._inspect	'F', 'p', "OverDemandEvent", "_OverDemandEvent", 'G', 43, 0, 00h, 0
+	._inspect	'F', 'p', "AdjustTimeRecord", "_AdjustTimeRecord", 'G', 44, 0, 00h, 0
+	._inspect	'F', 'p', "ClearDemandRecord", "_ClearDemandRecord", 'G', 45, 0, 00h, 0
+	._inspect	'F', 'p', "ProgWeekRecord", "_ProgWeekRecord", 'G', 46, 0, 00h, 0
+	._inspect	'F', 'p', "ProgAEModeRecord", "_ProgAEModeRecord", 'G', 47, 0, 00h, 0
+	._inspect	'F', 'p', "ProgNEMode1Record", "_ProgNEMode1Record", 'G', 48, 0, 00h, 0
+	._inspect	'F', 'p', "ProgNEMode2Record", "_ProgNEMode2Record", 'G', 49, 0, 00h, 0
+	._inspect	'F', 'p', "ProgBillDayRecord", "$ProgBillDayRecord", 'G', 50, 0, 00h, 0
+	._inspect	'F', 'p', "ProgYearSlotRecord", "_ProgYearSlotRecord", 'G', 51, 0, 00h, 0
+	._inspect	'F', 'p', "ProgDailySlotRecord", "_ProgDailySlotRecord", 'G', 52, 0, 00h, 0
+	._inspect	'F', 'p', "ClearNewEventRecord", "_ClearNewEventRecord", 'G', 54, 0, 00h, 0
+	._inspect	'F', 'p', "PrepVoltStatReadData", "_PrepVoltStatReadData", 'G', 56, 0, 00h, 0
+	._inspect	'F', 'p', "ResetCpuEvent_OnCheck", "_ResetCpuEvent_OnCheck", 'G', 57, 0, 00h, 0
+	._inspect	'F', 'p', "RunClockErrorRecord", "_RunClockErrorRecord", 'G', 58, 0, 00h, 0
+	._inspect	'F', 'p', "PowerUpClockErrorRecord", "_PowerUpClockErrorRecord", 'G', 59, 0, 00h, 0
+	._inspect	'F', 'p', "EepromErrorRecord", "_EepromErrorRecord", 'G', 60, 0, 00h, 0
+	._inspect	'F', 'p', "EnergyPassZeroRecord", "_EnergyPassZeroRecord", 'G', 61, 0, 00h, 0
+	._inspect	'F', 'p', "SetPrimaryRecord", "_SetPrimaryRecord", 'G', 63, 0, 00h, 0
+	._inspect	'F', 'p', "EepromEventSetDefault", "_EepromEventSetDefault", 'G', 64, 0, 00h, 0
+	._inspect	'F', 'p', "EMeterPowerdownRecord", "_EMeterPowerdownRecord", 'G', 67, 0, 00h, 0
+	._inspect	'F', 'p', "ClearEventRecord", "_ClearEventRecord", 'G', 68, 0, 00h, 0
+	._inspect	'F', 'p', "ProgAEMode_NEMode1_NEMode2_Record", "_ProgAEMode_NEMode1_NEMode2_Record", 'G', 70, 0, 00h, 0
+	._inspect	'F', 'p', "OpenBoxCoverEvent_Check", "_OpenBoxCoverEvent_Check", 'G', 71, 0, 00h, 0
+	._inspect	'F', 'p', "EventFlagPowerOnInit", "_EventFlagPowerOnInit", 'G', 72, 0, 00h, 0
+	._inspect	'F', 'p', "ProgrammeEventEnd_Check_Payment", "_ProgrammeEventEnd_Check_Payment", 'G', 73, 0, 00h, 0
+	._inspect	'F', 'p', "ProgrammeEventEnd_Check", "_ProgrammeEventEnd_Check", 'G', 74, 0, 00h, 0
+	._inspect	'F', 'p', "VoltStatisticFunc", "_VoltStatisticFunc", 'G', 75, 0, 00h, 0
+	._inspect	'F', 'p', "AdjustMeterRecord", "_AdjustMeterRecord", 'G', 76, 0, 00h, 0
+	._inspect	'F', 'p', "PrepNewFirstEventData", "_PrepNewFirstEventData", 'G', 77, 0, 00h, 0
+	._inspect	'F', 'p', "Save_EventTimesANDPointer_4byte", "$Save_EventTimesANDPointer_4byte", 'G', 81, 0, 00h, 0
+	._inspect	'F', 'p', "Prepare_For_EventLastTime", "$Prepare_For_EventLastTime", 'G', 84, 0, 00h, 0
+	._inspect	'F', 'p', "Refresh_EventData", "_Refresh_EventData", 'G', 86, 0, 00h, 0
+	._inspect	'F', 'p', "Refresh_AddTime", "_Refresh_AddTime", 'G', 87, 0, 00h, 0
+	._inspect	'F', 'p', "ClearEventDate_BatteryPowerOn", "_ClearEventDate_BatteryPowerOn", 'G', 88, 0, 00h, 0
+	._inspect	'F', 'p', "PrepLostVoltEnergyData", "_PrepLostVoltEnergyData", 'G', 89, 0, 00h, 0
+	._inspect	'F', 'p', "PowerAbnormalEventCheck", "_PowerAbnormalEventCheck", 'G', 91, 0, 00h, 0
+	._inspect	'F', 'p', "ClockBatteryDisplayBattery_Event", "_ClockBatteryDisplayBattery_Event", 'G', 93, 0, 00h, 0
+	._inspect	'F', 'p', "PdOpenCoverCheckInit", "$PdOpenCoverCheckInit", 'G', 95, 0, 00h, 0
+	._inspect	'F', 'p', "PdOpenCoverCheck", "_PdOpenCoverCheck", 'G', 96, 0, 00h, 0
+	._inspect	'F', 'p', "PdOpenCoverCheckPowerUpDeal", "_PdOpenCoverCheckPowerUpDeal", 'G', 97, 0, 00h, 0
+	._inspect	'F', 'p', "ClearEventAll", "_ClearEventAll", 'G', 99, 0, 00h, 0
+	._inspect	'F', 'p', "ClearEventCommDeal", "_ClearEventCommDeal", 'G', 100, 0, 00h, 0
+	._inspect	'F', 'p', "ClearEventDataPowerOn", "_ClearEventDataPowerOn", 'G', 101, 0, 00h, 0
+	._inspect	'F', 'p', "ClearEvent_EventBegin", "$ClearEvent_EventBegin", 'G', 102, 0, 00h, 0
+	._inspect	'V', 'e', "VoltCheck_N", 'G', 106, 0, 0, 0, 00h
+	._inspect	'V', 'e', "VoltStat", 'G', 107, 192, 0, 0, 00h
+	._inspect	'V', 'e', "Clearevent_ID", 'G', 111, 296, 0, 0, 00h
+	._inspect	'V', 'e', "pdopencovercheckdata", 'G', 113, 0, 0, 0, 00h
+	._inspect	'V', 'e', "eventstatusinfo", 'G', 115, 0, 0, 0, 00h
+	._inspect	'F', 'p', "Save_EventReportTimes", "$Save_EventReportTimes", 'G', 117, 0, 00h, 0
+
+	._inspect	'M', "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/MB_Base_fun.h", "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/Flash_API_M16C"
+	._inspect	'F', 'p', "BCD2Byte", "$BCD2Byte", 'G', 75, 0, 00h, 0
+	._inspect	'F', 'p', "OB_H", "$OB_H", 'G', 82, 0, 00h, 0
+	._inspect	'F', 'p', "OH_B", "$OH_B", 'G', 83, 0, 00h, 0
+	._inspect	'F', 'p', "CheckTime", "$CheckTime", 'G', 84, 0, 00h, 0
+	._inspect	'F', 'p', "CheckBCD", "$CheckBCD", 'G', 85, 0, 00h, 0
+	._inspect	'F', 'p', "CheckBCD_NByte", "$CheckBCD_NByte", 'G', 86, 0, 00h, 0
+	._inspect	'F', 'p', "ABS", "_ABS", 'G', 87, 0, 00h, 0
+	._inspect	'F', 'p', "ten_seq", "$ten_seq", 'G', 88, 0, 00h, 0
+	._inspect	'F', 'p', "HexToBcd", "$HexToBcd", 'G', 89, 0, 00h, 0
+	._inspect	'F', 'p', "BcdToHex", "$BcdToHex", 'G', 90, 0, 00h, 0
+	._inspect	'F', 'p', "FormatBCD", "$FormatBCD", 'G', 91, 0, 00h, 0
+	._inspect	'F', 'p', "CompareBytes", "$CompareBytes", 'G', 92, 0, 00h, 0
+	._inspect	'F', 'p', "HexToACK", "$HexToACK", 'G', 93, 0, 00h, 0
+	._inspect	'F', 'p', "ACKToHex", "$ACKToHex", 'G', 94, 0, 00h, 0
+	._inspect	'F', 'p', "search_unit", "$search_unit", 'G', 95, 0, 00h, 0
+	._inspect	'F', 'p', "HexToBcdnByte", "$HexToBcdnByte", 'G', 96, 0, 00h, 0
+	._inspect	'F', 'p', "BcdToHexnByte", "$BcdToHexnByte", 'G', 97, 0, 00h, 0
+	._inspect	'F', 'p', "memcpy", "$memcpy", 'G', 98, 0, 00h, 0
+	._inspect	'F', 'p', "format_data", "_format_data", 'G', 99, 0, 00h, 0
+
+	._inspect	'M', "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/defdata.h", "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/Flash_API_M16C"
+
+	._inspect	'M', "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/comm.h", "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/Flash_API_M16C"
+	._inspect	'V', 'e', "CommB", 'G', 6, 690, 0, 0, 00h
+	._inspect	'V', 'e', "ProgramEventFlag", 'G', 7, 1, 0, 0, 00h
+	._inspect	'V', 'e', "JustMeterDataFlag", 'G', 8, 1, 0, 0, 00h
+	._inspect	'V', 'e', "JustMeterDateFlag", 'G', 9, 7, 0, 0, 00h
+	._inspect	'V', 'e', "JustMeterFlag", 'G', 10, 1, 0, 0, 00h
+	._inspect	'V', 'e', "cx", 'G', 11, 188, 0, 0, 00h
+	._inspect	'V', 'e', "Readdata_buff", 'G', 12, 32, 0, 0, 00h
+	._inspect	'V', 'e', "COMM_Curr", 'G', 14, 12, 0, 0, 00h
+	._inspect	'V', 'e', "COMM_Factor", 'G', 15, 16, 0, 0, 00h
+	._inspect	'V', 'e', "COMM_Active_power", 'G', 16, 16, 0, 0, 00h
+	._inspect	'V', 'e', "COMM_Reactive_power", 'G', 17, 16, 0, 0, 00h
+	._inspect	'V', 'e', "COMM_Visual_power", 'G', 18, 16, 0, 0, 00h
+	._inspect	'V', 'e', "COMM_Current_Demand", 'G', 19, 8, 0, 0, 00h
+	._inspect	'V', 'e', "Freeze_Flag_DayHour", 'G', 20, 2, 0, 0, 00h
+	._inspect	'V', 'e', "Comm_DailyOrYear_Slot", 'G', 22, 1, 0, 0, 00h
+	._inspect	'V', 'e', "Comm_Firrespon_SecDispos_Buff", 'G', 23, 42, 0, 0, 00h
+	._inspect	'V', 'e', "Comm_Firrespon_SecDispos_Uart", 'G', 24, 3, 0, 0, 00h
+	._inspect	'V', 'e', "GPRS_Status", 'G', 32, 1, 0, 0, 00h
+	._inspect	'V', 'e', "Voltage_ad_data", 'G', 34, 4, 0, 0, 00h
+	._inspect	'V', 'e', "Displayfinish_flag", 'G', 35, 1, 0, 0, 00h
+	._inspect	'V', 'e', "FullScreenTime", 'G', 36, 2, 0, 0, 00h
+	._inspect	'V', 'e', "ad_Flag", 'G', 37, 1, 0, 0, 00h
+	._inspect	'V', 'e', "ad_finish_Flag", 'G', 38, 1, 0, 0, 00h
+	._inspect	'V', 'e', "meter_model_ok", 'G', 39, 4, 0, 0, 00h
+	._inspect	'V', 'e', "fix_ad_data", 'G', 41, 2, 0, 0, 00h
+	._inspect	'V', 'e', "comm_plus_energy_01wh", 'G', 43, 72, 0, 0, 00h
+	._inspect	'V', 'e', "comm_nega_energy_01wh", 'G', 44, 72, 0, 0, 00h
+	._inspect	'F', 'p', "Init_Comm", "$Init_Comm", 'G', 46, 0, 00h, 0
+	._inspect	'F', 'p', "Interr_Comm_R", "$Interr_Comm_R", 'G', 47, 0, 00h, 0
+	._inspect	'F', 'p', "Interr_Comm_W", "$Interr_Comm_W", 'G', 48, 0, 00h, 0
+	._inspect	'F', 'p', "Communication", "$Communication", 'G', 49, 0, 00h, 0
+	._inspect	'F', 'p', "FindComCommand", "$FindComCommand", 'G', 50, 0, 00h, 0
+	._inspect	'F', 'p', "AnswerComCommand", "$AnswerComCommand", 'G', 51, 0, 00h, 0
+	._inspect	'F', 'p', "TransferData", "$TransferData", 'G', 53, 0, 00h, 0
+	._inspect	'F', 'p', "GetNowTime", "_GetNowTime", 'G', 54, 0, 00h, 0
+	._inspect	'F', 'p', "GetTimeCount", "_GetTimeCount", 'G', 55, 0, 00h, 0
+	._inspect	'F', 'p', "F_Ar", "$F_Ar", 'G', 56, 0, 00h, 0
+	._inspect	'F', 'p', "ReadData", "$ReadData", 'G', 60, 0, 00h, 0
+	._inspect	'F', 'p', "WriteData", "_WriteData", 'G', 61, 0, 00h, 0
+	._inspect	'F', 'p', "BroadcastJustTime", "_BroadcastJustTime", 'G', 62, 0, 00h, 0
+	._inspect	'F', 'p', "WriteAddress", "_WriteAddress", 'G', 63, 0, 00h, 0
+	._inspect	'F', 'p', "WriteBaud", "_WriteBaud", 'G', 64, 0, 00h, 0
+	._inspect	'F', 'p', "WritePassword", "_WritePassword", 'G', 65, 0, 00h, 0
+	._inspect	'F', 'p', "ClearDemand", "_ClearDemand", 'G', 66, 0, 00h, 0
+	._inspect	'F', 'p', "R_W_Data", "_R_W_Data", 'G', 67, 0, 00h, 0
+	._inspect	'F', 'p', "ReadLC256", "$ReadLC256", 'G', 68, 0, 00h, 0
+	._inspect	'F', 'p', "WriteLC256", "$WriteLC256", 'G', 69, 0, 00h, 0
+	._inspect	'F', 'p', "HexToBcd", "$HexToBcd", 'G', 70, 0, 00h, 0
+	._inspect	'F', 'p', "HexToACK", "$HexToACK", 'G', 71, 0, 00h, 0
+	._inspect	'F', 'p', "BcdToHex", "$BcdToHex", 'G', 72, 0, 00h, 0
+	._inspect	'F', 'p', "ACKToHex", "$ACKToHex", 'G', 73, 0, 00h, 0
+	._inspect	'F', 'p', "GetRecordAddr", "$GetRecordAddr", 'G', 74, 0, 00h, 0
+	._inspect	'F', 'p', "Delay", "$Delay", 'G', 75, 0, 00h, 0
+	._inspect	'F', 'p', "CalDay", "$CalDay", 'G', 76, 0, 00h, 0
+	._inspect	'F', 'p', "ComTime", "$ComTime", 'G', 77, 0, 00h, 0
+	._inspect	'F', 'p', "ClearDemandCommAndKey", "$ClearDemandCommAndKey", 'G', 80, 0, 00h, 0
+	._inspect	'F', 'p', "Clear_PasswordErr", "$Clear_PasswordErr", 'G', 81, 0, 00h, 0
+	._inspect	'F', 'p', "CheckProgramKeyState", "_CheckProgramKeyState", 'G', 82, 0, 00h, 0
+	._inspect	'F', 'p', "IC_Set_Program", "_IC_Set_Program", 'G', 83, 0, 00h, 0
+	._inspect	'F', 'p', "FreezeEvent_Energy", "$FreezeEvent_Energy", 'G', 86, 0, 00h, 0
+	._inspect	'F', 'p', "Read_SystemTime_YMDH", "_Read_SystemTime_YMDH", 'G', 88, 0, 00h, 0
+	._inspect	'F', 'p', "Read_SystemTime_HMS", "_Read_SystemTime_HMS", 'G', 89, 0, 00h, 0
+	._inspect	'F', 'p', "Set_SystemTime_YMDH", "_Set_SystemTime_YMDH", 'G', 90, 0, 00h, 0
+	._inspect	'F', 'p', "Set_SystemTime_HMS", "_Set_SystemTime_HMS", 'G', 91, 0, 00h, 0
+	._inspect	'F', 'p', "Set_DemandPeriod", "_Set_DemandPeriod", 'G', 92, 0, 00h, 0
+	._inspect	'F', 'p', "Set_DemandSkipPeriod", "_Set_DemandSkipPeriod", 'G', 93, 0, 00h, 0
+	._inspect	'F', 'p', "Set_Activem_Erengy_Mode", "_Set_Activem_Erengy_Mode", 'G', 94, 0, 00h, 0
+	._inspect	'F', 'p', "Set_REActivem_Erengy_1_Mode", "_Set_REActivem_Erengy_1_Mode", 'G', 95, 0, 00h, 0
+	._inspect	'F', 'p', "Set_REActivem_Erengy_2_Mode", "_Set_REActivem_Erengy_2_Mode", 'G', 96, 0, 00h, 0
+	._inspect	'F', 'p', "Set_ActivePulseConst", "_Set_ActivePulseConst", 'G', 97, 0, 00h, 0
+	._inspect	'F', 'p', "Set_Erengypoint", "_Set_Erengypoint", 'G', 98, 0, 00h, 0
+	._inspect	'F', 'p', "Set_BILL_Day", "_Set_BILL_Day", 'G', 99, 0, 00h, 0
+	._inspect	'F', 'p', "Set_SlotParemeter", "_Set_SlotParemeter", 'G', 100, 0, 00h, 0
+	._inspect	'F', 'p', "Set_YearSlot", "_Set_YearSlot", 'G', 101, 0, 00h, 0
+	._inspect	'F', 'p', "Set_ProgWeek", "_Set_ProgWeek", 'G', 102, 0, 00h, 0
+	._inspect	'F', 'p', "Set_Holiday", "_Set_Holiday", 'G', 103, 0, 00h, 0
+	._inspect	'F', 'p', "Set_DailySlot", "_Set_DailySlot", 'G', 104, 0, 00h, 0
+	._inspect	'F', 'p', "Set_LoadRecoedBeginTime", "_Set_LoadRecoedBeginTime", 'G', 105, 0, 00h, 0
+	._inspect	'F', 'p', "Set_LoadRecoedPeriod", "_Set_LoadRecoedPeriod", 'G', 106, 0, 00h, 0
+	._inspect	'F', 'p', "Set_MeterMode", "_Set_MeterMode", 'G', 107, 0, 00h, 0
+	._inspect	'F', 'p', "Set_Meterlocktimes", "_Set_Meterlocktimes", 'G', 108, 0, 00h, 0
+	._inspect	'F', 'p', "Set_OutputModel", "_Set_OutputModel", 'G', 109, 0, 00h, 0
+	._inspect	'F', 'p', "Exit_WorkRoomState", "_Exit_WorkRoomState", 'G', 110, 0, 00h, 0
+	._inspect	'F', 'p', "Read_primary_energy", "_Read_primary_energy", 'G', 111, 0, 00h, 0
+	._inspect	'F', 'p', "Set_primary_energy", "_Set_primary_energy", 'G', 112, 0, 00h, 0
+	._inspect	'F', 'p', "Read_WorkRoomState", "_Read_WorkRoomState", 'G', 113, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Freeze_Bit_0_data", "_Read_Freeze_Bit_0_data", 'G', 114, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Freeze_Bit_1_data", "_Read_Freeze_Bit_1_data", 'G', 115, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Freeze_Bit_2_data", "_Read_Freeze_Bit_2_data", 'G', 116, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Freeze_Bit_3_data", "_Read_Freeze_Bit_3_data", 'G', 117, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Freeze_Bit_4_data", "_Read_Freeze_Bit_4_data", 'G', 118, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Freeze_Bit_5_data", "_Read_Freeze_Bit_5_data", 'G', 119, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Freeze_Bit_6_data", "_Read_Freeze_Bit_6_data", 'G', 120, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Freeze_Bit_7_data", "_Read_Freeze_Bit_7_data", 'G', 121, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Freeze_Block_data", "_Read_Freeze_Block_data", 'G', 122, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Meter_lock_times", "_Read_Meter_lock_times", 'G', 123, 0, 00h, 0
+	._inspect	'F', 'p', "Check_Parameter_Len_IS_ok", "$Check_Parameter_Len_IS_ok", 'G', 124, 0, 00h, 0
+	._inspect	'F', 'p', "Pre_No_use_leaf_data", "_Pre_No_use_leaf_data", 'G', 125, 0, 00h, 0
+	._inspect	'F', 'p', "Set_Display_Number", "_Set_Display_Number", 'G', 126, 0, 00h, 0
+	._inspect	'F', 'p', "Set_Commrate", "_Set_Commrate", 'G', 127, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Freeze_Date", "_Read_Freeze_Date", 'G', 128, 0, 00h, 0
+	._inspect	'F', 'p', "Set_CycleDisplayTime", "_Set_CycleDisplayTime", 'G', 129, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Far_IR_Commate", "_Read_Far_IR_Commate", 'G', 130, 0, 00h, 0
+	._inspect	'F', 'p', "Set_CriticalVoltage", "_Set_CriticalVoltage", 'G', 131, 0, 00h, 0
+	._inspect	'F', 'p', "Set_CommAddr", "_Set_CommAddr", 'G', 132, 0, 00h, 0
+	._inspect	'F', 'p', "Set_Show_USER_Code", "_Set_Show_USER_Code", 'G', 133, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Sign_Instance_Variable", "_Read_Sign_Instance_Variable", 'G', 134, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Meter_Temperature", "_Read_Meter_Temperature", 'G', 135, 0, 00h, 0
+	._inspect	'F', 'p', "Read_YearSlot_Table", "_Read_YearSlot_Table", 'G', 136, 0, 00h, 0
+	._inspect	'F', 'p', "Read_DailySlot_Table", "_Read_DailySlot_Table", 'G', 137, 0, 00h, 0
+	._inspect	'F', 'p', "Comm_Initialize_FLASH", "_Comm_Initialize_FLASH", 'G', 138, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Last_loss_voltage_start_time", "_Read_Last_loss_voltage_start_time", 'G', 139, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Last_loss_voltage_end_time", "_Read_Last_loss_voltage_end_time", 'G', 140, 0, 00h, 0
+	._inspect	'F', 'p', "Set_Freeze_Period_Begin_time", "_Set_Freeze_Period_Begin_time", 'G', 141, 0, 00h, 0
+	._inspect	'F', 'p', "Set_Freeze_Period", "_Set_Freeze_Period", 'G', 142, 0, 00h, 0
+	._inspect	'F', 'p', "Set_TriffSwitchDate", "_Set_TriffSwitchDate", 'G', 143, 0, 00h, 0
+	._inspect	'F', 'p', "Set_Cycle_Key_Display", "_Set_Cycle_Key_Display", 'G', 144, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Meter_FILEDATE_VI", "_Read_Meter_FILEDATE_VI", 'G', 145, 0, 00h, 0
+	._inspect	'V', 'e', "CommBP", 'G', 147, 2, 0, 0, 00h
+	._inspect	'V', 'e', "CurrPC", 'G', 148, 2, 0, 0, 00h
+	._inspect	'V', 'e', "WriteDateBuff", 'G', 149, 0, 0, 0, 00h
+	._inspect	'F', 'p', "Set_ShowNoKeyRetTime", "_Set_ShowNoKeyRetTime", 'G', 150, 0, 00h, 0
+	._inspect	'F', 'p', "CheckPasswordRight", "$CheckPasswordRight", 'G', 151, 0, 00h, 0
+	._inspect	'F', 'p', "CheckPasswoerErr", "$CheckPasswoerErr", 'G', 152, 0, 00h, 0
+	._inspect	'F', 'p', "AppointTrasfPortBuff", "$AppointTrasfPortBuff", 'G', 153, 0, 00h, 0
+	._inspect	'F', 'p', "Crc16l", "$Crc16l", 'G', 154, 0, 00h, 0
+	._inspect	'F', 'p', "Set_which_Responsion_Flag", "$Set_which_Responsion_Flag", 'G', 155, 0, 00h, 0
+	._inspect	'F', 'p', "Set_JFPG_Triff", "_Set_JFPG_Triff", 'G', 156, 0, 00h, 0
+	._inspect	'F', 'p', "Set_Meter_para_Deal", "$Set_Meter_para_Deal", 'G', 158, 0, 00h, 0
+	._inspect	'F', 'p', "Read_Display_Number", "_Read_Display_Number", 'G', 159, 0, 00h, 0
+	._inspect	'F', 'p', "Read_LostVoltEnergy", "_Read_LostVoltEnergy", 'G', 162, 0, 00h, 0
+	._inspect	'F', 'p', "Read_LostVolt_AllEnergy", "_Read_LostVolt_AllEnergy", 'G', 163, 0, 00h, 0
+	._inspect	'F', 'p', "RTC_Init", "_RTC_Init", 'G', 164, 0, 00h, 0
+	._inspect	'F', 'p', "PowerOn_FullScreen_TimeDetection", "_PowerOn_FullScreen_TimeDetection", 'G', 165, 0, 00h, 0
+	._inspect	'F', 'p', "ReadClockBatteryVoltage", "_ReadClockBatteryVoltage", 'G', 167, 0, 00h, 0
+	._inspect	'F', 'p', "ReadDisplayBatteryVoltage", "_ReadDisplayBatteryVoltage", 'G', 168, 0, 00h, 0
+	._inspect	'F', 'p', "ReadEventReportInfo", "_ReadEventReportInfo", 'G', 170, 0, 00h, 0
+	._inspect	'F', 'p', "GetEventReportMode", "_GetEventReportMode", 'G', 171, 0, 00h, 0
+	._inspect	'F', 'p', "SetEventReportMode", "_SetEventReportMode", 'G', 172, 0, 00h, 0
+	._inspect	'F', 'p', "SetPowerOnFullScreenTime", "_SetPowerOnFullScreenTime", 'G', 174, 0, 00h, 0
+	._inspect	'F', 'p', "Set_SystemTime_YMDHHMS", "_Set_SystemTime_YMDHHMS", 'G', 176, 0, 00h, 0
+	._inspect	'F', 'p', "GetMeterSoftIdNumber", "_GetMeterSoftIdNumber", 'G', 178, 0, 00h, 0
+	._inspect	'F', 'p', "SetMeterSoftIdNumber", "_SetMeterSoftIdNumber", 'G', 179, 0, 00h, 0
+	._inspect	'F', 'p', "GetNowMonthComActiveEnergy", "_GetNowMonthComActiveEnergy", 'G', 181, 0, 00h, 0
+	._inspect	'F', 'p', "GetLastMonthComActiveEnergy", "_GetLastMonthComActiveEnergy", 'G', 182, 0, 00h, 0
+	._inspect	'F', 'p', "Set_Freeze_Day", "_Set_Freeze_Day", 'G', 184, 0, 00h, 0
+	._inspect	'F', 'p', "ReadEnergy01Wh", "_ReadEnergy01Wh", 'G', 186, 0, 00h, 0
+	._inspect	'F', 'p', "ResetEventReportInfo", "_ResetEventReportInfo", 'G', 188, 0, 00h, 0
+	._inspect	'F', 'p', "Clear_EventReportStatus_And_Times", "_Clear_EventReportStatus_And_Times", 'G', 189, 0, 00h, 0
+	._inspect	'F', 'p', "Set_ResetReportTime", "_Set_ResetReportTime", 'G', 190, 0, 00h, 0
+	._inspect	'F', 'p', "Set_Read_Block_Para", "$Set_Read_Block_Para", 'G', 192, 0, 00h, 0
+_fmr0_addr	.equ	0220H			 
+_fmr1_addr	.equ	0221H			 
+_fmr2_addr	.equ	0222H			 
+_fmr6_addr	.equ	0230H			 
+
+	._inspect	'M', "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/Flash_API_M16C.c", "D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/Flash_API_M16C"
+	._inspect	'V', 'd', "flags_reg", "_flags_reg", 'S', 142, 2, 0, 0, 00h
+	._inspect	'V', 'd', "cm0_saved", "_cm0_saved", 'S', 143, 1, 0, 0, 00h
+	._inspect	'V', 'd', "cm1_saved", "_cm1_saved", 'S', 144, 1, 0, 0, 00h
+	._inspect	'V', 'd', "pm0_saved", "_pm0_saved", 'S', 145, 1, 0, 0, 00h
+	._inspect	'V', 'd', "pm1_saved", "_pm1_saved", 'S', 146, 1, 0, 0, 00h
+	._inspect	'V', 'd', "prcr_saved", "_prcr_saved", 'S', 147, 1, 0, 0, 00h
+	._inspect	'V', 'd', "fmr2_saved", "_fmr2_saved", 'S', 148, 1, 0, 0, 00h
+	._inspect	'V', 'd', "block_addresses", "_block_addresses", 'S', 149, 40, 0, 0, 00h
+	._inspect	'F', 'p', "SlowMCUClock", "_SlowMCUClock", 'S', 163, 0, 00h, 0
+	._inspect	'F', 'p', "RestoreMCUClock", "_RestoreMCUClock", 'S', 164, 0, 00h, 0
+
+;## #	FUNCTION FlashEraseEW1
+;## #	FRAME	AUTO	(flash_addr)	size  4,	offset -4
+;## #  REGISTER ARG    (   block)   size   1,   REGISTER R1L
+;## #	ARG Size(0)	Auto Size(4)	Context Size(5)
+
+
+	.SECTION	program,CODE,align
+	._inspect	'U', 2, "program", "program", 0
+	._file	'D:/TEST/12、RN8302B/HT7038 CODE_backup20160225_2016-4-22/HT7038 CODE/Release_Code/MB4_64A/Flash_API_M16C.c'
+	._type	256,'x',3,1
+	._type	256,'m','block',0,3
+	._func	'FlashEraseEW1','G',4,256,$FlashEraseEW1,0
+	._inspect	'F', 's', "FlashEraseEW1", "$FlashEraseEW1", 'G', 9
+	.align
+	._line	477
+	.glb	$FlashEraseEW1
+$FlashEraseEW1:
+	enter	#04H
+	._block
+	._var	'block','A',3,0
+	._type	257,'P',16
+	._var	'flash_addr','A',257,-4
+	._line	482
+	._block
+	._var	'block','R',3,3
+	mov.b	R1L,A0
+	._eblock
+	shl.w	#02H,A0
+	lde.w	_block_addresses+2[A0],-4+2[FB]	;  flash_addr 
+	lde.w	_block_addresses[A0],-4[FB]	;  flash_addr 
+	._line	484
+	._block
+;#### ASM START
+STC FLG,_flags_reg
+FCLR I
+;#### ASM END
+	._eblock
+	._line	487
+	._inspect	'S', 'c', "SlowMCUClock", "_SlowMCUClock", 'S', 0, 487
+	jsr	_SlowMCUClock
+	._line	490
+	bclr	1,_fmr0_addr
+	._line	491
+	bset	1,_fmr0_addr
+	._line	492
+	bclr	1,_fmr1_addr
+	._line	493
+	bset	1,_fmr1_addr
+	._line	495
+	mov.b	#03H,_fmr6_addr
+	._line	496
+	bclr	1,_fmr1_addr
+	._line	507
+	bclr	2,_fmr0_addr
+	._line	508
+	bset	2,_fmr0_addr
+	._line	512
+	bclr	6,_fmr1_addr
+	._line	513
+	bset	6,_fmr1_addr
+	._line	517
+	mov.b	#00H,R0H	;  i 
+	._block
+	._var	'i','R',3,2
+	._eblock
+	mov.b	R0H,R0L	;  i  i 
+	._block
+	._var	'i','R',3,1
+L1:
+	._eblock
+	._line	518
+	._block
+	._block
+	._var	'i','R',3,1
+	._line	519
+	mov.w	#0050H,R1
+	mov.w	-4[FB],A0	;  flash_addr 
+	mov.w	-4+2[FB],A1	;  flash_addr 
+	ste.w	R1,[A1A0]
+	._line	520
+	mov.w	#0020H,R1
+	mov.w	-4[FB],A0	;  flash_addr 
+	mov.w	-4+2[FB],A1	;  flash_addr 
+	ste.w	R1,[A1A0]
+	._line	521
+	mov.w	#00d0H,R1
+	mov.w	-4[FB],A0	;  flash_addr 
+	mov.w	-4+2[FB],A1	;  flash_addr 
+	ste.w	R1,[A1A0]
+	._line	526
+	btst	07H,_fmr0_addr
+	jz	L5
+	._eblock
+	inc.b	R0L	;  i 
+	cmp.b	#03H,R0L	;  i 
+	jltu	L1
+	._eblock
+L5:
+	._line	533
+	mov.b	#00H,_fmr0_addr
+	._line	535
+	._inspect	'S', 'c', "RestoreMCUClock", "_RestoreMCUClock", 'S', 0, 535
+	jsr	_RestoreMCUClock
+	._line	537
+	btst	06H,_fmr0_addr
+	jz	L51
+	btst	07H,_fmr0_addr
+	jz	L51
+	._line	538
+	._block
+	._line	539
+	mov.b	#02H,R0L	;  ret_value 
+	._block
+	._var	'ret_value','R',3,1
+	._eblock
+	._line	540
+	jmp	L39
+	._eblock
+	._line	541
+L51:
+	btst	7,_fmr0_addr
+	stzx	#00H,#01H,R0L	;  ret_value 
+	._block
+	._var	'ret_value','R',3,1
+	._line	548
+L39:
+	._eblock
+	._line	550
+	._block
+	._block
+	._var	'ret_value','R',3,1
+;#### ASM START
+LDC _flags_reg,FLG
+;#### ASM END
+	._eblock
+	._line	552
+	._eblock
+	exitd	
+E1:
+	._eblock
+M1:
+	._efunc	M1
+	._inspect	'F', 'd', "FlashEraseEW1", "$FlashEraseEW1", 'G', 477, 0, 00h, 0
+	._inspect	'F', 't', "FlashEraseEW1", 'G', 256
+	._inspect	'V', 'r', "block_addresses", 'S', 482, 40, 0, 0, 00h
+	._inspect	'F', 'r', "SlowMCUClock", "_SlowMCUClock", 'S', 487, 0, 00h, 0
+	._inspect	'V', 'r', "fmr0_addr", 'G', 490, 1, 1, 0, 02h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 491, 1, 1, 0, 02h
+	._inspect	'V', 'r', "fmr1_addr", 'G', 492, 1, 1, 0, 02h
+	._inspect	'V', 'r', "fmr1_addr", 'G', 493, 1, 1, 0, 02h
+	._inspect	'V', 'r', "fmr6_addr", 'G', 495, 1, 1, 0, 00h
+	._inspect	'V', 'r', "fmr1_addr", 'G', 496, 1, 1, 0, 02h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 507, 1, 1, 0, 04h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 508, 1, 1, 0, 04h
+	._inspect	'V', 'r', "fmr1_addr", 'G', 512, 1, 1, 0, 040h
+	._inspect	'V', 'r', "fmr1_addr", 'G', 513, 1, 1, 0, 040h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 526, 1, 1, 0, 080h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 533, 1, 1, 0, 00h
+	._inspect	'F', 'r', "RestoreMCUClock", "_RestoreMCUClock", 'S', 535, 0, 00h, 0
+	._inspect	'V', 'r', "fmr0_addr", 'G', 537, 1, 1, 0, 040h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 537, 1, 1, 0, 080h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 541, 1, 1, 0, 080h
+	._inspect	'F', 'e', "FlashEraseEW1", "$FlashEraseEW1", 'G', 0, 0
+
+
+;## #	FUNCTION FlashWriteEW1
+;## #	FRAME	AUTO	(ret_value)	size  1,	offset -1
+;## #  FRAME   ARG (flash_addr)  size   4,    offset 5
+;## #  FRAME   ARG (buffer_addr)  size   4,    offset 9
+;## #  FRAME   ARG (   bytes)  size   2,    offset 13
+;## #	ARG Size(10)	Auto Size(1)	Context Size(5)
+
+	._type	258,'P',3
+	._type	259,'P',3
+	._type	260,'x',3,3
+	._type	260,'m','flash_addr',0,258
+	._type	260,'m','buffer_addr',0,259
+	._type	260,'m','bytes',0,18
+	._func	'FlashWriteEW1','G',1,260,_FlashWriteEW1,0
+	._inspect	'F', 's', "FlashWriteEW1", "_FlashWriteEW1", 'G', 6
+	.align
+	._line	582
+	.glb	_FlashWriteEW1
+_FlashWriteEW1:
+	enter	#01H
+	._block
+	._type	261,'P',3
+	._var	'flash_addr','A',261,5
+	._type	262,'P',3
+	._var	'buffer_addr','A',262,9
+	._var	'bytes','A',18,13
+	._var	'ret_value','A',3,-1
+	._line	583
+	mov.b	#00H,-1[FB]	;  ret_value 
+	._line	584
+	mov.b	#00H,R0L	;  wait_time 
+	._line	597
+	mov.b	13[FB],R0L	;  bytes 
+	and.b	#03H,R0L
+	jz	L53
+	._line	598
+	mov.b	#02H,R0L
+	exitd	
+L53:
+	._line	601
+	mov.b	5[FB],R0L	;  flash_addr 
+	and.b	#03H,R0L
+	jz	L57
+	._line	602
+	mov.b	#02H,R0L
+	exitd	
+L57:
+	._line	605
+	._block
+;#### ASM START
+STC FLG,_flags_reg
+FCLR I
+;#### ASM END
+	._eblock
+	._line	608
+	._inspect	'S', 'c', "SlowMCUClock", "_SlowMCUClock", 'S', 0, 608
+	jsr	_SlowMCUClock
+	._line	611
+	bclr	1,_fmr0_addr
+	._line	612
+	bset	1,_fmr0_addr
+	._line	613
+	bclr	1,_fmr1_addr
+	._line	614
+	bset	1,_fmr1_addr
+	._line	616
+	mov.b	#03H,_fmr6_addr
+	._line	617
+	bclr	1,_fmr1_addr
+	._line	628
+	bclr	2,_fmr0_addr
+	._line	629
+	bset	2,_fmr0_addr
+	._line	633
+	bclr	6,_fmr1_addr
+	._line	634
+	bset	6,_fmr1_addr
+	._line	637
+	mov.w	#0050H,R0
+	mov.w	5[FB],A0	;  flash_addr 
+	mov.w	5+2[FB],A1	;  flash_addr 
+	ste.w	R0,[A1A0]
+	._line	638
+L61:
+	cmp.w	#0000H,13[FB]	;  bytes 
+	jeq	L63
+	._line	639
+	._block
+	._line	653
+	mov.w	#0041H,R0
+	mov.w	5[FB],A0	;  flash_addr 
+	mov.w	5+2[FB],A1	;  flash_addr 
+	ste.w	R0,[A1A0]
+	._line	654
+	mov.w	A0,R0
+	mov.w	A1,R2
+	mov.w	9[FB],A0	;  buffer_addr 
+	mov.w	9+2[FB],A1	;  buffer_addr 
+	lde.w	[A1A0],R1
+	add.w	#0002H,A0
+	adcf.w	A1
+	lde.w	[A1A0],R3
+	mov.w	R0,A0
+	mov.w	R2,A1
+	ste.w	R1,[A1A0]
+	add.w	#0002H,A0
+	adcf.w	A1
+	ste.w	R3,[A1A0]
+	._line	658
+	add.w	#0004H,5[FB]	;  flash_addr 
+	adcf.w	5+2[FB]	;  flash_addr 
+	._line	659
+	add.w	#0004H,9[FB]	;  buffer_addr 
+	adcf.w	9+2[FB]	;  buffer_addr 
+	._line	660
+	add.w	#-4,13[FB]	;  bytes 
+	._line	663
+	mov.b	#00H,R0H	;  wait_time 
+	._block
+	._var	'wait_time','R',3,2
+	._eblock
+	mov.b	R0H,R0L	;  wait_time  wait_time 
+	._block
+	._var	'wait_time','R',3,1
+L65:
+	._eblock
+	._line	664
+	._block
+	._block
+	._var	'wait_time','R',3,1
+	._line	665
+	btst	00H,_fmr0_addr
+	jnz	L69
+	._eblock
+	inc.b	R0L	;  wait_time 
+	cmp.b	#0aH,R0L	;  wait_time 
+	jltu	L65
+	._eblock
+L69:
+	._line	675
+	btst	06H,_fmr0_addr
+	jz	L61
+	._line	676
+	._block
+	._line	677
+	btst	7,_fmr0_addr
+	stzx	#01H,#03H,-1[FB]	;  ret_value 
+	._eblock
+	._eblock
+	._line	683
+L63:
+	._line	686
+	mov.b	#00H,_fmr0_addr
+	._line	688
+	._inspect	'S', 'c', "RestoreMCUClock", "_RestoreMCUClock", 'S', 0, 688
+	jsr	_RestoreMCUClock
+	._line	689
+	._block
+;#### ASM START
+LDC _flags_reg,FLG
+;#### ASM END
+	._eblock
+	._line	691
+	mov.b	-1[FB],R0L	;  ret_value 
+	exitd	
+E2:
+	._eblock
+M2:
+	._efunc	M2
+	._inspect	'F', 'd', "FlashWriteEW1", "_FlashWriteEW1", 'G', 582, 0, 00h, 0
+	._inspect	'F', 't', "FlashWriteEW1", 'G', 260
+	._inspect	'F', 'r', "SlowMCUClock", "_SlowMCUClock", 'S', 608, 0, 00h, 0
+	._inspect	'V', 'r', "fmr0_addr", 'G', 611, 1, 1, 0, 02h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 612, 1, 1, 0, 02h
+	._inspect	'V', 'r', "fmr1_addr", 'G', 613, 1, 1, 0, 02h
+	._inspect	'V', 'r', "fmr1_addr", 'G', 614, 1, 1, 0, 02h
+	._inspect	'V', 'r', "fmr6_addr", 'G', 616, 1, 1, 0, 00h
+	._inspect	'V', 'r', "fmr1_addr", 'G', 617, 1, 1, 0, 02h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 628, 1, 1, 0, 04h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 629, 1, 1, 0, 04h
+	._inspect	'V', 'r', "fmr1_addr", 'G', 633, 1, 1, 0, 040h
+	._inspect	'V', 'r', "fmr1_addr", 'G', 634, 1, 1, 0, 040h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 665, 1, 1, 0, 01h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 675, 1, 1, 0, 040h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 677, 1, 1, 0, 080h
+	._inspect	'V', 'r', "fmr0_addr", 'G', 686, 1, 1, 0, 00h
+	._inspect	'F', 'r', "RestoreMCUClock", "_RestoreMCUClock", 'S', 688, 0, 00h, 0
+	._inspect	'F', 'e', "FlashWriteEW1", "_FlashWriteEW1", 'G', 0, 0
+
+
+;## #	FUNCTION FlashReadEW1
+;## #  FRAME   ARG (flash_addr)  size   4,    offset 5
+;## #  FRAME   ARG (buffer_addr)  size   4,    offset 9
+;## #  FRAME   ARG (   bytes)  size   2,    offset 13
+;## #	ARG Size(10)	Auto Size(0)	Context Size(5)
+
+	._type	263,'P',3
+	._type	264,'P',3
+	._type	265,'x',3,3
+	._type	265,'m','flash_addr',0,263
+	._type	265,'m','buffer_addr',0,264
+	._type	265,'m','bytes',0,18
+	._func	'FlashReadEW1','G',0,265,_FlashReadEW1,0
+	._inspect	'F', 's', "FlashReadEW1", "_FlashReadEW1", 'G', 5
+	.align
+	._line	715
+	.glb	_FlashReadEW1
+_FlashReadEW1:
+	enter	#00H
+	mov.w	13[FB],R0	;  bytes  bytes 
+	._block
+	._type	266,'P',3
+	._var	'flash_addr','A',266,5
+	._type	267,'P',3
+	._var	'buffer_addr','A',267,9
+	._line	719
+	._block
+	._var	'bytes','R',18,5
+	jne	L91
+	._eblock
+	._block
+	._line	720
+	mov.b	#01H,R0L
+	exitd	
+	._eblock
+L91:
+	._block
+	._var	'bytes','R',18,5
+	._line	723
+	btst	00H,_fmr0_addr
+	jnz	L101
+	._eblock
+	._line	727
+	mov.b	#01H,R0L
+	exitd	
+	._line	728
+L101:
+	._block
+	._var	'bytes','R',18,5
+	._eblock
+	._line	729
+	._block
+	._block
+	._var	'bytes','R',18,5
+	._line	731
+	btst	00H,5[FB]	;  flash_addr 
+	jz	L111
+	._eblock
+	._block
+	._block
+	._var	'bytes','R',18,5
+	._line	732
+	mov.w	5[FB],A0	;  flash_addr 
+	mov.w	5+2[FB],A1	;  flash_addr 
+	add.w	#-1,A0
+	sbb.w	#0000H,A1
+	lde.w	[A1A0],R1	;  tmp 
+	._eblock
+	._block
+	._var	'bytes','R',18,5
+	._var	'tmp','R',18,6
+	._line	733
+	shl.w	#-08H,R1
+	._eblock
+	._block
+	._var	'bytes','R',18,5
+	mov.w	9[FB],A0	;  buffer_addr 
+	mov.w	9+2[FB],A1	;  buffer_addr 
+	ste.b	R1L,[A1A0]
+	._line	735
+	add.w	#0001H,5[FB]	;  flash_addr 
+	adcf.w	5+2[FB]	;  flash_addr 
+	._line	736
+	add.w	#0001H,9[FB]	;  buffer_addr 
+	adcf.w	9+2[FB]	;  buffer_addr 
+	._line	737
+	add.w	#-1,R0	;  bytes 
+	._eblock
+L111:
+	._line	739
+	cmp.w	#0000H,R0	;  bytes 
+	jeq	L137
+	._eblock
+	._line	740
+	._block
+	._block
+	._var	'bytes','R',18,5
+	._line	741
+	cmp.w	#0001H,R0	;  bytes 
+	jne	L119
+	._eblock
+	._block
+	._line	742
+	mov.w	5[FB],A0	;  flash_addr 
+	mov.w	5+2[FB],A1	;  flash_addr 
+	lde.w	[A1A0],R0	;  tmp 
+	._block
+	._var	'tmp','R',18,5
+	._line	743
+	._eblock
+	mov.w	9[FB],A0	;  buffer_addr 
+	mov.w	9+2[FB],A1	;  buffer_addr 
+	ste.b	R0L,[A1A0]
+	._line	744
+	jmp	L137
+	._eblock
+L119:
+	._block
+	._var	'bytes','R',18,5
+	._line	746
+	mov.w	5[FB],A0	;  flash_addr 
+	mov.w	5+2[FB],A1	;  flash_addr 
+	lde.w	[A1A0],R1	;  tmp 
+	._eblock
+	._block
+	._var	'bytes','R',18,5
+	._var	'tmp','R',18,6
+	._line	747
+	mov.w	R0,R2	;  bytes  bytes 
+	._eblock
+	mov.b	R1L,R0L
+	._block
+	._var	'tmp','R',18,6
+	._var	'bytes','R',18,7
+	mov.w	9[FB],A0	;  buffer_addr 
+	mov.w	9+2[FB],A1	;  buffer_addr 
+	ste.b	R0L,[A1A0]
+	._line	748
+	shl.w	#-08H,R1
+	._eblock
+	._block
+	._var	'bytes','R',18,7
+	mov.b	R1L,R0L
+	mov.w	9[FB],A0	;  buffer_addr 
+	mov.w	9+2[FB],A1	;  buffer_addr 
+	add.w	#0001H,A0
+	adcf.w	A1
+	ste.b	R0L,[A1A0]
+	._line	750
+	add.w	#0002H,5[FB]	;  flash_addr 
+	adcf.w	5+2[FB]	;  flash_addr 
+	._line	751
+	add.w	#0002H,9[FB]	;  buffer_addr 
+	adcf.w	9+2[FB]	;  buffer_addr 
+	._line	752
+	add.w	#-2,R2	;  bytes 
+	._eblock
+	._line	753
+	mov.w	R2,R0	;  bytes  bytes 
+	._eblock
+	jmp	L111
+L137:
+	._eblock
+	._line	755
+	mov.b	#00H,R0L
+	exitd	
+E3:
+	._eblock
+M3:
+	._efunc	M3
+	._inspect	'F', 'd', "FlashReadEW1", "_FlashReadEW1", 'G', 715, 0, 00h, 0
+	._inspect	'F', 't', "FlashReadEW1", 'G', 265
+	._inspect	'V', 'r', "fmr0_addr", 'G', 723, 1, 1, 0, 01h
+	._inspect	'F', 'e', "FlashReadEW1", "_FlashReadEW1", 'G', 0, 0
+
+
+;## #	FUNCTION SlowMCUClock
+;## #	ARG Size(0)	Auto Size(0)	Context Size(3)
+
+	._type	268,'v'
+	._type	269,'v'
+	._type	270,'x',268,1
+	._type	270,'m','',0,269
+	._func	'SlowMCUClock','S',0,270,_SlowMCUClock,0
+	._inspect	'F', 's', "SlowMCUClock", "_SlowMCUClock", 'S', 3
+	.align
+	._line	769
+_SlowMCUClock:
+	._block
+	._line	771
+	mov.b	_prcr_addr,_prcr_saved
+	._line	772
+	mov.b	#03H,_prcr_addr
+	._line	776
+	mov.b	_pm0_addr,_pm0_saved
+	._line	777
+	mov.b	_pm0_saved,R0L
+	and.b	#0fcH,R0L
+	mov.b	R0L,_pm0_addr
+	._line	783
+	mov.b	_fmr2_addr,_fmr2_saved
+	._line	784
+	mov.b	#00H,_fmr2_addr
+	._line	790
+	mov.b	_cm0_addr,_cm0_saved
+	._line	791
+	mov.b	_cm1_addr,_cm1_saved
+	._line	792
+	mov.b	_pm1_addr,_pm1_saved
+	._line	796
+;#### ASM START
+BSET	7,05h
+;#### ASM END
+	._eblock
+	._line	818
+	rts	
+E4:
+M4:
+	._efunc	M4
+	._inspect	'F', 'd', "SlowMCUClock", "_SlowMCUClock", 'S', 769, 0, 00h, 0
+	._inspect	'F', 't', "SlowMCUClock", 'S', 270
+	._inspect	'V', 'r', "prcr_saved", 'S', 771, 1, 0, 0, 00h
+	._inspect	'V', 'r', "prcr_addr", 'G', 771, 1, 1, 0, 00h
+	._inspect	'V', 'r', "prcr_addr", 'G', 772, 1, 1, 0, 00h
+	._inspect	'V', 'r', "pm0_saved", 'S', 776, 1, 0, 0, 00h
+	._inspect	'V', 'r', "pm0_addr", 'G', 776, 1, 1, 0, 00h
+	._inspect	'V', 'r', "pm0_saved", 'S', 777, 1, 0, 0, 00h
+	._inspect	'V', 'r', "pm0_addr", 'G', 777, 1, 1, 0, 00h
+	._inspect	'V', 'r', "fmr2_saved", 'S', 783, 1, 0, 0, 00h
+	._inspect	'V', 'r', "fmr2_addr", 'G', 783, 1, 1, 0, 00h
+	._inspect	'V', 'r', "fmr2_addr", 'G', 784, 1, 1, 0, 00h
+	._inspect	'V', 'r', "cm0_saved", 'S', 790, 1, 0, 0, 00h
+	._inspect	'V', 'r', "cm0_addr", 'G', 790, 1, 1, 0, 00h
+	._inspect	'V', 'r', "cm1_saved", 'S', 791, 1, 0, 0, 00h
+	._inspect	'V', 'r', "cm1_addr", 'G', 791, 1, 1, 0, 00h
+	._inspect	'V', 'r', "pm1_saved", 'S', 792, 1, 0, 0, 00h
+	._inspect	'V', 'r', "pm1_addr", 'G', 792, 1, 1, 0, 00h
+	._inspect	'F', 'e', "SlowMCUClock", "_SlowMCUClock", 'S', 0, 0
+
+
+;## #	FUNCTION RestoreMCUClock
+;## #	ARG Size(0)	Auto Size(0)	Context Size(3)
+
+	._type	271,'v'
+	._type	272,'v'
+	._type	273,'x',271,1
+	._type	273,'m','',0,272
+	._func	'RestoreMCUClock','S',0,273,_RestoreMCUClock,0
+	._inspect	'F', 's', "RestoreMCUClock", "_RestoreMCUClock", 'S', 3
+	.align
+	._line	827
+_RestoreMCUClock:
+	._block
+	._line	829
+	mov.b	_pm0_saved,_pm0_addr
+	._line	833
+	mov.b	_cm1_saved,_cm1_addr
+	._line	834
+	mov.b	_cm0_saved,_cm0_addr
+	._line	835
+	mov.b	_pm1_saved,_pm1_addr
+	._line	836
+	mov.b	_prcr_saved,_prcr_addr
+	._eblock
+	._line	844
+	rts	
+E5:
+M5:
+	._efunc	M5
+	._inspect	'F', 'd', "RestoreMCUClock", "_RestoreMCUClock", 'S', 827, 0, 00h, 0
+	._inspect	'F', 't', "RestoreMCUClock", 'S', 273
+	._inspect	'V', 'r', "pm0_addr", 'G', 829, 1, 1, 0, 00h
+	._inspect	'V', 'r', "pm0_saved", 'S', 829, 1, 0, 0, 00h
+	._inspect	'V', 'r', "cm1_addr", 'G', 833, 1, 1, 0, 00h
+	._inspect	'V', 'r', "cm1_saved", 'S', 833, 1, 0, 0, 00h
+	._inspect	'V', 'r', "cm0_addr", 'G', 834, 1, 1, 0, 00h
+	._inspect	'V', 'r', "cm0_saved", 'S', 834, 1, 0, 0, 00h
+	._inspect	'V', 'r', "pm1_addr", 'G', 835, 1, 1, 0, 00h
+	._inspect	'V', 'r', "pm1_saved", 'S', 835, 1, 0, 0, 00h
+	._inspect	'V', 'r', "prcr_addr", 'G', 836, 1, 1, 0, 00h
+	._inspect	'V', 'r', "prcr_saved", 'S', 836, 1, 0, 0, 00h
+	._inspect	'F', 'e', "RestoreMCUClock", "_RestoreMCUClock", 'S', 0, 0
+
+	.glb	$FlashErase
+	.glb	_FlashWrite
+	.glb	_FlashRead
+	.glb	_Clear_Demand_Mode
+	.glb	_EventEnergyValid_Flag
+	.glb	_Event_AmpHour
+	.glb	_EventCriticalVoltage_Flag
+	.glb	_TempEventData
+	.glb	_lostvoltenergyall
+	.glb	_lostvoltenergy
+	.glb	_EventTimeAdd
+	.glb	_New2007_Event
+	.glb	_EventRecordAdjustEnergy
+	.glb	_EventData_PowerDown_Save
+	.glb	_EventData_PowerOn_Check
+	.glb	_EventRecord_Poweron_Check
+	.glb	_PowerDownEvent_OnCheck
+	.glb	_ProgrammeEvent
+	.glb	_ClearMeterRecord
+	.glb	_VoltStatSetDefault
+	.glb	_VoltStatInit
+	.glb	_VoltStatisticCheck
+	.glb	_OverDemandEvent
+	.glb	_AdjustTimeRecord
+	.glb	_ClearDemandRecord
+	.glb	_ProgWeekRecord
+	.glb	_ProgAEModeRecord
+	.glb	_ProgNEMode1Record
+	.glb	_ProgNEMode2Record
+	.glb	$ProgBillDayRecord
+	.glb	_ProgYearSlotRecord
+	.glb	_ProgDailySlotRecord
+	.glb	_ClearNewEventRecord
+	.glb	_PrepVoltStatReadData
+	.glb	_ResetCpuEvent_OnCheck
+	.glb	_RunClockErrorRecord
+	.glb	_PowerUpClockErrorRecord
+	.glb	_EepromErrorRecord
+	.glb	_EnergyPassZeroRecord
+	.glb	_SetPrimaryRecord
+	.glb	_EepromEventSetDefault
+	.glb	_EMeterPowerdownRecord
+	.glb	_ClearEventRecord
+	.glb	_ProgAEMode_NEMode1_NEMode2_Record
+	.glb	_OpenBoxCoverEvent_Check
+	.glb	_EventFlagPowerOnInit
+	.glb	_ProgrammeEventEnd_Check_Payment
+	.glb	_ProgrammeEventEnd_Check
+	.glb	_VoltStatisticFunc
+	.glb	_AdjustMeterRecord
+	.glb	_PrepNewFirstEventData
+	.glb	$Save_EventTimesANDPointer_4byte
+	.glb	$Prepare_For_EventLastTime
+	.glb	_Refresh_EventData
+	.glb	_Refresh_AddTime
+	.glb	_ClearEventDate_BatteryPowerOn
+	.glb	_PrepLostVoltEnergyData
+	.glb	_PowerAbnormalEventCheck
+	.glb	_ClockBatteryDisplayBattery_Event
+	.glb	$PdOpenCoverCheckInit
+	.glb	_PdOpenCoverCheck
+	.glb	_PdOpenCoverCheckPowerUpDeal
+	.glb	_ClearEventAll
+	.glb	_ClearEventCommDeal
+	.glb	_ClearEventDataPowerOn
+	.glb	$ClearEvent_EventBegin
+	.glb	_VoltCheck_N
+	.glb	_VoltStat
+	.glb	_Clearevent_ID
+	.glb	_pdopencovercheckdata
+	.glb	_eventstatusinfo
+	.glb	$Save_EventReportTimes
+	.glb	$BCD2Byte
+	.glb	$OB_H
+	.glb	$OH_B
+	.glb	$CheckTime
+	.glb	$CheckBCD
+	.glb	$CheckBCD_NByte
+	.glb	_ABS
+	.glb	$ten_seq
+	.glb	$HexToBcd
+	.glb	$BcdToHex
+	.glb	$FormatBCD
+	.glb	$CompareBytes
+	.glb	$HexToACK
+	.glb	$ACKToHex
+	.glb	$search_unit
+	.glb	$HexToBcdnByte
+	.glb	$BcdToHexnByte
+	.glb	$memcpy
+	.glb	_format_data
+	.glb	_CommB
+	.glb	_ProgramEventFlag
+	.glb	_JustMeterDataFlag
+	.glb	_JustMeterDateFlag
+	.glb	_JustMeterFlag
+	.glb	_cx
+	.glb	_Readdata_buff
+	.glb	_COMM_Curr
+	.glb	_COMM_Factor
+	.glb	_COMM_Active_power
+	.glb	_COMM_Reactive_power
+	.glb	_COMM_Visual_power
+	.glb	_COMM_Current_Demand
+	.glb	_Freeze_Flag_DayHour
+	.glb	_Comm_DailyOrYear_Slot
+	.glb	_Comm_Firrespon_SecDispos_Buff
+	.glb	_Comm_Firrespon_SecDispos_Uart
+	.glb	_GPRS_Status
+	.glb	_Voltage_ad_data
+	.glb	_Displayfinish_flag
+	.glb	_FullScreenTime
+	.glb	_ad_Flag
+	.glb	_ad_finish_Flag
+	.glb	_meter_model_ok
+	.glb	_fix_ad_data
+	.glb	_comm_plus_energy_01wh
+	.glb	_comm_nega_energy_01wh
+	.glb	$Init_Comm
+	.glb	$Interr_Comm_R
+	.glb	$Interr_Comm_W
+	.glb	$Communication
+	.glb	$FindComCommand
+	.glb	$AnswerComCommand
+	.glb	$TransferData
+	.glb	_GetNowTime
+	.glb	_GetTimeCount
+	.glb	$F_Ar
+	.glb	$ReadData
+	.glb	_WriteData
+	.glb	_BroadcastJustTime
+	.glb	_WriteAddress
+	.glb	_WriteBaud
+	.glb	_WritePassword
+	.glb	_ClearDemand
+	.glb	_R_W_Data
+	.glb	$ReadLC256
+	.glb	$WriteLC256
+	.glb	$GetRecordAddr
+	.glb	$Delay
+	.glb	$CalDay
+	.glb	$ComTime
+	.glb	$ClearDemandCommAndKey
+	.glb	$Clear_PasswordErr
+	.glb	_CheckProgramKeyState
+	.glb	_IC_Set_Program
+	.glb	$FreezeEvent_Energy
+	.glb	_Read_SystemTime_YMDH
+	.glb	_Read_SystemTime_HMS
+	.glb	_Set_SystemTime_YMDH
+	.glb	_Set_SystemTime_HMS
+	.glb	_Set_DemandPeriod
+	.glb	_Set_DemandSkipPeriod
+	.glb	_Set_Activem_Erengy_Mode
+	.glb	_Set_REActivem_Erengy_1_Mode
+	.glb	_Set_REActivem_Erengy_2_Mode
+	.glb	_Set_ActivePulseConst
+	.glb	_Set_Erengypoint
+	.glb	_Set_BILL_Day
+	.glb	_Set_SlotParemeter
+	.glb	_Set_YearSlot
+	.glb	_Set_ProgWeek
+	.glb	_Set_Holiday
+	.glb	_Set_DailySlot
+	.glb	_Set_LoadRecoedBeginTime
+	.glb	_Set_LoadRecoedPeriod
+	.glb	_Set_MeterMode
+	.glb	_Set_Meterlocktimes
+	.glb	_Set_OutputModel
+	.glb	_Exit_WorkRoomState
+	.glb	_Read_primary_energy
+	.glb	_Set_primary_energy
+	.glb	_Read_WorkRoomState
+	.glb	_Read_Freeze_Bit_0_data
+	.glb	_Read_Freeze_Bit_1_data
+	.glb	_Read_Freeze_Bit_2_data
+	.glb	_Read_Freeze_Bit_3_data
+	.glb	_Read_Freeze_Bit_4_data
+	.glb	_Read_Freeze_Bit_5_data
+	.glb	_Read_Freeze_Bit_6_data
+	.glb	_Read_Freeze_Bit_7_data
+	.glb	_Read_Freeze_Block_data
+	.glb	_Read_Meter_lock_times
+	.glb	$Check_Parameter_Len_IS_ok
+	.glb	_Pre_No_use_leaf_data
+	.glb	_Set_Display_Number
+	.glb	_Set_Commrate
+	.glb	_Read_Freeze_Date
+	.glb	_Set_CycleDisplayTime
+	.glb	_Read_Far_IR_Commate
+	.glb	_Set_CriticalVoltage
+	.glb	_Set_CommAddr
+	.glb	_Set_Show_USER_Code
+	.glb	_Read_Sign_Instance_Variable
+	.glb	_Read_Meter_Temperature
+	.glb	_Read_YearSlot_Table
+	.glb	_Read_DailySlot_Table
+	.glb	_Comm_Initialize_FLASH
+	.glb	_Read_Last_loss_voltage_start_time
+	.glb	_Read_Last_loss_voltage_end_time
+	.glb	_Set_Freeze_Period_Begin_time
+	.glb	_Set_Freeze_Period
+	.glb	_Set_TriffSwitchDate
+	.glb	_Set_Cycle_Key_Display
+	.glb	_Read_Meter_FILEDATE_VI
+	.glb	_CommBP
+	.glb	_CurrPC
+	.glb	_WriteDateBuff
+	.glb	_Set_ShowNoKeyRetTime
+	.glb	$CheckPasswordRight
+	.glb	$CheckPasswoerErr
+	.glb	$AppointTrasfPortBuff
+	.glb	$Crc16l
+	.glb	$Set_which_Responsion_Flag
+	.glb	_Set_JFPG_Triff
+	.glb	$Set_Meter_para_Deal
+	.glb	_Read_Display_Number
+	.glb	_Read_LostVoltEnergy
+	.glb	_Read_LostVolt_AllEnergy
+	.glb	_RTC_Init
+	.glb	_PowerOn_FullScreen_TimeDetection
+	.glb	_ReadClockBatteryVoltage
+	.glb	_ReadDisplayBatteryVoltage
+	.glb	_ReadEventReportInfo
+	.glb	_GetEventReportMode
+	.glb	_SetEventReportMode
+	.glb	_SetPowerOnFullScreenTime
+	.glb	_Set_SystemTime_YMDHHMS
+	.glb	_GetMeterSoftIdNumber
+	.glb	_SetMeterSoftIdNumber
+	.glb	_GetNowMonthComActiveEnergy
+	.glb	_GetLastMonthComActiveEnergy
+	.glb	_Set_Freeze_Day
+	.glb	_ReadEnergy01Wh
+	.glb	_ResetEventReportInfo
+	.glb	_Clear_EventReportStatus_And_Times
+	.glb	_Set_ResetReportTime
+	.glb	$Set_Read_Block_Para
+
+	.SECTION	bss_NE,DATA,align
+	._inspect	'U', 3, "bss_NE", "bss_NE", 0
+_flags_reg:
+	.blkb	2
+
+	.SECTION	bss_NO,DATA
+	._inspect	'U', 3, "bss_NO", "bss_NO", 0
+_cm0_saved:
+	.blkb	1
+_cm1_saved:
+	.blkb	1
+_pm0_saved:
+	.blkb	1
+_pm1_saved:
+	.blkb	1
+_prcr_saved:
+	.blkb	1
+_fmr2_saved:
+	.blkb	1
+
+	.SECTION	rom_FE,ROMDATA,align
+	._inspect	'U', 4, "rom_FE", "rom_FE", 0
+_block_addresses:
+	.word	0fffeH
+	.word	000fH
+	.word	0fffeH
+	.word	000eH
+	.word	0fffeH
+	.word	000dH
+	.word	0fffeH
+	.word	000cH
+	.word	0fffeH
+	.word	000bH
+	.word	0fffeH
+	.word	000aH
+	.word	0fffeH
+	.word	0009H
+	.word	0fffeH
+	.word	0008H
+	.word	0effeH
+	.word	0000H
+	.word	0fffeH
+	.word	0000H
+;#################################
+;###  STATIC DATA INFORMATION  ###
+;#################################
+	._type	274,'x',3,1
+	._type	274,'m','block',0,3
+	._var	'FlashErase','F',274
+	._type	275,'P',3
+	._type	276,'P',3
+	._type	277,'x',3,3
+	._type	277,'m','flash_addr',0,275
+	._type	277,'m','buffer_addr',0,276
+	._type	277,'m','bytes',0,18
+	._var	'FlashWrite','F',277
+	._type	278,'P',3
+	._type	279,'P',3
+	._type	280,'x',3,3
+	._type	280,'m','flash_addr',0,278
+	._type	280,'m','buffer_addr',0,279
+	._type	280,'m','bytes',0,18
+	._var	'FlashRead','F',280
+	._type	283,'g','b0',0,1,3
+	._type	284,'g','b1',0,1,3
+	._type	285,'g','b2',0,1,3
+	._type	286,'g','b3',0,1,3
+	._type	287,'g','b4',0,1,3
+	._type	288,'g','b5',0,1,3
+	._type	289,'g','b6',0,1,3
+	._type	290,'g','b7',0,1,3
+	._type	282,'S','',1
+	._type	282,'m','b0',283,0
+	._type	282,'m','b1',284,1
+	._type	282,'m','b2',285,2
+	._type	282,'m','b3',286,3
+	._type	282,'m','b4',287,4
+	._type	282,'m','b5',288,5
+	._type	282,'m','b6',289,6
+	._type	282,'m','b7',290,7
+	._type	281,'U','BYTE_DEF',1
+	._type	281,'m','bit',282,0
+	._type	281,'m','byte',3,0
+	._var	'pm0_addr','S',281,_pm0_addr
+	._var	'pm1_addr','S',281,_pm1_addr
+	._var	'cm0_addr','S',281,_cm0_addr
+	._var	'cm1_addr','S',281,_cm1_addr
+	._var	'csr_addr','S',281,_csr_addr
+	._var	'prcr_addr','S',281,_prcr_addr
+	._var	'dbr_addr','S',281,_dbr_addr
+	._var	'cm2_addr','S',281,_cm2_addr
+	._var	'prg2c_addr','S',281,_prg2c_addr
+	._var	'pclkr_addr','S',281,_pclkr_addr
+	._var	'cpsrf_addr','S',281,_cpsrf_addr
+	._var	'rstfr_addr','S',281,_rstfr_addr
+	._var	'vcr1_addr','S',281,_vcr1_addr
+	._var	'vcr2_addr','S',281,_vcr2_addr
+	._var	'cse_addr','S',281,_cse_addr
+	._var	'plc0_addr','S',281,_plc0_addr
+	._var	'pm2_addr','S',281,_pm2_addr
+	._var	'vwce_addr','S',281,_vwce_addr
+	._var	'vd1ls_addr','S',281,_vd1ls_addr
+	._var	'vw0c_addr','S',281,_vw0c_addr
+	._var	'vw1c_addr','S',281,_vw1c_addr
+	._var	'vw2c_addr','S',281,_vw2c_addr
+	._var	'int7ic_addr','S',281,_int7ic_addr
+	._var	'int6ic_addr','S',281,_int6ic_addr
+	._var	'int3ic_addr','S',281,_int3ic_addr
+	._var	'tb5ic_addr','S',281,_tb5ic_addr
+	._var	'tb4ic_addr','S',281,_tb4ic_addr
+	._var	'u1bcnic_addr','S',281,_u1bcnic_addr
+	._var	'tb3ic_addr','S',281,_tb3ic_addr
+	._var	'u0bcnic_addr','S',281,_u0bcnic_addr
+	._var	's4ic_addr','S',281,_s4ic_addr
+	._var	'int5ic_addr','S',281,_int5ic_addr
+	._var	's3ic_addr','S',281,_s3ic_addr
+	._var	'int4ic_addr','S',281,_int4ic_addr
+	._var	'bcnic_addr','S',281,_bcnic_addr
+	._var	'dm0ic_addr','S',281,_dm0ic_addr
+	._var	'dm1ic_addr','S',281,_dm1ic_addr
+	._var	'kupic_addr','S',281,_kupic_addr
+	._var	'adic_addr','S',281,_adic_addr
+	._var	's2tic_addr','S',281,_s2tic_addr
+	._var	's2ric_addr','S',281,_s2ric_addr
+	._var	's0tic_addr','S',281,_s0tic_addr
+	._var	's0ric_addr','S',281,_s0ric_addr
+	._var	's1tic_addr','S',281,_s1tic_addr
+	._var	's1ric_addr','S',281,_s1ric_addr
+	._var	'ta0ic_addr','S',281,_ta0ic_addr
+	._var	'ta1ic_addr','S',281,_ta1ic_addr
+	._var	'ta2ic_addr','S',281,_ta2ic_addr
+	._var	'ta3ic_addr','S',281,_ta3ic_addr
+	._var	'ta4ic_addr','S',281,_ta4ic_addr
+	._var	'tb0ic_addr','S',281,_tb0ic_addr
+	._var	'tb1ic_addr','S',281,_tb1ic_addr
+	._var	'tb2ic_addr','S',281,_tb2ic_addr
+	._var	'int0ic_addr','S',281,_int0ic_addr
+	._var	'int1ic_addr','S',281,_int1ic_addr
+	._var	'int2ic_addr','S',281,_int2ic_addr
+	._var	'dm2ic_addr','S',281,_dm2ic_addr
+	._var	'dm3ic_addr','S',281,_dm3ic_addr
+	._var	'u5bcnic_addr','S',281,_u5bcnic_addr
+	._var	'cec1ic_addr','S',281,_cec1ic_addr
+	._var	's5tic_addr','S',281,_s5tic_addr
+	._var	'cec2ic_addr','S',281,_cec2ic_addr
+	._var	's5ric_addr','S',281,_s5ric_addr
+	._var	'u6bcnic_addr','S',281,_u6bcnic_addr
+	._var	'rtctic_addr','S',281,_rtctic_addr
+	._var	's6tic_addr','S',281,_s6tic_addr
+	._var	'rtccic_addr','S',281,_rtccic_addr
+	._var	's6ric_addr','S',281,_s6ric_addr
+	._var	'u7bcnic_addr','S',281,_u7bcnic_addr
+	._var	'pmc0ic_addr','S',281,_pmc0ic_addr
+	._var	's7tic_addr','S',281,_s7tic_addr
+	._var	'pmc1ic_addr','S',281,_pmc1ic_addr
+	._var	's7ric_addr','S',281,_s7ric_addr
+	._var	'iicic_addr','S',281,_iicic_addr
+	._var	'scldaic_addr','S',281,_scldaic_addr
+	._type	293,'g','b0',0,1,3
+	._type	294,'g','b1',0,1,3
+	._type	295,'g','b2',0,1,3
+	._type	296,'g','b3',0,1,3
+	._type	297,'g','b4',0,1,3
+	._type	298,'g','b5',0,1,3
+	._type	299,'g','b6',0,1,3
+	._type	300,'g','b7',0,1,3
+	._type	301,'g','b8',0,1,3
+	._type	302,'g','b9',0,1,3
+	._type	303,'g','b10',0,1,3
+	._type	304,'g','b11',0,1,3
+	._type	305,'g','b12',0,1,3
+	._type	306,'g','b13',0,1,3
+	._type	307,'g','b14',0,1,3
+	._type	308,'g','b15',0,1,3
+	._type	309,'g','b16',0,1,3
+	._type	310,'g','b17',0,1,3
+	._type	311,'g','b18',0,1,3
+	._type	312,'g','b19',0,1,3
+	._type	313,'g','b20',0,1,3
+	._type	314,'g','b21',0,1,3
+	._type	315,'g','b22',0,1,3
+	._type	316,'g','b23',0,1,3
+	._type	317,'g','b24',0,1,3
+	._type	318,'g','b25',0,1,3
+	._type	319,'g','b26',0,1,3
+	._type	320,'g','b27',0,1,3
+	._type	321,'g','b28',0,1,3
+	._type	322,'g','b29',0,1,3
+	._type	323,'g','b30',0,1,3
+	._type	324,'g','b31',0,1,3
+	._type	292,'S','',4
+	._type	292,'m','b0',293,0
+	._type	292,'m','b1',294,1
+	._type	292,'m','b2',295,2
+	._type	292,'m','b3',296,3
+	._type	292,'m','b4',297,4
+	._type	292,'m','b5',298,5
+	._type	292,'m','b6',299,6
+	._type	292,'m','b7',300,7
+	._type	292,'m','b8',301,8
+	._type	292,'m','b9',302,9
+	._type	292,'m','b10',303,10
+	._type	292,'m','b11',304,11
+	._type	292,'m','b12',305,12
+	._type	292,'m','b13',306,13
+	._type	292,'m','b14',307,14
+	._type	292,'m','b15',308,15
+	._type	292,'m','b16',309,16
+	._type	292,'m','b17',310,17
+	._type	292,'m','b18',311,18
+	._type	292,'m','b19',312,19
+	._type	292,'m','b20',313,20
+	._type	292,'m','b21',314,21
+	._type	292,'m','b22',315,22
+	._type	292,'m','b23',316,23
+	._type	292,'m','b24',317,24
+	._type	292,'m','b25',318,25
+	._type	292,'m','b26',319,26
+	._type	292,'m','b27',320,27
+	._type	292,'m','b28',321,28
+	._type	292,'m','b29',322,29
+	._type	292,'m','b30',323,30
+	._type	292,'m','b31',324,31
+	._type	325,'S','',4
+	._type	325,'m','low',3,0
+	._type	325,'m','mid',3,1
+	._type	325,'m','high',3,2
+	._type	325,'m','nc',3,3
+	._type	291,'U','DWORD_DEF',4
+	._type	291,'m','bit',292,0
+	._type	291,'m','byte',325,0
+	._type	291,'m','dword',7,0
+	._var	'sar0_addr','S',291,_sar0_addr
+	._var	'dar0_addr','S',291,_dar0_addr
+	._type	328,'g','b0',0,1,3
+	._type	329,'g','b1',0,1,3
+	._type	330,'g','b2',0,1,3
+	._type	331,'g','b3',0,1,3
+	._type	332,'g','b4',0,1,3
+	._type	333,'g','b5',0,1,3
+	._type	334,'g','b6',0,1,3
+	._type	335,'g','b7',0,1,3
+	._type	336,'g','b8',0,1,3
+	._type	337,'g','b9',0,1,3
+	._type	338,'g','b10',0,1,3
+	._type	339,'g','b11',0,1,3
+	._type	340,'g','b12',0,1,3
+	._type	341,'g','b13',0,1,3
+	._type	342,'g','b14',0,1,3
+	._type	343,'g','b15',0,1,3
+	._type	327,'S','',2
+	._type	327,'m','b0',328,0
+	._type	327,'m','b1',329,1
+	._type	327,'m','b2',330,2
+	._type	327,'m','b3',331,3
+	._type	327,'m','b4',332,4
+	._type	327,'m','b5',333,5
+	._type	327,'m','b6',334,6
+	._type	327,'m','b7',335,7
+	._type	327,'m','b8',336,8
+	._type	327,'m','b9',337,9
+	._type	327,'m','b10',338,10
+	._type	327,'m','b11',339,11
+	._type	327,'m','b12',340,12
+	._type	327,'m','b13',341,13
+	._type	327,'m','b14',342,14
+	._type	327,'m','b15',343,15
+	._type	344,'S','',2
+	._type	344,'m','low',3,0
+	._type	344,'m','high',3,1
+	._type	326,'U','WORD_DEF',2
+	._type	326,'m','bit',327,0
+	._type	326,'m','byte',344,0
+	._type	326,'m','word',5,0
+	._var	'tcr0_addr','S',326,_tcr0_addr
+	._var	'dm0con_addr','S',281,_dm0con_addr
+	._var	'sar1_addr','S',291,_sar1_addr
+	._var	'dar1_addr','S',291,_dar1_addr
+	._var	'tcr1_addr','S',326,_tcr1_addr
+	._var	'dm1con_addr','S',281,_dm1con_addr
+	._var	'sar2_addr','S',291,_sar2_addr
+	._var	'dar2_addr','S',291,_dar2_addr
+	._var	'tcr2_addr','S',326,_tcr2_addr
+	._var	'dm2con_addr','S',281,_dm2con_addr
+	._var	'sar3_addr','S',291,_sar3_addr
+	._var	'dar3_addr','S',291,_dar3_addr
+	._var	'tcr3_addr','S',326,_tcr3_addr
+	._var	'dm3con_addr','S',281,_dm3con_addr
+	._var	'tb01_addr','S',326,_tb01_addr
+	._var	'tb11_addr','S',326,_tb11_addr
+	._var	'tb21_addr','S',326,_tb21_addr
+	._var	'ppwfs1_addr','S',281,_ppwfs1_addr
+	._var	'tbcs0_addr','S',281,_tbcs0_addr
+	._var	'tbcs1_addr','S',281,_tbcs1_addr
+	._var	'tacs0_addr','S',281,_tacs0_addr
+	._var	'tacs1_addr','S',281,_tacs1_addr
+	._var	'tacs2_addr','S',281,_tacs2_addr
+	._var	'pwmfs_addr','S',281,_pwmfs_addr
+	._var	'tapofs_addr','S',281,_tapofs_addr
+	._var	'taow_addr','S',281,_taow_addr
+	._var	'tprc_addr','S',281,_tprc_addr
+	._var	'tb31_addr','S',326,_tb31_addr
+	._var	'tb41_addr','S',326,_tb41_addr
+	._var	'tb51_addr','S',326,_tb51_addr
+	._var	'ppwfs2_addr','S',281,_ppwfs2_addr
+	._var	'tbcs2_addr','S',281,_tbcs2_addr
+	._var	'tbcs3_addr','S',281,_tbcs3_addr
+	._var	'pmc0con0_addr','S',281,_pmc0con0_addr
+	._var	'pmc0con1_addr','S',281,_pmc0con1_addr
+	._var	'pmc0con2_addr','S',281,_pmc0con2_addr
+	._var	'pmc0con3_addr','S',281,_pmc0con3_addr
+	._var	'pmc0sts_addr','S',281,_pmc0sts_addr
+	._var	'pmc0int_addr','S',281,_pmc0int_addr
+	._var	'pmc0cpc_addr','S',281,_pmc0cpc_addr
+	._var	'pmc0cpd_addr','S',281,_pmc0cpd_addr
+	._var	'pmc1con0_addr','S',281,_pmc1con0_addr
+	._var	'pmc1con1_addr','S',281,_pmc1con1_addr
+	._var	'pmc1con2_addr','S',281,_pmc1con2_addr
+	._var	'pmc1con3_addr','S',281,_pmc1con3_addr
+	._var	'pmc1sts_addr','S',281,_pmc1sts_addr
+	._var	'pmc1int_addr','S',281,_pmc1int_addr
+	._var	'ifsr3a_addr','S',281,_ifsr3a_addr
+	._var	'ifsr2a_addr','S',281,_ifsr2a_addr
+	._var	'ifsr_addr','S',281,_ifsr_addr
+	._var	'aier_addr','S',281,_aier_addr
+	._var	'aier2_addr','S',281,_aier2_addr
+	._var	'rmad0_addr','S',291,_rmad0_addr
+	._var	'rmad1_addr','S',291,_rmad1_addr
+	._var	'rmad2_addr','S',291,_rmad2_addr
+	._var	'rmad3_addr','S',291,_rmad3_addr
+	._var	'fmr0_addr','S',281,_fmr0_addr
+	._var	'fmr1_addr','S',281,_fmr1_addr
+	._var	'fmr2_addr','S',281,_fmr2_addr
+	._var	'fmr6_addr','S',281,_fmr6_addr
+	._var	'u0smr4_addr','S',281,_u0smr4_addr
+	._var	'u0smr3_addr','S',281,_u0smr3_addr
+	._var	'u0smr2_addr','S',281,_u0smr2_addr
+	._var	'u0smr_addr','S',281,_u0smr_addr
+	._var	'u0mr_addr','S',281,_u0mr_addr
+	._var	'u0brg_addr','S',281,_u0brg_addr
+	._var	'u0tb_addr','S',326,_u0tb_addr
+	._var	'u0c0_addr','S',281,_u0c0_addr
+	._var	'u0c1_addr','S',281,_u0c1_addr
+	._var	'u0rb_addr','S',326,_u0rb_addr
+	._var	'ucon_addr','S',281,_ucon_addr
+	._var	'u1smr4_addr','S',281,_u1smr4_addr
+	._var	'u1smr3_addr','S',281,_u1smr3_addr
+	._var	'u1smr2_addr','S',281,_u1smr2_addr
+	._var	'u1smr_addr','S',281,_u1smr_addr
+	._var	'u1mr_addr','S',281,_u1mr_addr
+	._var	'u1brg_addr','S',281,_u1brg_addr
+	._var	'u1tb_addr','S',326,_u1tb_addr
+	._var	'u1c0_addr','S',281,_u1c0_addr
+	._var	'u1c1_addr','S',281,_u1c1_addr
+	._var	'u1rb_addr','S',326,_u1rb_addr
+	._var	'u2smr4_addr','S',281,_u2smr4_addr
+	._var	'u2smr3_addr','S',281,_u2smr3_addr
+	._var	'u2smr2_addr','S',281,_u2smr2_addr
+	._var	'u2smr_addr','S',281,_u2smr_addr
+	._var	'u2mr_addr','S',281,_u2mr_addr
+	._var	'u2brg_addr','S',281,_u2brg_addr
+	._var	'u2tb_addr','S',326,_u2tb_addr
+	._var	'u2c0_addr','S',281,_u2c0_addr
+	._var	'u2c1_addr','S',281,_u2c1_addr
+	._var	'u2rb_addr','S',326,_u2rb_addr
+	._var	's3trr_addr','S',281,_s3trr_addr
+	._var	's3c_addr','S',281,_s3c_addr
+	._var	's3brg_addr','S',281,_s3brg_addr
+	._var	's4trr_addr','S',281,_s4trr_addr
+	._var	's4c_addr','S',281,_s4c_addr
+	._var	's4brg_addr','S',281,_s4brg_addr
+	._var	's34c2_addr','S',281,_s34c2_addr
+	._var	'u5smr4_addr','S',281,_u5smr4_addr
+	._var	'u5smr3_addr','S',281,_u5smr3_addr
+	._var	'u5smr2_addr','S',281,_u5smr2_addr
+	._var	'u5smr_addr','S',281,_u5smr_addr
+	._var	'u5mr_addr','S',281,_u5mr_addr
+	._var	'u5brg_addr','S',281,_u5brg_addr
+	._var	'u5tb_addr','S',326,_u5tb_addr
+	._var	'u5c0_addr','S',281,_u5c0_addr
+	._var	'u5c1_addr','S',281,_u5c1_addr
+	._var	'u5rb_addr','S',326,_u5rb_addr
+	._var	'u6smr4_addr','S',281,_u6smr4_addr
+	._var	'u6smr3_addr','S',281,_u6smr3_addr
+	._var	'u6smr2_addr','S',281,_u6smr2_addr
+	._var	'u6smr_addr','S',281,_u6smr_addr
+	._var	'u6mr_addr','S',281,_u6mr_addr
+	._var	'u6brg_addr','S',281,_u6brg_addr
+	._var	'u6tb_addr','S',326,_u6tb_addr
+	._var	'u6c0_addr','S',281,_u6c0_addr
+	._var	'u6c1_addr','S',281,_u6c1_addr
+	._var	'u6rb_addr','S',326,_u6rb_addr
+	._var	'u7smr4_addr','S',281,_u7smr4_addr
+	._var	'u7smr3_addr','S',281,_u7smr3_addr
+	._var	'u7smr2_addr','S',281,_u7smr2_addr
+	._var	'u7smr_addr','S',281,_u7smr_addr
+	._var	'u7mr_addr','S',281,_u7mr_addr
+	._var	'u7brg_addr','S',281,_u7brg_addr
+	._var	'u7tb_addr','S',326,_u7tb_addr
+	._var	'u7c0_addr','S',281,_u7c0_addr
+	._var	'u7c1_addr','S',281,_u7c1_addr
+	._var	'u7rb_addr','S',326,_u7rb_addr
+	._var	's00_addr','S',281,_s00_addr
+	._var	's0d0_addr','S',281,_s0d0_addr
+	._var	's1d0_addr','S',281,_s1d0_addr
+	._var	's20_addr','S',281,_s20_addr
+	._var	's2d0_addr','S',281,_s2d0_addr
+	._var	's3d0_addr','S',281,_s3d0_addr
+	._var	's4d0_addr','S',281,_s4d0_addr
+	._var	's10_addr','S',281,_s10_addr
+	._var	's11_addr','S',281,_s11_addr
+	._var	's0d1_addr','S',281,_s0d1_addr
+	._var	's0d2_addr','S',281,_s0d2_addr
+	._var	'tbsr_addr','S',281,_tbsr_addr
+	._var	'ta11_addr','S',326,_ta11_addr
+	._var	'ta21_addr','S',326,_ta21_addr
+	._var	'ta41_addr','S',326,_ta41_addr
+	._var	'invc0_addr','S',281,_invc0_addr
+	._var	'invc1_addr','S',281,_invc1_addr
+	._var	'idb0_addr','S',281,_idb0_addr
+	._var	'idb1_addr','S',281,_idb1_addr
+	._var	'dtt_addr','S',281,_dtt_addr
+	._var	'ictb2_addr','S',281,_ictb2_addr
+	._var	'pdrf_addr','S',281,_pdrf_addr
+	._var	'tb3_addr','S',326,_tb3_addr
+	._var	'tb4_addr','S',326,_tb4_addr
+	._var	'tb5_addr','S',326,_tb5_addr
+	._var	'pfcr_addr','S',281,_pfcr_addr
+	._var	'tb3mr_addr','S',281,_tb3mr_addr
+	._var	'tb4mr_addr','S',281,_tb4mr_addr
+	._var	'tb5mr_addr','S',281,_tb5mr_addr
+	._var	'tabsr_addr','S',281,_tabsr_addr
+	._var	'onsf_addr','S',281,_onsf_addr
+	._var	'trgsr_addr','S',281,_trgsr_addr
+	._var	'udf_addr','S',281,_udf_addr
+	._var	'ta0_addr','S',326,_ta0_addr
+	._var	'ta1_addr','S',326,_ta1_addr
+	._var	'ta2_addr','S',326,_ta2_addr
+	._var	'ta3_addr','S',326,_ta3_addr
+	._var	'ta4_addr','S',326,_ta4_addr
+	._var	'tb0_addr','S',326,_tb0_addr
+	._var	'tb1_addr','S',326,_tb1_addr
+	._var	'tb2_addr','S',326,_tb2_addr
+	._var	'ta0mr_addr','S',281,_ta0mr_addr
+	._var	'ta1mr_addr','S',281,_ta1mr_addr
+	._var	'ta2mr_addr','S',281,_ta2mr_addr
+	._var	'ta3mr_addr','S',281,_ta3mr_addr
+	._var	'ta4mr_addr','S',281,_ta4mr_addr
+	._var	'tb0mr_addr','S',281,_tb0mr_addr
+	._var	'tb1mr_addr','S',281,_tb1mr_addr
+	._var	'tb2mr_addr','S',281,_tb2mr_addr
+	._var	'tb2sc_addr','S',281,_tb2sc_addr
+	._var	'rtcsec_addr','S',281,_rtcsec_addr
+	._var	'rtcmin_addr','S',281,_rtcmin_addr
+	._var	'rtchr_addr','S',281,_rtchr_addr
+	._var	'rtcwk_addr','S',281,_rtcwk_addr
+	._var	'rtccr1_addr','S',281,_rtccr1_addr
+	._var	'rtccr2_addr','S',281,_rtccr2_addr
+	._var	'rtccsr_addr','S',281,_rtccsr_addr
+	._var	'rtccsec_addr','S',281,_rtccsec_addr
+	._var	'rtccmin_addr','S',281,_rtccmin_addr
+	._var	'rtcchr_addr','S',281,_rtcchr_addr
+	._var	'cecc1_addr','S',281,_cecc1_addr
+	._var	'cecc2_addr','S',281,_cecc2_addr
+	._var	'cecc3_addr','S',281,_cecc3_addr
+	._var	'cecc4_addr','S',281,_cecc4_addr
+	._var	'cecflg_addr','S',281,_cecflg_addr
+	._var	'cisel_addr','S',281,_cisel_addr
+	._var	'cctb1_addr','S',281,_cctb1_addr
+	._var	'cctb2_addr','S',281,_cctb2_addr
+	._var	'ccrb1_addr','S',281,_ccrb1_addr
+	._var	'ccrb2_addr','S',281,_ccrb2_addr
+	._var	'cradri1_addr','S',281,_cradri1_addr
+	._var	'cradri2_addr','S',281,_cradri2_addr
+	._var	'pur0_addr','S',281,_pur0_addr
+	._var	'pur1_addr','S',281,_pur1_addr
+	._var	'pur2_addr','S',281,_pur2_addr
+	._var	'pcr_addr','S',281,_pcr_addr
+	._var	'nmidf_addr','S',281,_nmidf_addr
+	._var	'pwmcon0_addr','S',281,_pwmcon0_addr
+	._var	'pwmpre0_addr','S',281,_pwmpre0_addr
+	._var	'pwmreg0_addr','S',281,_pwmreg0_addr
+	._var	'pwmpre1_addr','S',281,_pwmpre1_addr
+	._var	'pwmreg1_addr','S',281,_pwmreg1_addr
+	._var	'pwmcon1_addr','S',281,_pwmcon1_addr
+	._var	'cspr_addr','S',281,_cspr_addr
+	._var	'wdtr_addr','S',281,_wdtr_addr
+	._var	'wdts_addr','S',281,_wdts_addr
+	._var	'wdc_addr','S',281,_wdc_addr
+	._var	'dm2sl_addr','S',281,_dm2sl_addr
+	._var	'dm3sl_addr','S',281,_dm3sl_addr
+	._var	'dm0sl_addr','S',281,_dm0sl_addr
+	._var	'dm1sl_addr','S',281,_dm1sl_addr
+	._var	'ainrst_addr','S',281,_ainrst_addr
+	._var	'crcsar_addr','S',326,_crcsar_addr
+	._var	'crcmr_addr','S',281,_crcmr_addr
+	._var	'crcd_addr','S',326,_crcd_addr
+	._var	'crcin_addr','S',281,_crcin_addr
+	._var	'ad0_addr','S',326,_ad0_addr
+	._var	'ad1_addr','S',326,_ad1_addr
+	._var	'ad2_addr','S',326,_ad2_addr
+	._var	'ad3_addr','S',326,_ad3_addr
+	._var	'ad4_addr','S',326,_ad4_addr
+	._var	'ad5_addr','S',326,_ad5_addr
+	._var	'ad6_addr','S',326,_ad6_addr
+	._var	'ad7_addr','S',326,_ad7_addr
+	._var	'adcon2_addr','S',281,_adcon2_addr
+	._var	'adcon0_addr','S',281,_adcon0_addr
+	._var	'adcon1_addr','S',281,_adcon1_addr
+	._var	'da0_addr','S',281,_da0_addr
+	._var	'da1_addr','S',281,_da1_addr
+	._var	'dacon_addr','S',281,_dacon_addr
+	._var	'p0_addr','S',281,_p0_addr
+	._var	'p1_addr','S',281,_p1_addr
+	._var	'pd0_addr','S',281,_pd0_addr
+	._var	'pd1_addr','S',281,_pd1_addr
+	._var	'p2_addr','S',281,_p2_addr
+	._var	'p3_addr','S',281,_p3_addr
+	._var	'pd2_addr','S',281,_pd2_addr
+	._var	'pd3_addr','S',281,_pd3_addr
+	._var	'p4_addr','S',281,_p4_addr
+	._var	'p5_addr','S',281,_p5_addr
+	._var	'pd4_addr','S',281,_pd4_addr
+	._var	'pd5_addr','S',281,_pd5_addr
+	._var	'p6_addr','S',281,_p6_addr
+	._var	'p7_addr','S',281,_p7_addr
+	._var	'pd6_addr','S',281,_pd6_addr
+	._var	'pd7_addr','S',281,_pd7_addr
+	._var	'p8_addr','S',281,_p8_addr
+	._var	'p9_addr','S',281,_p9_addr
+	._var	'pd8_addr','S',281,_pd8_addr
+	._var	'pd9_addr','S',281,_pd9_addr
+	._var	'p10_addr','S',281,_p10_addr
+	._var	'pd10_addr','S',281,_pd10_addr
+	._var	'pmc0hdpmin_addr','S',326,_pmc0hdpmin_addr
+	._var	'pmc0hdpmax_addr','S',326,_pmc0hdpmax_addr
+	._var	'pmc0d0pmin_addr','S',281,_pmc0d0pmin_addr
+	._var	'pmc0d0pmax_addr','S',281,_pmc0d0pmax_addr
+	._var	'pmc0d1pmin_addr','S',281,_pmc0d1pmin_addr
+	._var	'pmc0d1pmax_addr','S',281,_pmc0d1pmax_addr
+	._var	'pmc0tim_addr','S',326,_pmc0tim_addr
+	._var	'pmc0bc_addr','S',326,_pmc0bc_addr
+	._var	'pmc0dat0_addr','S',281,_pmc0dat0_addr
+	._var	'pmc0dat1_addr','S',281,_pmc0dat1_addr
+	._var	'pmc0dat2_addr','S',281,_pmc0dat2_addr
+	._var	'pmc0dat3_addr','S',281,_pmc0dat3_addr
+	._var	'pmc0dat4_addr','S',281,_pmc0dat4_addr
+	._var	'pmc0dat5_addr','S',281,_pmc0dat5_addr
+	._var	'pmc0rbit_addr','S',281,_pmc0rbit_addr
+	._var	'pmc1hdpmin_addr','S',326,_pmc1hdpmin_addr
+	._var	'pmc1hdpmax_addr','S',326,_pmc1hdpmax_addr
+	._var	'pmc1d0pmin_addr','S',281,_pmc1d0pmin_addr
+	._var	'pmc1d0pmax_addr','S',281,_pmc1d0pmax_addr
+	._var	'pmc1d1pmin_addr','S',281,_pmc1d1pmin_addr
+	._var	'pmc1d1pmax_addr','S',281,_pmc1d1pmax_addr
+	._var	'pmc1tim_addr','S',326,_pmc1tim_addr
+	._var	'pmc1bc_addr','S',326,_pmc1bc_addr
+	._type	345,'O',3
+	._type	346,'x',3,4
+	._type	346,'m','eeprom_addr',0,18
+	._type	346,'m','event_filename',0,18
+	._type	346,'m','event_adjusteflag',0,3
+	._type	346,'m','tempdatep',0,345
+	._type	347,'P',346
+	._type	348,'T','TSave_General_Event',347
+	._type	349,'O',3
+	._type	350,'x',3,5
+	._type	350,'m','Card_Addr',0,18
+	._type	350,'m','DataPointer',0,349
+	._type	350,'m','Data_Length',0,18
+	._type	350,'m','DeviceName',0,3
+	._type	350,'m','OperationType',0,3
+	._type	351,'P',350
+	._type	352,'T','TSpec_Event',351
+	._type	353,'x',3,4
+	._type	353,'m','eeprom_addr',0,18
+	._type	353,'m','event_filename',0,18
+	._type	353,'m','event_adjusteflag',0,3
+	._type	353,'m','storekind',0,3
+	._type	354,'P',353
+	._type	355,'T','TGeneral_Event',354
+	._var	'Clear_Demand_Mode','E',3
+	._var	'EventEnergyValid_Flag','E',3
+	._type	356,'Z',3,7
+	._var	'Event_AmpHour','E',356
+	._var	'EventCriticalVoltage_Flag','E',3
+	._type	357,'Z',400,3
+	._var	'TempEventData','E',357
+	._type	358,'Z',2,7
+	._var	'lostvoltenergyall','E',358
+	._type	359,'Z',6,7
+	._var	'lostvoltenergy','E',359
+	._type	360,'v'
+	._type	361,'v'
+	._type	362,'x',360,1
+	._type	362,'m','',0,361
+	._var	'EventTimeAdd','F',362
+	._type	363,'v'
+	._type	364,'v'
+	._type	365,'x',363,1
+	._type	365,'m','',0,364
+	._var	'New2007_Event','F',365
+	._type	366,'v'
+	._type	367,'v'
+	._type	368,'x',366,1
+	._type	368,'m','',0,367
+	._var	'EventRecordAdjustEnergy','F',368
+	._type	369,'v'
+	._type	370,'v'
+	._type	371,'x',369,1
+	._type	371,'m','',0,370
+	._var	'EventData_PowerDown_Save','F',371
+	._type	372,'v'
+	._type	373,'x',3,1
+	._type	373,'m','',0,372
+	._var	'EventData_PowerOn_Check','F',373
+	._type	374,'v'
+	._type	375,'x',3,1
+	._type	375,'m','',0,374
+	._var	'EventRecord_Poweron_Check','F',375
+	._type	376,'v'
+	._type	377,'v'
+	._type	378,'x',376,1
+	._type	378,'m','',0,377
+	._var	'PowerDownEvent_OnCheck','F',378
+	._type	379,'x',18,2
+	._type	379,'m','',0,7
+	._type	379,'m','',0,7
+	._var	'ProgrammeEvent','F',379
+	._type	380,'x',18,1
+	._type	380,'m','',0,7
+	._var	'ClearMeterRecord','F',380
+	._type	381,'v'
+	._type	382,'v'
+	._type	383,'x',381,1
+	._type	383,'m','',0,382
+	._var	'VoltStatSetDefault','F',383
+	._type	384,'v'
+	._type	385,'v'
+	._type	386,'x',384,1
+	._type	386,'m','',0,385
+	._var	'VoltStatInit','F',386
+	._type	387,'v'
+	._type	388,'v'
+	._type	389,'x',387,1
+	._type	389,'m','',0,388
+	._var	'VoltStatisticCheck','F',389
+	._type	390,'v'
+	._type	391,'v'
+	._type	392,'x',390,1
+	._type	392,'m','',0,391
+	._var	'OverDemandEvent','F',392
+	._type	393,'x',18,1
+	._type	393,'m','',0,7
+	._var	'AdjustTimeRecord','F',393
+	._type	394,'x',18,1
+	._type	394,'m','',0,7
+	._var	'ClearDemandRecord','F',394
+	._type	395,'x',18,2
+	._type	395,'m','',0,7
+	._type	395,'m','',0,3
+	._var	'ProgWeekRecord','F',395
+	._type	396,'x',18,2
+	._type	396,'m','',0,7
+	._type	396,'m','',0,3
+	._var	'ProgAEModeRecord','F',396
+	._type	397,'x',18,2
+	._type	397,'m','',0,7
+	._type	397,'m','',0,3
+	._var	'ProgNEMode1Record','F',397
+	._type	398,'x',18,2
+	._type	398,'m','',0,7
+	._type	398,'m','',0,3
+	._var	'ProgNEMode2Record','F',398
+	._type	399,'O',3
+	._type	400,'x',18,2
+	._type	400,'m','',0,7
+	._type	400,'m','',0,399
+	._var	'ProgBillDayRecord','F',400
+	._type	401,'x',18,1
+	._type	401,'m','',0,7
+	._var	'ProgYearSlotRecord','F',401
+	._type	402,'x',18,1
+	._type	402,'m','',0,7
+	._var	'ProgDailySlotRecord','F',402
+	._type	403,'x',3,2
+	._type	403,'m','',0,7
+	._type	403,'m','',0,7
+	._var	'ClearNewEventRecord','F',403
+	._type	404,'v'
+	._type	405,'x',16,1
+	._type	405,'m','',0,404
+	._var	'PrepVoltStatReadData','F',405
+	._type	406,'v'
+	._type	407,'v'
+	._type	408,'x',406,1
+	._type	408,'m','',0,407
+	._var	'ResetCpuEvent_OnCheck','F',408
+	._type	409,'v'
+	._type	410,'v'
+	._type	411,'x',409,1
+	._type	411,'m','',0,410
+	._var	'RunClockErrorRecord','F',411
+	._type	412,'v'
+	._type	413,'v'
+	._type	414,'x',412,1
+	._type	414,'m','',0,413
+	._var	'PowerUpClockErrorRecord','F',414
+	._type	415,'v'
+	._type	416,'v'
+	._type	417,'x',415,1
+	._type	417,'m','',0,416
+	._var	'EepromErrorRecord','F',417
+	._type	418,'v'
+	._type	419,'v'
+	._type	420,'x',418,1
+	._type	420,'m','',0,419
+	._var	'EnergyPassZeroRecord','F',420
+	._type	421,'v'
+	._type	422,'v'
+	._type	423,'x',421,1
+	._type	423,'m','',0,422
+	._var	'SetPrimaryRecord','F',423
+	._type	424,'v'
+	._type	425,'v'
+	._type	426,'x',424,1
+	._type	426,'m','',0,425
+	._var	'EepromEventSetDefault','F',426
+	._type	427,'v'
+	._type	428,'v'
+	._type	429,'x',427,1
+	._type	429,'m','',0,428
+	._var	'EMeterPowerdownRecord','F',429
+	._type	430,'x',18,2
+	._type	430,'m','',0,7
+	._type	430,'m','',0,7
+	._var	'ClearEventRecord','F',430
+	._type	431,'x',18,3
+	._type	431,'m','progman',0,7
+	._type	431,'m','progoldvaluep',0,3
+	._type	431,'m','sort',0,3
+	._var	'ProgAEMode_NEMode1_NEMode2_Record','F',431
+	._type	432,'v'
+	._type	433,'v'
+	._type	434,'x',432,1
+	._type	434,'m','',0,433
+	._var	'OpenBoxCoverEvent_Check','F',434
+	._type	435,'v'
+	._type	436,'v'
+	._type	437,'x',435,1
+	._type	437,'m','',0,436
+	._var	'EventFlagPowerOnInit','F',437
+	._type	438,'v'
+	._type	439,'v'
+	._type	440,'x',438,1
+	._type	440,'m','',0,439
+	._var	'ProgrammeEventEnd_Check_Payment','F',440
+	._type	441,'v'
+	._type	442,'v'
+	._type	443,'x',441,1
+	._type	443,'m','',0,442
+	._var	'ProgrammeEventEnd_Check','F',443
+	._type	444,'v'
+	._type	445,'v'
+	._type	446,'x',444,1
+	._type	446,'m','',0,445
+	._var	'VoltStatisticFunc','F',446
+	._type	447,'v'
+	._type	448,'v'
+	._type	449,'x',447,1
+	._type	449,'m','',0,448
+	._var	'AdjustMeterRecord','F',449
+	._type	450,'x',3,1
+	._type	450,'m','',0,7
+	._var	'PrepNewFirstEventData','F',450
+	._type	451,'O',3
+	._type	452,'O',7
+	._type	453,'x',3,4
+	._type	453,'m','Pointer_Addr',0,18
+	._type	453,'m','Times_Addr',0,18
+	._type	453,'m','Event_Pointer',0,451
+	._type	453,'m','Event_times',0,452
+	._var	'Save_EventTimesANDPointer_4byte','F',453
+	._type	454,'O',3
+	._type	455,'O',7
+	._type	456,'x',7,5
+	._type	456,'m','eventaddr',0,18
+	._type	456,'m','eventaddrkind',0,3
+	._type	456,'m','eventendtimepointer',0,454
+	._type	456,'m','eventlasttimeaddr',0,18
+	._type	456,'m','eventlasttimepointer',0,455
+	._var	'Prepare_For_EventLastTime','F',456
+	._type	457,'v'
+	._type	458,'x',457,1
+	._type	458,'m','eventcode',0,7
+	._var	'Refresh_EventData','F',458
+	._type	459,'x',3,1
+	._type	459,'m','eventcode',0,7
+	._var	'Refresh_AddTime','F',459
+	._type	460,'v'
+	._type	461,'v'
+	._type	462,'x',460,1
+	._type	462,'m','',0,461
+	._var	'ClearEventDate_BatteryPowerOn','F',462
+	._type	463,'x',16,1
+	._type	463,'m','',0,7
+	._var	'PrepLostVoltEnergyData','F',463
+	._type	464,'v'
+	._type	465,'v'
+	._type	466,'x',464,1
+	._type	466,'m','',0,465
+	._var	'PowerAbnormalEventCheck','F',466
+	._type	467,'v'
+	._type	468,'v'
+	._type	469,'x',467,1
+	._type	469,'m','',0,468
+	._var	'ClockBatteryDisplayBattery_Event','F',469
+	._type	470,'v'
+	._type	471,'x',470,1
+	._type	471,'m','',0,3
+	._var	'PdOpenCoverCheckInit','F',471
+	._type	472,'v'
+	._type	473,'v'
+	._type	474,'x',472,1
+	._type	474,'m','',0,473
+	._var	'PdOpenCoverCheck','F',474
+	._type	475,'v'
+	._type	476,'v'
+	._type	477,'x',475,1
+	._type	477,'m','',0,476
+	._var	'PdOpenCoverCheckPowerUpDeal','F',477
+	._type	478,'v'
+	._type	479,'v'
+	._type	480,'x',478,1
+	._type	480,'m','',0,479
+	._var	'ClearEventAll','F',480
+	._type	481,'v'
+	._type	482,'x',481,1
+	._type	482,'m','eventID',0,7
+	._var	'ClearEventCommDeal','F',482
+	._type	483,'v'
+	._type	484,'v'
+	._type	485,'x',483,1
+	._type	485,'m','',0,484
+	._var	'ClearEventDataPowerOn','F',485
+	._type	486,'v'
+	._type	487,'O',3
+	._type	488,'x',486,2
+	._type	488,'m','pEventPoint',0,487
+	._type	488,'m','begin_file',0,18
+	._var	'ClearEvent_EventBegin','F',488
+	._type	489,'U','BYTE_BIT',0
+	._type	490,'Z',2,489
+	._type	491,'Z',3,490
+	._var	'VoltCheck_N','E',491
+	._type	493,'Z',4,7
+	._type	494,'Z',2,7
+	._type	495,'Z',6,3
+	._type	496,'Z',2,495
+	._type	497,'Z',2,7
+	._type	498,'Z',2,18
+	._type	492,'S','VoltStatistic_Data',48
+	._type	492,'m','checktime',493,0
+	._type	492,'m','checkvolt',494,16
+	._type	492,'m','checkvolttime',496,24
+	._type	492,'m','voltratebcd',497,36
+	._type	492,'m','checkvoltbcd',498,44
+	._type	499,'Z',4,492
+	._var	'VoltStat','E',499
+	._type	500,'Z',74,7
+	._var	'Clearevent_ID','E',500
+	._type	501,'S','PDOPENCOVER_STRUCTURE',0
+	._type	502,'Z',2,501
+	._var	'pdopencovercheckdata','E',502
+	._type	503,'U','EVENTSTATUS',0
+	._var	'eventstatusinfo','E',503
+	._type	504,'O',3
+	._type	505,'x',3,2
+	._type	505,'m','Times_Addr',0,18
+	._type	505,'m','EventReport_times',0,504
+	._var	'Save_EventReportTimes','F',505
+	._type	506,'O',3
+	._type	507,'x',16,2
+	._type	507,'m','src_data',0,3
+	._type	507,'m','dest_data',0,506
+	._var	'BCD2Byte','F',507
+	._type	508,'x',3,1
+	._type	508,'m','bcd',0,3
+	._var	'OB_H','F',508
+	._type	509,'x',3,1
+	._type	509,'m','hex',0,3
+	._var	'OH_B','F',509
+	._type	510,'O',3
+	._type	511,'x',3,1
+	._type	511,'m','time',0,510
+	._var	'CheckTime','F',511
+	._type	512,'x',3,1
+	._type	512,'m','data',0,3
+	._var	'CheckBCD','F',512
+	._type	513,'O',3
+	._type	514,'x',3,2
+	._type	514,'m','input',0,513
+	._type	514,'m','n',0,3
+	._var	'CheckBCD_NByte','F',514
+	._type	515,'x',7,1
+	._type	515,'m','rData',0,20
+	._var	'ABS','F',515
+	._type	516,'x',20,1
+	._type	516,'m','seq',0,19
+	._var	'ten_seq','F',516
+	._type	517,'v'
+	._type	518,'O',3
+	._type	519,'O',3
+	._type	520,'x',517,3
+	._type	520,'m','',0,18
+	._type	520,'m','',0,518
+	._type	520,'m','',0,519
+	._var	'HexToBcd','F',520
+	._type	521,'v'
+	._type	522,'O',3
+	._type	523,'O',3
+	._type	524,'x',521,3
+	._type	524,'m','',0,18
+	._type	524,'m','',0,522
+	._type	524,'m','',0,523
+	._var	'BcdToHex','F',524
+	._type	525,'v'
+	._type	526,'O',3
+	._type	527,'x',525,3
+	._type	527,'m','rSource',0,7
+	._type	527,'m','rDesc',0,526
+	._type	527,'m','rLength',0,3
+	._var	'FormatBCD','F',527
+	._type	528,'O',3
+	._type	529,'O',3
+	._type	530,'x',16,3
+	._type	530,'m','rData1',0,528
+	._type	530,'m','rData2',0,529
+	._type	530,'m','rLength',0,3
+	._var	'CompareBytes','F',530
+	._type	531,'v'
+	._type	532,'O',3
+	._type	533,'O',3
+	._type	534,'x',531,3
+	._type	534,'m','',0,532
+	._type	534,'m','',0,533
+	._type	534,'m','',0,18
+	._var	'HexToACK','F',534
+	._type	535,'v'
+	._type	536,'O',3
+	._type	537,'O',3
+	._type	538,'x',535,3
+	._type	538,'m','',0,536
+	._type	538,'m','',0,537
+	._type	538,'m','',0,18
+	._var	'ACKToHex','F',538
+	._type	539,'x',7,1
+	._type	539,'m','unit_flag',0,3
+	._var	'search_unit','F',539
+	._type	540,'v'
+	._type	541,'O',3
+	._type	542,'O',3
+	._type	543,'x',540,3
+	._type	543,'m','n',0,3
+	._type	543,'m','src_data',0,541
+	._type	543,'m','dest_data',0,542
+	._var	'HexToBcdnByte','F',543
+	._type	544,'v'
+	._type	545,'O',3
+	._type	546,'O',3
+	._type	547,'x',544,3
+	._type	547,'m','n',0,3
+	._type	547,'m','src_data',0,545
+	._type	547,'m','dest_data',0,546
+	._var	'BcdToHexnByte','F',547
+	._type	548,'O',3
+	._type	549,'O',3
+	._type	550,'O',3
+	._type	551,'x',548,3
+	._type	551,'m','Dest',0,549
+	._type	551,'m','Src',0,550
+	._type	551,'m','len',0,3
+	._var	'memcpy','F',551
+	._type	552,'x',20,2
+	._type	552,'m','input',0,20
+	._type	552,'m','mode',0,3
+	._var	'format_data','F',552
+	._type	553,'Z',230,3
+	._type	554,'Z',3,553
+	._var	'CommB','E',554
+	._var	'ProgramEventFlag','E',3
+	._type	556,'g','b0',0,1,3
+	._type	557,'g','b1',0,1,3
+	._type	558,'g','b2',0,1,3
+	._type	559,'g','b3',0,1,3
+	._type	560,'g','b4',0,1,3
+	._type	561,'g','b5',0,1,3
+	._type	562,'g','b6',0,1,3
+	._type	563,'g','b7',0,1,3
+	._type	555,'S','BIT',1
+	._type	555,'m','b0',556,0
+	._type	555,'m','b1',557,1
+	._type	555,'m','b2',558,2
+	._type	555,'m','b3',559,3
+	._type	555,'m','b4',560,4
+	._type	555,'m','b5',561,5
+	._type	555,'m','b6',562,6
+	._type	555,'m','b7',563,7
+	._type	489,'U','BYTE_BIT',1
+	._type	489,'m','bit',555,0
+	._type	489,'m','byte',3,0
+	._var	'JustMeterDataFlag','E',489
+	._type	564,'S','DATEANDTIME_DEF',7
+	._type	564,'m','Year',3,0
+	._type	564,'m','Month',3,1
+	._type	564,'m','Day',3,2
+	._type	564,'m','Hour',3,3
+	._type	564,'m','Min',3,4
+	._type	564,'m','Sec',3,5
+	._type	564,'m','Week',3,6
+	._var	'JustMeterDateFlag','E',564
+	._var	'JustMeterFlag','E',3
+	._type	566,'g','firstreceivecomm',0,1,3
+	._type	567,'g','havebackframe',0,1,3
+	._type	568,'g','sendbackframe',0,1,3
+	._type	569,'g','readloadrecord',0,1,3
+	._type	570,'g','firstreadloadrecord',0,1,3
+	._type	571,'g','lastreadloadrecord',0,1,3
+	._type	572,'g','ZJ_Read_Big_Block',0,1,3
+	._type	573,'g','ZJ_Read_Lit_Block',0,1,3
+	._type	574,'g','ZJ_Read_Single',0,1,3
+	._type	575,'g','ZJ_zerodata',0,1,3
+	._type	576,'g','ZJ_overdata',0,1,3
+	._type	577,'g','ZJ_firstzjto645',0,1,3
+	._type	578,'g','BroadCasrAddress',0,1,3
+	._type	580,'Z',4,3
+	._type	581,'Z',2,18
+	._type	579,'U','ID',4
+	._type	579,'m','d',580,0
+	._type	579,'m','i',18,0
+	._type	579,'m','new_i',581,0
+	._type	579,'m','l',7,0
+	._type	582,'O',3
+	._type	583,'Z',10,3
+	._type	565,'S','FindCommand_Result',47
+	._type	565,'m','firstreceivecomm',566,0
+	._type	565,'m','havebackframe',567,1
+	._type	565,'m','sendbackframe',568,2
+	._type	565,'m','readloadrecord',569,3
+	._type	565,'m','firstreadloadrecord',570,4
+	._type	565,'m','lastreadloadrecord',571,5
+	._type	565,'m','ZJ_Read_Big_Block',572,6
+	._type	565,'m','ZJ_Read_Lit_Block',573,7
+	._type	565,'m','ZJ_Read_Single',574,8
+	._type	565,'m','ZJ_zerodata',575,9
+	._type	565,'m','ZJ_overdata',576,10
+	._type	565,'m','ZJ_firstzjto645',577,11
+	._type	565,'m','BroadCasrAddress',578,12
+	._type	565,'m','All_AA_Address',3,2
+	._type	565,'m','model',3,3
+	._type	565,'m','c',3,4
+	._type	565,'m','len',18,5
+	._type	565,'m','addr',3,7
+	._type	565,'m','id',579,8
+	._type	565,'m','dataaddr',582,12
+	._type	565,'m','idt',579,14
+	._type	565,'m','lent',18,18
+	._type	565,'m','lena',18,20
+	._type	565,'m','ct',3,22
+	._type	565,'m','idd',579,23
+	._type	565,'m','ZJ_n',3,27
+	._type	565,'m','ZJ_len',3,28
+	._type	565,'m','uartx',3,29
+	._type	565,'m','sum',3,30
+	._type	565,'m','passerword',3,31
+	._type	565,'m','Frame_serial',3,32
+	._type	565,'m','Programer_code',7,33
+	._type	565,'m','command',583,37
+	._type	584,'Z',4,565
+	._var	'cx','E',584
+	._type	585,'Z',32,3
+	._var	'Readdata_buff','E',585
+	._type	586,'Z',3,20
+	._var	'COMM_Curr','E',586
+	._type	587,'Z',4,20
+	._var	'COMM_Factor','E',587
+	._type	588,'Z',4,20
+	._var	'COMM_Active_power','E',588
+	._type	589,'Z',4,20
+	._var	'COMM_Reactive_power','E',589
+	._type	590,'Z',4,20
+	._var	'COMM_Visual_power','E',590
+	._type	591,'Z',2,20
+	._var	'COMM_Current_Demand','E',591
+	._type	592,'Z',2,3
+	._var	'Freeze_Flag_DayHour','E',592
+	._var	'Comm_DailyOrYear_Slot','E',3
+	._type	593,'Z',42,3
+	._var	'Comm_Firrespon_SecDispos_Buff','E',593
+	._type	594,'Z',3,3
+	._var	'Comm_Firrespon_SecDispos_Uart','E',594
+	._var	'GPRS_Status','E',3
+	._type	595,'Z',2,18
+	._var	'Voltage_ad_data','E',595
+	._var	'Displayfinish_flag','E',3
+	._var	'FullScreenTime','E',18
+	._var	'ad_Flag','E',3
+	._var	'ad_finish_Flag','E',3
+	._var	'meter_model_ok','E',7
+	._var	'fix_ad_data','E',18
+	._type	596,'Z',2,7
+	._type	597,'Z',9,596
+	._var	'comm_plus_energy_01wh','E',597
+	._type	598,'Z',2,7
+	._type	599,'Z',9,598
+	._var	'comm_nega_energy_01wh','E',599
+	._type	600,'v'
+	._type	601,'x',600,1
+	._type	601,'m','',0,3
+	._var	'Init_Comm','F',601
+	._type	602,'v'
+	._type	603,'x',602,1
+	._type	603,'m','',0,3
+	._var	'Interr_Comm_R','F',603
+	._type	604,'v'
+	._type	605,'x',604,1
+	._type	605,'m','',0,3
+	._var	'Interr_Comm_W','F',605
+	._type	606,'v'
+	._type	607,'x',606,3
+	._type	607,'m','',0,3
+	._type	607,'m','',0,3
+	._type	607,'m','',0,3
+	._var	'Communication','F',607
+	._type	608,'x',3,2
+	._type	608,'m','',0,3
+	._type	608,'m','',0,3
+	._var	'FindComCommand','F',608
+	._type	609,'x',3,2
+	._type	609,'m','',0,3
+	._type	609,'m','',0,3
+	._var	'AnswerComCommand','F',609
+	._type	610,'O',3
+	._type	611,'O',3
+	._type	612,'x',16,6
+	._type	612,'m','',0,579
+	._type	612,'m','',0,610
+	._type	612,'m','',0,18
+	._type	612,'m','',0,3
+	._type	612,'m','',0,611
+	._type	612,'m','',0,3
+	._var	'TransferData','F',612
+	._type	613,'v'
+	._type	614,'x',7,1
+	._type	614,'m','',0,613
+	._var	'GetNowTime','F',614
+	._type	615,'x',3,2
+	._type	615,'m','',0,7
+	._type	615,'m','',0,7
+	._var	'GetTimeCount','F',615
+	._type	616,'x',3,2
+	._type	616,'m','',0,3
+	._type	616,'m','',0,3
+	._var	'F_Ar','F',616
+	._type	617,'v'
+	._type	618,'x',617,1
+	._type	618,'m','',0,3
+	._var	'ReadData','F',618
+	._type	619,'v'
+	._type	620,'v'
+	._type	621,'x',619,1
+	._type	621,'m','',0,620
+	._var	'WriteData','F',621
+	._type	622,'v'
+	._type	623,'v'
+	._type	624,'x',622,1
+	._type	624,'m','',0,623
+	._var	'BroadcastJustTime','F',624
+	._type	625,'v'
+	._type	626,'v'
+	._type	627,'x',625,1
+	._type	627,'m','',0,626
+	._var	'WriteAddress','F',627
+	._type	628,'v'
+	._type	629,'v'
+	._type	630,'x',628,1
+	._type	630,'m','',0,629
+	._var	'WriteBaud','F',630
+	._type	631,'v'
+	._type	632,'v'
+	._type	633,'x',631,1
+	._type	633,'m','',0,632
+	._var	'WritePassword','F',633
+	._type	634,'v'
+	._type	635,'v'
+	._type	636,'x',634,1
+	._type	636,'m','',0,635
+	._var	'ClearDemand','F',636
+	._type	637,'v'
+	._type	638,'x',3,1
+	._type	638,'m','',0,637
+	._var	'R_W_Data','F',638
+	._type	639,'O',3
+	._type	640,'x',3,4
+	._type	640,'m','',0,18
+	._type	640,'m','',0,639
+	._type	640,'m','',0,18
+	._type	640,'m','',0,3
+	._var	'ReadLC256','F',640
+	._type	641,'O',3
+	._type	642,'x',3,4
+	._type	642,'m','',0,18
+	._type	642,'m','',0,641
+	._type	642,'m','',0,18
+	._type	642,'m','',0,3
+	._var	'WriteLC256','F',642
+	._type	643,'x',3,3
+	._type	643,'m','',0,3
+	._type	643,'m','',0,3
+	._type	643,'m','',0,3
+	._var	'GetRecordAddr','F',643
+	._type	644,'v'
+	._type	645,'x',644,1
+	._type	645,'m','',0,18
+	._var	'Delay','F',645
+	._type	646,'x',3,2
+	._type	646,'m','',0,3
+	._type	646,'m','',0,3
+	._var	'CalDay','F',646
+	._type	647,'O',3
+	._type	648,'O',3
+	._type	649,'x',11,2
+	._type	649,'m','',0,647
+	._type	649,'m','',0,648
+	._var	'ComTime','F',649
+	._type	650,'x',3,2
+	._type	650,'m','',0,3
+	._type	650,'m','',0,3
+	._var	'ClearDemandCommAndKey','F',650
+	._type	651,'v'
+	._type	652,'x',651,2
+	._type	652,'m','',0,3
+	._type	652,'m','',0,3
+	._var	'Clear_PasswordErr','F',652
+	._type	653,'v'
+	._type	654,'v'
+	._type	655,'x',653,1
+	._type	655,'m','',0,654
+	._var	'CheckProgramKeyState','F',655
+	._type	656,'v'
+	._type	657,'v'
+	._type	658,'x',656,1
+	._type	658,'m','',0,657
+	._var	'IC_Set_Program','F',658
+	._type	659,'O',3
+	._type	660,'O',3
+	._type	661,'x',16,2
+	._type	661,'m','',0,659
+	._type	661,'m','',0,660
+	._var	'FreezeEvent_Energy','F',661
+	._type	662,'v'
+	._type	663,'x',16,1
+	._type	663,'m','',0,662
+	._var	'Read_SystemTime_YMDH','F',663
+	._type	664,'v'
+	._type	665,'x',16,1
+	._type	665,'m','',0,664
+	._var	'Read_SystemTime_HMS','F',665
+	._type	666,'v'
+	._type	667,'x',16,1
+	._type	667,'m','',0,666
+	._var	'Set_SystemTime_YMDH','F',667
+	._type	668,'v'
+	._type	669,'x',16,1
+	._type	669,'m','',0,668
+	._var	'Set_SystemTime_HMS','F',669
+	._type	670,'v'
+	._type	671,'x',16,1
+	._type	671,'m','',0,670
+	._var	'Set_DemandPeriod','F',671
+	._type	672,'v'
+	._type	673,'x',16,1
+	._type	673,'m','',0,672
+	._var	'Set_DemandSkipPeriod','F',673
+	._type	674,'v'
+	._type	675,'x',16,1
+	._type	675,'m','',0,674
+	._var	'Set_Activem_Erengy_Mode','F',675
+	._type	676,'v'
+	._type	677,'x',16,1
+	._type	677,'m','',0,676
+	._var	'Set_REActivem_Erengy_1_Mode','F',677
+	._type	678,'v'
+	._type	679,'x',16,1
+	._type	679,'m','',0,678
+	._var	'Set_REActivem_Erengy_2_Mode','F',679
+	._type	680,'v'
+	._type	681,'x',16,1
+	._type	681,'m','',0,680
+	._var	'Set_ActivePulseConst','F',681
+	._type	682,'v'
+	._type	683,'x',16,1
+	._type	683,'m','',0,682
+	._var	'Set_Erengypoint','F',683
+	._type	684,'v'
+	._type	685,'x',16,1
+	._type	685,'m','',0,684
+	._var	'Set_BILL_Day','F',685
+	._type	686,'v'
+	._type	687,'x',16,1
+	._type	687,'m','',0,686
+	._var	'Set_SlotParemeter','F',687
+	._type	688,'v'
+	._type	689,'x',16,1
+	._type	689,'m','',0,688
+	._var	'Set_YearSlot','F',689
+	._type	690,'v'
+	._type	691,'x',16,1
+	._type	691,'m','',0,690
+	._var	'Set_ProgWeek','F',691
+	._type	692,'v'
+	._type	693,'x',16,1
+	._type	693,'m','',0,692
+	._var	'Set_Holiday','F',693
+	._type	694,'v'
+	._type	695,'x',16,1
+	._type	695,'m','',0,694
+	._var	'Set_DailySlot','F',695
+	._type	696,'v'
+	._type	697,'x',16,1
+	._type	697,'m','',0,696
+	._var	'Set_LoadRecoedBeginTime','F',697
+	._type	698,'v'
+	._type	699,'x',16,1
+	._type	699,'m','',0,698
+	._var	'Set_LoadRecoedPeriod','F',699
+	._type	700,'v'
+	._type	701,'x',16,1
+	._type	701,'m','',0,700
+	._var	'Set_MeterMode','F',701
+	._type	702,'v'
+	._type	703,'x',16,1
+	._type	703,'m','',0,702
+	._var	'Set_Meterlocktimes','F',703
+	._type	704,'v'
+	._type	705,'x',16,1
+	._type	705,'m','',0,704
+	._var	'Set_OutputModel','F',705
+	._type	706,'v'
+	._type	707,'x',16,1
+	._type	707,'m','',0,706
+	._var	'Exit_WorkRoomState','F',707
+	._type	708,'v'
+	._type	709,'x',16,1
+	._type	709,'m','',0,708
+	._var	'Read_primary_energy','F',709
+	._type	710,'v'
+	._type	711,'x',16,1
+	._type	711,'m','',0,710
+	._var	'Set_primary_energy','F',711
+	._type	712,'v'
+	._type	713,'x',16,1
+	._type	713,'m','',0,712
+	._var	'Read_WorkRoomState','F',713
+	._type	714,'v'
+	._type	715,'x',16,1
+	._type	715,'m','',0,714
+	._var	'Read_Freeze_Bit_0_data','F',715
+	._type	716,'v'
+	._type	717,'x',16,1
+	._type	717,'m','',0,716
+	._var	'Read_Freeze_Bit_1_data','F',717
+	._type	718,'v'
+	._type	719,'x',16,1
+	._type	719,'m','',0,718
+	._var	'Read_Freeze_Bit_2_data','F',719
+	._type	720,'v'
+	._type	721,'x',16,1
+	._type	721,'m','',0,720
+	._var	'Read_Freeze_Bit_3_data','F',721
+	._type	722,'v'
+	._type	723,'x',16,1
+	._type	723,'m','',0,722
+	._var	'Read_Freeze_Bit_4_data','F',723
+	._type	724,'v'
+	._type	725,'x',16,1
+	._type	725,'m','',0,724
+	._var	'Read_Freeze_Bit_5_data','F',725
+	._type	726,'v'
+	._type	727,'x',16,1
+	._type	727,'m','',0,726
+	._var	'Read_Freeze_Bit_6_data','F',727
+	._type	728,'v'
+	._type	729,'x',16,1
+	._type	729,'m','',0,728
+	._var	'Read_Freeze_Bit_7_data','F',729
+	._type	730,'v'
+	._type	731,'x',16,1
+	._type	731,'m','',0,730
+	._var	'Read_Freeze_Block_data','F',731
+	._type	732,'v'
+	._type	733,'x',16,1
+	._type	733,'m','',0,732
+	._var	'Read_Meter_lock_times','F',733
+	._type	734,'x',16,1
+	._type	734,'m','trans_format',0,3
+	._var	'Check_Parameter_Len_IS_ok','F',734
+	._type	735,'v'
+	._type	736,'x',16,1
+	._type	736,'m','',0,735
+	._var	'Pre_No_use_leaf_data','F',736
+	._type	737,'v'
+	._type	738,'x',16,1
+	._type	738,'m','',0,737
+	._var	'Set_Display_Number','F',738
+	._type	739,'v'
+	._type	740,'x',16,1
+	._type	740,'m','',0,739
+	._var	'Set_Commrate','F',740
+	._type	741,'v'
+	._type	742,'x',16,1
+	._type	742,'m','',0,741
+	._var	'Read_Freeze_Date','F',742
+	._type	743,'v'
+	._type	744,'x',16,1
+	._type	744,'m','',0,743
+	._var	'Set_CycleDisplayTime','F',744
+	._type	745,'x',16,0
+	._var	'Read_Far_IR_Commate','F',745
+	._type	746,'v'
+	._type	747,'x',16,1
+	._type	747,'m','',0,746
+	._var	'Set_CriticalVoltage','F',747
+	._type	748,'v'
+	._type	749,'x',16,1
+	._type	749,'m','',0,748
+	._var	'Set_CommAddr','F',749
+	._type	750,'v'
+	._type	751,'x',16,1
+	._type	751,'m','',0,750
+	._var	'Set_Show_USER_Code','F',751
+	._type	752,'v'
+	._type	753,'x',16,1
+	._type	753,'m','',0,752
+	._var	'Read_Sign_Instance_Variable','F',753
+	._type	754,'v'
+	._type	755,'x',16,1
+	._type	755,'m','',0,754
+	._var	'Read_Meter_Temperature','F',755
+	._type	756,'v'
+	._type	757,'x',16,1
+	._type	757,'m','',0,756
+	._var	'Read_YearSlot_Table','F',757
+	._type	758,'v'
+	._type	759,'x',16,1
+	._type	759,'m','',0,758
+	._var	'Read_DailySlot_Table','F',759
+	._type	760,'v'
+	._type	761,'x',16,1
+	._type	761,'m','',0,760
+	._var	'Comm_Initialize_FLASH','F',761
+	._type	762,'v'
+	._type	763,'x',16,1
+	._type	763,'m','',0,762
+	._var	'Read_Last_loss_voltage_start_time','F',763
+	._type	764,'v'
+	._type	765,'x',16,1
+	._type	765,'m','',0,764
+	._var	'Read_Last_loss_voltage_end_time','F',765
+	._type	766,'v'
+	._type	767,'x',16,1
+	._type	767,'m','',0,766
+	._var	'Set_Freeze_Period_Begin_time','F',767
+	._type	768,'v'
+	._type	769,'x',16,1
+	._type	769,'m','',0,768
+	._var	'Set_Freeze_Period','F',769
+	._type	770,'v'
+	._type	771,'x',16,1
+	._type	771,'m','',0,770
+	._var	'Set_TriffSwitchDate','F',771
+	._type	772,'v'
+	._type	773,'x',16,1
+	._type	773,'m','',0,772
+	._var	'Set_Cycle_Key_Display','F',773
+	._type	774,'v'
+	._type	775,'x',16,1
+	._type	775,'m','',0,774
+	._var	'Read_Meter_FILEDATE_VI','F',775
+	._type	776,'O',3
+	._var	'CommBP','E',776
+	._type	777,'O',565
+	._var	'CurrPC','E',777
+	._type	778,'Z',-1,3
+	._var	'WriteDateBuff','E',778
+	._type	779,'v'
+	._type	780,'x',16,1
+	._type	780,'m','',0,779
+	._var	'Set_ShowNoKeyRetTime','F',780
+	._type	781,'O',3
+	._type	782,'x',3,1
+	._type	782,'m','',0,781
+	._var	'CheckPasswordRight','F',782
+	._type	783,'v'
+	._type	784,'x',783,1
+	._type	784,'m','',0,3
+	._var	'CheckPasswoerErr','F',784
+	._type	785,'v'
+	._type	786,'x',785,1
+	._type	786,'m','',0,3
+	._var	'AppointTrasfPortBuff','F',786
+	._type	787,'O',3
+	._type	788,'x',18,2
+	._type	788,'m','ptr',0,787
+	._type	788,'m','len',0,3
+	._var	'Crc16l','F',788
+	._type	789,'v'
+	._type	790,'x',789,2
+	._type	790,'m','Which',0,3
+	._type	790,'m','flag',0,3
+	._var	'Set_which_Responsion_Flag','F',790
+	._type	791,'v'
+	._type	792,'x',16,1
+	._type	792,'m','',0,791
+	._var	'Set_JFPG_Triff','F',792
+	._type	793,'v'
+	._type	794,'x',793,1
+	._type	794,'m','rom_addr',0,18
+	._var	'Set_Meter_para_Deal','F',794
+	._type	795,'v'
+	._type	796,'x',16,1
+	._type	796,'m','',0,795
+	._var	'Read_Display_Number','F',796
+	._type	797,'v'
+	._type	798,'x',16,1
+	._type	798,'m','',0,797
+	._var	'Read_LostVoltEnergy','F',798
+	._type	799,'v'
+	._type	800,'x',16,1
+	._type	800,'m','',0,799
+	._var	'Read_LostVolt_AllEnergy','F',800
+	._type	801,'v'
+	._type	802,'v'
+	._type	803,'x',801,1
+	._type	803,'m','',0,802
+	._var	'RTC_Init','F',803
+	._type	804,'v'
+	._type	805,'v'
+	._type	806,'x',804,1
+	._type	806,'m','',0,805
+	._var	'PowerOn_FullScreen_TimeDetection','F',806
+	._type	807,'v'
+	._type	808,'x',16,1
+	._type	808,'m','',0,807
+	._var	'ReadClockBatteryVoltage','F',808
+	._type	809,'v'
+	._type	810,'x',16,1
+	._type	810,'m','',0,809
+	._var	'ReadDisplayBatteryVoltage','F',810
+	._type	811,'v'
+	._type	812,'x',16,1
+	._type	812,'m','',0,811
+	._var	'ReadEventReportInfo','F',812
+	._type	813,'v'
+	._type	814,'x',16,1
+	._type	814,'m','',0,813
+	._var	'GetEventReportMode','F',814
+	._type	815,'v'
+	._type	816,'x',16,1
+	._type	816,'m','',0,815
+	._var	'SetEventReportMode','F',816
+	._type	817,'v'
+	._type	818,'x',16,1
+	._type	818,'m','',0,817
+	._var	'SetPowerOnFullScreenTime','F',818
+	._type	819,'v'
+	._type	820,'x',16,1
+	._type	820,'m','',0,819
+	._var	'Set_SystemTime_YMDHHMS','F',820
+	._type	821,'v'
+	._type	822,'x',16,1
+	._type	822,'m','',0,821
+	._var	'GetMeterSoftIdNumber','F',822
+	._type	823,'v'
+	._type	824,'x',16,1
+	._type	824,'m','',0,823
+	._var	'SetMeterSoftIdNumber','F',824
+	._type	825,'v'
+	._type	826,'x',16,1
+	._type	826,'m','',0,825
+	._var	'GetNowMonthComActiveEnergy','F',826
+	._type	827,'v'
+	._type	828,'x',16,1
+	._type	828,'m','',0,827
+	._var	'GetLastMonthComActiveEnergy','F',828
+	._type	829,'v'
+	._type	830,'x',16,1
+	._type	830,'m','',0,829
+	._var	'Set_Freeze_Day','F',830
+	._type	831,'v'
+	._type	832,'x',16,1
+	._type	832,'m','',0,831
+	._var	'ReadEnergy01Wh','F',832
+	._type	833,'v'
+	._type	834,'x',16,1
+	._type	834,'m','',0,833
+	._var	'ResetEventReportInfo','F',834
+	._type	835,'v'
+	._type	838,'g','Switch_err',0,1,3
+	._type	839,'g','ESAM_err',0,1,3
+	._type	840,'g','Eeprom_init_err',0,1,3
+	._type	841,'g','Clock_Battery_Volt_low',0,1,3
+	._type	842,'g','Code_err',0,1,3
+	._type	843,'g','Memorizer_err',0,1,3
+	._type	844,'g','',0,1,3
+	._type	845,'g','Clock_err',0,1,3
+	._type	846,'g','LowPower_Battery_Volt_low',0,1,3
+	._type	847,'g','Overdraft',0,1,3
+	._type	848,'g','Open_Meter_Cover',0,1,3
+	._type	849,'g','Open_Rail_Cover',0,1,3
+	._type	850,'g','ConstantMagnet_event',0,1,3
+	._type	851,'g','PowerAbnormal_event',0,1,3
+	._type	852,'g','Switch_off',0,1,3
+	._type	853,'g','Switch_on',0,1,3
+	._type	854,'g','LostVolt_A',0,1,3
+	._type	855,'g','LowVolt_A',0,1,3
+	._type	856,'g','OverVolt_A',0,1,3
+	._type	857,'g','LossCurr_A',0,1,3
+	._type	858,'g','OverCurr_A',0,1,3
+	._type	859,'g','UpLoad_A',0,1,3
+	._type	860,'g','PowerReserve_A',0,1,3
+	._type	861,'g','BreakPhase_A',0,1,3
+	._type	862,'g','BreakCurr_A',0,1,3
+	._type	863,'g','',0,1,3
+	._type	864,'g','',0,1,3
+	._type	865,'g','',0,1,3
+	._type	866,'g','',0,1,3
+	._type	867,'g','',0,1,3
+	._type	868,'g','',0,1,3
+	._type	869,'g','',0,1,3
+	._type	870,'g','LostVolt_B',0,1,3
+	._type	871,'g','LowVolt_B',0,1,3
+	._type	872,'g','OverVolt_B',0,1,3
+	._type	873,'g','LossCurr_B',0,1,3
+	._type	874,'g','OverCurr_B',0,1,3
+	._type	875,'g','UpLoad_B',0,1,3
+	._type	876,'g','PowerReserve_B',0,1,3
+	._type	877,'g','BreakPhase_B',0,1,3
+	._type	878,'g','BreakCurr_B',0,1,3
+	._type	879,'g','',0,1,3
+	._type	880,'g','',0,1,3
+	._type	881,'g','',0,1,3
+	._type	882,'g','',0,1,3
+	._type	883,'g','',0,1,3
+	._type	884,'g','',0,1,3
+	._type	885,'g','',0,1,3
+	._type	886,'g','LostVolt_C',0,1,3
+	._type	887,'g','LowVolt_C',0,1,3
+	._type	888,'g','OverVolt_C',0,1,3
+	._type	889,'g','LossCurr_C',0,1,3
+	._type	890,'g','OverCurr_C',0,1,3
+	._type	891,'g','UpLoad_C',0,1,3
+	._type	892,'g','PowerReserve_C',0,1,3
+	._type	893,'g','BreakPhase_C',0,1,3
+	._type	894,'g','BreakCurr_C',0,1,3
+	._type	895,'g','',0,1,3
+	._type	896,'g','',0,1,3
+	._type	897,'g','',0,1,3
+	._type	898,'g','',0,1,3
+	._type	899,'g','',0,1,3
+	._type	900,'g','',0,1,3
+	._type	901,'g','',0,1,3
+	._type	902,'g','VoltReverse',0,1,3
+	._type	903,'g','CurrReverse',0,1,3
+	._type	904,'g','VoltImbalance',0,1,3
+	._type	905,'g','CurrImbalance',0,1,3
+	._type	906,'g','auxiliaryPower_event',0,1,3
+	._type	907,'g','PowerDown',0,1,3
+	._type	908,'g','OverDemand',0,1,3
+	._type	909,'g','Factor_Low',0,1,3
+	._type	910,'g','CurrCriticalImbalance',0,1,3
+	._type	911,'g','TotalPowerReverse',0,1,3
+	._type	912,'g','AllLostVoltage',0,1,3
+	._type	913,'g','',0,1,3
+	._type	914,'g','',0,1,3
+	._type	915,'g','',0,1,3
+	._type	916,'g','',0,1,3
+	._type	917,'g','',0,1,3
+	._type	918,'g','Program_event',0,1,3
+	._type	919,'g','Meter_clear',0,1,3
+	._type	920,'g','Demand_clear',0,1,3
+	._type	921,'g','Event_clear',0,1,3
+	._type	922,'g','AdjustTime_event',0,1,3
+	._type	923,'g','ProgDailySlot',0,1,3
+	._type	924,'g','ProgYearSlot',0,1,3
+	._type	925,'g','ProgWeek',0,1,3
+	._type	926,'g','ProgHoliday',0,1,3
+	._type	927,'g','ProgAEMode',0,1,3
+	._type	928,'g','ProgNEMode1',0,1,3
+	._type	929,'g','ProgNEMode2',0,1,3
+	._type	930,'g','ProgBillDay',0,1,3
+	._type	931,'g','ProgTriffPrice',0,1,3
+	._type	932,'g','ProgStepPrice',0,1,3
+	._type	933,'g','PSWUpdate',0,1,3
+	._type	837,'S','',12
+	._type	837,'m','Switch_err',838,0
+	._type	837,'m','ESAM_err',839,1
+	._type	837,'m','Eeprom_init_err',840,2
+	._type	837,'m','Clock_Battery_Volt_low',841,3
+	._type	837,'m','Code_err',842,4
+	._type	837,'m','Memorizer_err',843,5
+	._type	837,'m','',844,6
+	._type	837,'m','Clock_err',845,7
+	._type	837,'m','LowPower_Battery_Volt_low',846,8
+	._type	837,'m','Overdraft',847,9
+	._type	837,'m','Open_Meter_Cover',848,10
+	._type	837,'m','Open_Rail_Cover',849,11
+	._type	837,'m','ConstantMagnet_event',850,12
+	._type	837,'m','PowerAbnormal_event',851,13
+	._type	837,'m','Switch_off',852,14
+	._type	837,'m','Switch_on',853,15
+	._type	837,'m','LostVolt_A',854,16
+	._type	837,'m','LowVolt_A',855,17
+	._type	837,'m','OverVolt_A',856,18
+	._type	837,'m','LossCurr_A',857,19
+	._type	837,'m','OverCurr_A',858,20
+	._type	837,'m','UpLoad_A',859,21
+	._type	837,'m','PowerReserve_A',860,22
+	._type	837,'m','BreakPhase_A',861,23
+	._type	837,'m','BreakCurr_A',862,24
+	._type	837,'m','',863,25
+	._type	837,'m','',864,26
+	._type	837,'m','',865,27
+	._type	837,'m','',866,28
+	._type	837,'m','',867,29
+	._type	837,'m','',868,30
+	._type	837,'m','',869,31
+	._type	837,'m','LostVolt_B',870,32
+	._type	837,'m','LowVolt_B',871,33
+	._type	837,'m','OverVolt_B',872,34
+	._type	837,'m','LossCurr_B',873,35
+	._type	837,'m','OverCurr_B',874,36
+	._type	837,'m','UpLoad_B',875,37
+	._type	837,'m','PowerReserve_B',876,38
+	._type	837,'m','BreakPhase_B',877,39
+	._type	837,'m','BreakCurr_B',878,40
+	._type	837,'m','',879,41
+	._type	837,'m','',880,42
+	._type	837,'m','',881,43
+	._type	837,'m','',882,44
+	._type	837,'m','',883,45
+	._type	837,'m','',884,46
+	._type	837,'m','',885,47
+	._type	837,'m','LostVolt_C',886,48
+	._type	837,'m','LowVolt_C',887,49
+	._type	837,'m','OverVolt_C',888,50
+	._type	837,'m','LossCurr_C',889,51
+	._type	837,'m','OverCurr_C',890,52
+	._type	837,'m','UpLoad_C',891,53
+	._type	837,'m','PowerReserve_C',892,54
+	._type	837,'m','BreakPhase_C',893,55
+	._type	837,'m','BreakCurr_C',894,56
+	._type	837,'m','',895,57
+	._type	837,'m','',896,58
+	._type	837,'m','',897,59
+	._type	837,'m','',898,60
+	._type	837,'m','',899,61
+	._type	837,'m','',900,62
+	._type	837,'m','',901,63
+	._type	837,'m','VoltReverse',902,64
+	._type	837,'m','CurrReverse',903,65
+	._type	837,'m','VoltImbalance',904,66
+	._type	837,'m','CurrImbalance',905,67
+	._type	837,'m','auxiliaryPower_event',906,68
+	._type	837,'m','PowerDown',907,69
+	._type	837,'m','OverDemand',908,70
+	._type	837,'m','Factor_Low',909,71
+	._type	837,'m','CurrCriticalImbalance',910,72
+	._type	837,'m','TotalPowerReverse',911,73
+	._type	837,'m','AllLostVoltage',912,74
+	._type	837,'m','',913,75
+	._type	837,'m','',914,76
+	._type	837,'m','',915,77
+	._type	837,'m','',916,78
+	._type	837,'m','',917,79
+	._type	837,'m','Program_event',918,80
+	._type	837,'m','Meter_clear',919,81
+	._type	837,'m','Demand_clear',920,82
+	._type	837,'m','Event_clear',921,83
+	._type	837,'m','AdjustTime_event',922,84
+	._type	837,'m','ProgDailySlot',923,85
+	._type	837,'m','ProgYearSlot',924,86
+	._type	837,'m','ProgWeek',925,87
+	._type	837,'m','ProgHoliday',926,88
+	._type	837,'m','ProgAEMode',927,89
+	._type	837,'m','ProgNEMode1',928,90
+	._type	837,'m','ProgNEMode2',929,91
+	._type	837,'m','ProgBillDay',930,92
+	._type	837,'m','ProgTriffPrice',931,93
+	._type	837,'m','ProgStepPrice',932,94
+	._type	837,'m','PSWUpdate',933,95
+	._type	934,'Z',12,3
+	._type	836,'U','EVENT_REPORT_STATUS',12
+	._type	836,'m','bit',837,0
+	._type	836,'m','byte',934,0
+	._type	935,'x',835,1
+	._type	935,'m','EventReportStatus',0,836
+	._var	'Clear_EventReportStatus_And_Times','F',935
+	._type	936,'v'
+	._type	937,'x',16,1
+	._type	937,'m','',0,936
+	._var	'Set_ResetReportTime','F',937
+	._type	938,'O',3
+	._type	939,'x',16,4
+	._type	939,'m','id',0,579
+	._type	939,'m','rBuffer',0,938
+	._type	939,'m','data_len',0,3
+	._type	939,'m','mode',0,3
+	._var	'Set_Read_Block_Para','F',939
+	._var	'flags_reg','S',18,_flags_reg
+	._var	'cm0_saved','S',3,_cm0_saved
+	._var	'cm1_saved','S',3,_cm1_saved
+	._var	'pm0_saved','S',3,_pm0_saved
+	._var	'pm1_saved','S',3,_pm1_saved
+	._var	'prcr_saved','S',3,_prcr_saved
+	._var	'fmr2_saved','S',3,_fmr2_saved
+	._type	940,'Z',10,7
+	._var	'block_addresses','S',940,_block_addresses
+;#################################
+;#################################
+;#################################
+	._inspect	'F', 't', "FlashErase", 'G', 274
+	._inspect	'F', 't', "FlashWrite", 'G', 277
+	._inspect	'F', 't', "FlashRead", 'G', 280
+	._inspect	'V', 't', "pm0_addr", 'G', 281
+	._inspect	'V', 't', "pm1_addr", 'G', 281
+	._inspect	'V', 't', "cm0_addr", 'G', 281
+	._inspect	'V', 't', "cm1_addr", 'G', 281
+	._inspect	'V', 't', "csr_addr", 'G', 281
+	._inspect	'V', 't', "prcr_addr", 'G', 281
+	._inspect	'V', 't', "dbr_addr", 'G', 281
+	._inspect	'V', 't', "cm2_addr", 'G', 281
+	._inspect	'V', 't', "prg2c_addr", 'G', 281
+	._inspect	'V', 't', "pclkr_addr", 'G', 281
+	._inspect	'V', 't', "cpsrf_addr", 'G', 281
+	._inspect	'V', 't', "rstfr_addr", 'G', 281
+	._inspect	'V', 't', "vcr1_addr", 'G', 281
+	._inspect	'V', 't', "vcr2_addr", 'G', 281
+	._inspect	'V', 't', "cse_addr", 'G', 281
+	._inspect	'V', 't', "plc0_addr", 'G', 281
+	._inspect	'V', 't', "pm2_addr", 'G', 281
+	._inspect	'V', 't', "vwce_addr", 'G', 281
+	._inspect	'V', 't', "vd1ls_addr", 'G', 281
+	._inspect	'V', 't', "vw0c_addr", 'G', 281
+	._inspect	'V', 't', "vw1c_addr", 'G', 281
+	._inspect	'V', 't', "vw2c_addr", 'G', 281
+	._inspect	'V', 't', "int7ic_addr", 'G', 281
+	._inspect	'V', 't', "int6ic_addr", 'G', 281
+	._inspect	'V', 't', "int3ic_addr", 'G', 281
+	._inspect	'V', 't', "tb5ic_addr", 'G', 281
+	._inspect	'V', 't', "tb4ic_addr", 'G', 281
+	._inspect	'V', 't', "u1bcnic_addr", 'G', 281
+	._inspect	'V', 't', "tb3ic_addr", 'G', 281
+	._inspect	'V', 't', "u0bcnic_addr", 'G', 281
+	._inspect	'V', 't', "s4ic_addr", 'G', 281
+	._inspect	'V', 't', "int5ic_addr", 'G', 281
+	._inspect	'V', 't', "s3ic_addr", 'G', 281
+	._inspect	'V', 't', "int4ic_addr", 'G', 281
+	._inspect	'V', 't', "bcnic_addr", 'G', 281
+	._inspect	'V', 't', "dm0ic_addr", 'G', 281
+	._inspect	'V', 't', "dm1ic_addr", 'G', 281
+	._inspect	'V', 't', "kupic_addr", 'G', 281
+	._inspect	'V', 't', "adic_addr", 'G', 281
+	._inspect	'V', 't', "s2tic_addr", 'G', 281
+	._inspect	'V', 't', "s2ric_addr", 'G', 281
+	._inspect	'V', 't', "s0tic_addr", 'G', 281
+	._inspect	'V', 't', "s0ric_addr", 'G', 281
+	._inspect	'V', 't', "s1tic_addr", 'G', 281
+	._inspect	'V', 't', "s1ric_addr", 'G', 281
+	._inspect	'V', 't', "ta0ic_addr", 'G', 281
+	._inspect	'V', 't', "ta1ic_addr", 'G', 281
+	._inspect	'V', 't', "ta2ic_addr", 'G', 281
+	._inspect	'V', 't', "ta3ic_addr", 'G', 281
+	._inspect	'V', 't', "ta4ic_addr", 'G', 281
+	._inspect	'V', 't', "tb0ic_addr", 'G', 281
+	._inspect	'V', 't', "tb1ic_addr", 'G', 281
+	._inspect	'V', 't', "tb2ic_addr", 'G', 281
+	._inspect	'V', 't', "int0ic_addr", 'G', 281
+	._inspect	'V', 't', "int1ic_addr", 'G', 281
+	._inspect	'V', 't', "int2ic_addr", 'G', 281
+	._inspect	'V', 't', "dm2ic_addr", 'G', 281
+	._inspect	'V', 't', "dm3ic_addr", 'G', 281
+	._inspect	'V', 't', "u5bcnic_addr", 'G', 281
+	._inspect	'V', 't', "cec1ic_addr", 'G', 281
+	._inspect	'V', 't', "s5tic_addr", 'G', 281
+	._inspect	'V', 't', "cec2ic_addr", 'G', 281
+	._inspect	'V', 't', "s5ric_addr", 'G', 281
+	._inspect	'V', 't', "u6bcnic_addr", 'G', 281
+	._inspect	'V', 't', "rtctic_addr", 'G', 281
+	._inspect	'V', 't', "s6tic_addr", 'G', 281
+	._inspect	'V', 't', "rtccic_addr", 'G', 281
+	._inspect	'V', 't', "s6ric_addr", 'G', 281
+	._inspect	'V', 't', "u7bcnic_addr", 'G', 281
+	._inspect	'V', 't', "pmc0ic_addr", 'G', 281
+	._inspect	'V', 't', "s7tic_addr", 'G', 281
+	._inspect	'V', 't', "pmc1ic_addr", 'G', 281
+	._inspect	'V', 't', "s7ric_addr", 'G', 281
+	._inspect	'V', 't', "iicic_addr", 'G', 281
+	._inspect	'V', 't', "scldaic_addr", 'G', 281
+	._inspect	'V', 't', "sar0_addr", 'G', 291
+	._inspect	'V', 't', "dar0_addr", 'G', 291
+	._inspect	'V', 't', "tcr0_addr", 'G', 326
+	._inspect	'V', 't', "dm0con_addr", 'G', 281
+	._inspect	'V', 't', "sar1_addr", 'G', 291
+	._inspect	'V', 't', "dar1_addr", 'G', 291
+	._inspect	'V', 't', "tcr1_addr", 'G', 326
+	._inspect	'V', 't', "dm1con_addr", 'G', 281
+	._inspect	'V', 't', "sar2_addr", 'G', 291
+	._inspect	'V', 't', "dar2_addr", 'G', 291
+	._inspect	'V', 't', "tcr2_addr", 'G', 326
+	._inspect	'V', 't', "dm2con_addr", 'G', 281
+	._inspect	'V', 't', "sar3_addr", 'G', 291
+	._inspect	'V', 't', "dar3_addr", 'G', 291
+	._inspect	'V', 't', "tcr3_addr", 'G', 326
+	._inspect	'V', 't', "dm3con_addr", 'G', 281
+	._inspect	'V', 't', "tb01_addr", 'G', 326
+	._inspect	'V', 't', "tb11_addr", 'G', 326
+	._inspect	'V', 't', "tb21_addr", 'G', 326
+	._inspect	'V', 't', "ppwfs1_addr", 'G', 281
+	._inspect	'V', 't', "tbcs0_addr", 'G', 281
+	._inspect	'V', 't', "tbcs1_addr", 'G', 281
+	._inspect	'V', 't', "tacs0_addr", 'G', 281
+	._inspect	'V', 't', "tacs1_addr", 'G', 281
+	._inspect	'V', 't', "tacs2_addr", 'G', 281
+	._inspect	'V', 't', "pwmfs_addr", 'G', 281
+	._inspect	'V', 't', "tapofs_addr", 'G', 281
+	._inspect	'V', 't', "taow_addr", 'G', 281
+	._inspect	'V', 't', "tprc_addr", 'G', 281
+	._inspect	'V', 't', "tb31_addr", 'G', 326
+	._inspect	'V', 't', "tb41_addr", 'G', 326
+	._inspect	'V', 't', "tb51_addr", 'G', 326
+	._inspect	'V', 't', "ppwfs2_addr", 'G', 281
+	._inspect	'V', 't', "tbcs2_addr", 'G', 281
+	._inspect	'V', 't', "tbcs3_addr", 'G', 281
+	._inspect	'V', 't', "pmc0con0_addr", 'G', 281
+	._inspect	'V', 't', "pmc0con1_addr", 'G', 281
+	._inspect	'V', 't', "pmc0con2_addr", 'G', 281
+	._inspect	'V', 't', "pmc0con3_addr", 'G', 281
+	._inspect	'V', 't', "pmc0sts_addr", 'G', 281
+	._inspect	'V', 't', "pmc0int_addr", 'G', 281
+	._inspect	'V', 't', "pmc0cpc_addr", 'G', 281
+	._inspect	'V', 't', "pmc0cpd_addr", 'G', 281
+	._inspect	'V', 't', "pmc1con0_addr", 'G', 281
+	._inspect	'V', 't', "pmc1con1_addr", 'G', 281
+	._inspect	'V', 't', "pmc1con2_addr", 'G', 281
+	._inspect	'V', 't', "pmc1con3_addr", 'G', 281
+	._inspect	'V', 't', "pmc1sts_addr", 'G', 281
+	._inspect	'V', 't', "pmc1int_addr", 'G', 281
+	._inspect	'V', 't', "ifsr3a_addr", 'G', 281
+	._inspect	'V', 't', "ifsr2a_addr", 'G', 281
+	._inspect	'V', 't', "ifsr_addr", 'G', 281
+	._inspect	'V', 't', "aier_addr", 'G', 281
+	._inspect	'V', 't', "aier2_addr", 'G', 281
+	._inspect	'V', 't', "rmad0_addr", 'G', 291
+	._inspect	'V', 't', "rmad1_addr", 'G', 291
+	._inspect	'V', 't', "rmad2_addr", 'G', 291
+	._inspect	'V', 't', "rmad3_addr", 'G', 291
+	._inspect	'V', 't', "fmr0_addr", 'G', 281
+	._inspect	'V', 't', "fmr1_addr", 'G', 281
+	._inspect	'V', 't', "fmr2_addr", 'G', 281
+	._inspect	'V', 't', "fmr6_addr", 'G', 281
+	._inspect	'V', 't', "u0smr4_addr", 'G', 281
+	._inspect	'V', 't', "u0smr3_addr", 'G', 281
+	._inspect	'V', 't', "u0smr2_addr", 'G', 281
+	._inspect	'V', 't', "u0smr_addr", 'G', 281
+	._inspect	'V', 't', "u0mr_addr", 'G', 281
+	._inspect	'V', 't', "u0brg_addr", 'G', 281
+	._inspect	'V', 't', "u0tb_addr", 'G', 326
+	._inspect	'V', 't', "u0c0_addr", 'G', 281
+	._inspect	'V', 't', "u0c1_addr", 'G', 281
+	._inspect	'V', 't', "u0rb_addr", 'G', 326
+	._inspect	'V', 't', "ucon_addr", 'G', 281
+	._inspect	'V', 't', "u1smr4_addr", 'G', 281
+	._inspect	'V', 't', "u1smr3_addr", 'G', 281
+	._inspect	'V', 't', "u1smr2_addr", 'G', 281
+	._inspect	'V', 't', "u1smr_addr", 'G', 281
+	._inspect	'V', 't', "u1mr_addr", 'G', 281
+	._inspect	'V', 't', "u1brg_addr", 'G', 281
+	._inspect	'V', 't', "u1tb_addr", 'G', 326
+	._inspect	'V', 't', "u1c0_addr", 'G', 281
+	._inspect	'V', 't', "u1c1_addr", 'G', 281
+	._inspect	'V', 't', "u1rb_addr", 'G', 326
+	._inspect	'V', 't', "u2smr4_addr", 'G', 281
+	._inspect	'V', 't', "u2smr3_addr", 'G', 281
+	._inspect	'V', 't', "u2smr2_addr", 'G', 281
+	._inspect	'V', 't', "u2smr_addr", 'G', 281
+	._inspect	'V', 't', "u2mr_addr", 'G', 281
+	._inspect	'V', 't', "u2brg_addr", 'G', 281
+	._inspect	'V', 't', "u2tb_addr", 'G', 326
+	._inspect	'V', 't', "u2c0_addr", 'G', 281
+	._inspect	'V', 't', "u2c1_addr", 'G', 281
+	._inspect	'V', 't', "u2rb_addr", 'G', 326
+	._inspect	'V', 't', "s3trr_addr", 'G', 281
+	._inspect	'V', 't', "s3c_addr", 'G', 281
+	._inspect	'V', 't', "s3brg_addr", 'G', 281
+	._inspect	'V', 't', "s4trr_addr", 'G', 281
+	._inspect	'V', 't', "s4c_addr", 'G', 281
+	._inspect	'V', 't', "s4brg_addr", 'G', 281
+	._inspect	'V', 't', "s34c2_addr", 'G', 281
+	._inspect	'V', 't', "u5smr4_addr", 'G', 281
+	._inspect	'V', 't', "u5smr3_addr", 'G', 281
+	._inspect	'V', 't', "u5smr2_addr", 'G', 281
+	._inspect	'V', 't', "u5smr_addr", 'G', 281
+	._inspect	'V', 't', "u5mr_addr", 'G', 281
+	._inspect	'V', 't', "u5brg_addr", 'G', 281
+	._inspect	'V', 't', "u5tb_addr", 'G', 326
+	._inspect	'V', 't', "u5c0_addr", 'G', 281
+	._inspect	'V', 't', "u5c1_addr", 'G', 281
+	._inspect	'V', 't', "u5rb_addr", 'G', 326
+	._inspect	'V', 't', "u6smr4_addr", 'G', 281
+	._inspect	'V', 't', "u6smr3_addr", 'G', 281
+	._inspect	'V', 't', "u6smr2_addr", 'G', 281
+	._inspect	'V', 't', "u6smr_addr", 'G', 281
+	._inspect	'V', 't', "u6mr_addr", 'G', 281
+	._inspect	'V', 't', "u6brg_addr", 'G', 281
+	._inspect	'V', 't', "u6tb_addr", 'G', 326
+	._inspect	'V', 't', "u6c0_addr", 'G', 281
+	._inspect	'V', 't', "u6c1_addr", 'G', 281
+	._inspect	'V', 't', "u6rb_addr", 'G', 326
+	._inspect	'V', 't', "u7smr4_addr", 'G', 281
+	._inspect	'V', 't', "u7smr3_addr", 'G', 281
+	._inspect	'V', 't', "u7smr2_addr", 'G', 281
+	._inspect	'V', 't', "u7smr_addr", 'G', 281
+	._inspect	'V', 't', "u7mr_addr", 'G', 281
+	._inspect	'V', 't', "u7brg_addr", 'G', 281
+	._inspect	'V', 't', "u7tb_addr", 'G', 326
+	._inspect	'V', 't', "u7c0_addr", 'G', 281
+	._inspect	'V', 't', "u7c1_addr", 'G', 281
+	._inspect	'V', 't', "u7rb_addr", 'G', 326
+	._inspect	'V', 't', "s00_addr", 'G', 281
+	._inspect	'V', 't', "s0d0_addr", 'G', 281
+	._inspect	'V', 't', "s1d0_addr", 'G', 281
+	._inspect	'V', 't', "s20_addr", 'G', 281
+	._inspect	'V', 't', "s2d0_addr", 'G', 281
+	._inspect	'V', 't', "s3d0_addr", 'G', 281
+	._inspect	'V', 't', "s4d0_addr", 'G', 281
+	._inspect	'V', 't', "s10_addr", 'G', 281
+	._inspect	'V', 't', "s11_addr", 'G', 281
+	._inspect	'V', 't', "s0d1_addr", 'G', 281
+	._inspect	'V', 't', "s0d2_addr", 'G', 281
+	._inspect	'V', 't', "tbsr_addr", 'G', 281
+	._inspect	'V', 't', "ta11_addr", 'G', 326
+	._inspect	'V', 't', "ta21_addr", 'G', 326
+	._inspect	'V', 't', "ta41_addr", 'G', 326
+	._inspect	'V', 't', "invc0_addr", 'G', 281
+	._inspect	'V', 't', "invc1_addr", 'G', 281
+	._inspect	'V', 't', "idb0_addr", 'G', 281
+	._inspect	'V', 't', "idb1_addr", 'G', 281
+	._inspect	'V', 't', "dtt_addr", 'G', 281
+	._inspect	'V', 't', "ictb2_addr", 'G', 281
+	._inspect	'V', 't', "pdrf_addr", 'G', 281
+	._inspect	'V', 't', "tb3_addr", 'G', 326
+	._inspect	'V', 't', "tb4_addr", 'G', 326
+	._inspect	'V', 't', "tb5_addr", 'G', 326
+	._inspect	'V', 't', "pfcr_addr", 'G', 281
+	._inspect	'V', 't', "tb3mr_addr", 'G', 281
+	._inspect	'V', 't', "tb4mr_addr", 'G', 281
+	._inspect	'V', 't', "tb5mr_addr", 'G', 281
+	._inspect	'V', 't', "tabsr_addr", 'G', 281
+	._inspect	'V', 't', "onsf_addr", 'G', 281
+	._inspect	'V', 't', "trgsr_addr", 'G', 281
+	._inspect	'V', 't', "udf_addr", 'G', 281
+	._inspect	'V', 't', "ta0_addr", 'G', 326
+	._inspect	'V', 't', "ta1_addr", 'G', 326
+	._inspect	'V', 't', "ta2_addr", 'G', 326
+	._inspect	'V', 't', "ta3_addr", 'G', 326
+	._inspect	'V', 't', "ta4_addr", 'G', 326
+	._inspect	'V', 't', "tb0_addr", 'G', 326
+	._inspect	'V', 't', "tb1_addr", 'G', 326
+	._inspect	'V', 't', "tb2_addr", 'G', 326
+	._inspect	'V', 't', "ta0mr_addr", 'G', 281
+	._inspect	'V', 't', "ta1mr_addr", 'G', 281
+	._inspect	'V', 't', "ta2mr_addr", 'G', 281
+	._inspect	'V', 't', "ta3mr_addr", 'G', 281
+	._inspect	'V', 't', "ta4mr_addr", 'G', 281
+	._inspect	'V', 't', "tb0mr_addr", 'G', 281
+	._inspect	'V', 't', "tb1mr_addr", 'G', 281
+	._inspect	'V', 't', "tb2mr_addr", 'G', 281
+	._inspect	'V', 't', "tb2sc_addr", 'G', 281
+	._inspect	'V', 't', "rtcsec_addr", 'G', 281
+	._inspect	'V', 't', "rtcmin_addr", 'G', 281
+	._inspect	'V', 't', "rtchr_addr", 'G', 281
+	._inspect	'V', 't', "rtcwk_addr", 'G', 281
+	._inspect	'V', 't', "rtccr1_addr", 'G', 281
+	._inspect	'V', 't', "rtccr2_addr", 'G', 281
+	._inspect	'V', 't', "rtccsr_addr", 'G', 281
+	._inspect	'V', 't', "rtccsec_addr", 'G', 281
+	._inspect	'V', 't', "rtccmin_addr", 'G', 281
+	._inspect	'V', 't', "rtcchr_addr", 'G', 281
+	._inspect	'V', 't', "cecc1_addr", 'G', 281
+	._inspect	'V', 't', "cecc2_addr", 'G', 281
+	._inspect	'V', 't', "cecc3_addr", 'G', 281
+	._inspect	'V', 't', "cecc4_addr", 'G', 281
+	._inspect	'V', 't', "cecflg_addr", 'G', 281
+	._inspect	'V', 't', "cisel_addr", 'G', 281
+	._inspect	'V', 't', "cctb1_addr", 'G', 281
+	._inspect	'V', 't', "cctb2_addr", 'G', 281
+	._inspect	'V', 't', "ccrb1_addr", 'G', 281
+	._inspect	'V', 't', "ccrb2_addr", 'G', 281
+	._inspect	'V', 't', "cradri1_addr", 'G', 281
+	._inspect	'V', 't', "cradri2_addr", 'G', 281
+	._inspect	'V', 't', "pur0_addr", 'G', 281
+	._inspect	'V', 't', "pur1_addr", 'G', 281
+	._inspect	'V', 't', "pur2_addr", 'G', 281
+	._inspect	'V', 't', "pcr_addr", 'G', 281
+	._inspect	'V', 't', "nmidf_addr", 'G', 281
+	._inspect	'V', 't', "pwmcon0_addr", 'G', 281
+	._inspect	'V', 't', "pwmpre0_addr", 'G', 281
+	._inspect	'V', 't', "pwmreg0_addr", 'G', 281
+	._inspect	'V', 't', "pwmpre1_addr", 'G', 281
+	._inspect	'V', 't', "pwmreg1_addr", 'G', 281
+	._inspect	'V', 't', "pwmcon1_addr", 'G', 281
+	._inspect	'V', 't', "cspr_addr", 'G', 281
+	._inspect	'V', 't', "wdtr_addr", 'G', 281
+	._inspect	'V', 't', "wdts_addr", 'G', 281
+	._inspect	'V', 't', "wdc_addr", 'G', 281
+	._inspect	'V', 't', "dm2sl_addr", 'G', 281
+	._inspect	'V', 't', "dm3sl_addr", 'G', 281
+	._inspect	'V', 't', "dm0sl_addr", 'G', 281
+	._inspect	'V', 't', "dm1sl_addr", 'G', 281
+	._inspect	'V', 't', "ainrst_addr", 'G', 281
+	._inspect	'V', 't', "crcsar_addr", 'G', 326
+	._inspect	'V', 't', "crcmr_addr", 'G', 281
+	._inspect	'V', 't', "crcd_addr", 'G', 326
+	._inspect	'V', 't', "crcin_addr", 'G', 281
+	._inspect	'V', 't', "ad0_addr", 'G', 326
+	._inspect	'V', 't', "ad1_addr", 'G', 326
+	._inspect	'V', 't', "ad2_addr", 'G', 326
+	._inspect	'V', 't', "ad3_addr", 'G', 326
+	._inspect	'V', 't', "ad4_addr", 'G', 326
+	._inspect	'V', 't', "ad5_addr", 'G', 326
+	._inspect	'V', 't', "ad6_addr", 'G', 326
+	._inspect	'V', 't', "ad7_addr", 'G', 326
+	._inspect	'V', 't', "adcon2_addr", 'G', 281
+	._inspect	'V', 't', "adcon0_addr", 'G', 281
+	._inspect	'V', 't', "adcon1_addr", 'G', 281
+	._inspect	'V', 't', "da0_addr", 'G', 281
+	._inspect	'V', 't', "da1_addr", 'G', 281
+	._inspect	'V', 't', "dacon_addr", 'G', 281
+	._inspect	'V', 't', "p0_addr", 'G', 281
+	._inspect	'V', 't', "p1_addr", 'G', 281
+	._inspect	'V', 't', "pd0_addr", 'G', 281
+	._inspect	'V', 't', "pd1_addr", 'G', 281
+	._inspect	'V', 't', "p2_addr", 'G', 281
+	._inspect	'V', 't', "p3_addr", 'G', 281
+	._inspect	'V', 't', "pd2_addr", 'G', 281
+	._inspect	'V', 't', "pd3_addr", 'G', 281
+	._inspect	'V', 't', "p4_addr", 'G', 281
+	._inspect	'V', 't', "p5_addr", 'G', 281
+	._inspect	'V', 't', "pd4_addr", 'G', 281
+	._inspect	'V', 't', "pd5_addr", 'G', 281
+	._inspect	'V', 't', "p6_addr", 'G', 281
+	._inspect	'V', 't', "p7_addr", 'G', 281
+	._inspect	'V', 't', "pd6_addr", 'G', 281
+	._inspect	'V', 't', "pd7_addr", 'G', 281
+	._inspect	'V', 't', "p8_addr", 'G', 281
+	._inspect	'V', 't', "p9_addr", 'G', 281
+	._inspect	'V', 't', "pd8_addr", 'G', 281
+	._inspect	'V', 't', "pd9_addr", 'G', 281
+	._inspect	'V', 't', "p10_addr", 'G', 281
+	._inspect	'V', 't', "pd10_addr", 'G', 281
+	._inspect	'V', 't', "pmc0hdpmin_addr", 'G', 326
+	._inspect	'V', 't', "pmc0hdpmax_addr", 'G', 326
+	._inspect	'V', 't', "pmc0d0pmin_addr", 'G', 281
+	._inspect	'V', 't', "pmc0d0pmax_addr", 'G', 281
+	._inspect	'V', 't', "pmc0d1pmin_addr", 'G', 281
+	._inspect	'V', 't', "pmc0d1pmax_addr", 'G', 281
+	._inspect	'V', 't', "pmc0tim_addr", 'G', 326
+	._inspect	'V', 't', "pmc0bc_addr", 'G', 326
+	._inspect	'V', 't', "pmc0dat0_addr", 'G', 281
+	._inspect	'V', 't', "pmc0dat1_addr", 'G', 281
+	._inspect	'V', 't', "pmc0dat2_addr", 'G', 281
+	._inspect	'V', 't', "pmc0dat3_addr", 'G', 281
+	._inspect	'V', 't', "pmc0dat4_addr", 'G', 281
+	._inspect	'V', 't', "pmc0dat5_addr", 'G', 281
+	._inspect	'V', 't', "pmc0rbit_addr", 'G', 281
+	._inspect	'V', 't', "pmc1hdpmin_addr", 'G', 326
+	._inspect	'V', 't', "pmc1hdpmax_addr", 'G', 326
+	._inspect	'V', 't', "pmc1d0pmin_addr", 'G', 281
+	._inspect	'V', 't', "pmc1d0pmax_addr", 'G', 281
+	._inspect	'V', 't', "pmc1d1pmin_addr", 'G', 281
+	._inspect	'V', 't', "pmc1d1pmax_addr", 'G', 281
+	._inspect	'V', 't', "pmc1tim_addr", 'G', 326
+	._inspect	'V', 't', "pmc1bc_addr", 'G', 326
+	._inspect	'V', 't', "TSave_General_Event", 'O', 347
+	._inspect	'V', 't', "TSpec_Event", 'O', 351
+	._inspect	'V', 't', "TGeneral_Event", 'O', 354
+	._inspect	'V', 't', "Clear_Demand_Mode", 'G', 3
+	._inspect	'V', 't', "EventEnergyValid_Flag", 'G', 3
+	._inspect	'V', 't', "Event_AmpHour", 'G', 356
+	._inspect	'V', 't', "EventCriticalVoltage_Flag", 'G', 3
+	._inspect	'V', 't', "TempEventData", 'G', 357
+	._inspect	'V', 't', "lostvoltenergyall", 'G', 358
+	._inspect	'V', 't', "lostvoltenergy", 'G', 359
+	._inspect	'F', 't', "EventTimeAdd", 'G', 362
+	._inspect	'F', 't', "New2007_Event", 'G', 365
+	._inspect	'F', 't', "EventRecordAdjustEnergy", 'G', 368
+	._inspect	'F', 't', "EventData_PowerDown_Save", 'G', 371
+	._inspect	'F', 't', "EventData_PowerOn_Check", 'G', 373
+	._inspect	'F', 't', "EventRecord_Poweron_Check", 'G', 375
+	._inspect	'F', 't', "PowerDownEvent_OnCheck", 'G', 378
+	._inspect	'F', 't', "ProgrammeEvent", 'G', 379
+	._inspect	'F', 't', "ClearMeterRecord", 'G', 380
+	._inspect	'F', 't', "VoltStatSetDefault", 'G', 383
+	._inspect	'F', 't', "VoltStatInit", 'G', 386
+	._inspect	'F', 't', "VoltStatisticCheck", 'G', 389
+	._inspect	'F', 't', "OverDemandEvent", 'G', 392
+	._inspect	'F', 't', "AdjustTimeRecord", 'G', 393
+	._inspect	'F', 't', "ClearDemandRecord", 'G', 394
+	._inspect	'F', 't', "ProgWeekRecord", 'G', 395
+	._inspect	'F', 't', "ProgAEModeRecord", 'G', 396
+	._inspect	'F', 't', "ProgNEMode1Record", 'G', 397
+	._inspect	'F', 't', "ProgNEMode2Record", 'G', 398
+	._inspect	'F', 't', "ProgBillDayRecord", 'G', 400
+	._inspect	'F', 't', "ProgYearSlotRecord", 'G', 401
+	._inspect	'F', 't', "ProgDailySlotRecord", 'G', 402
+	._inspect	'F', 't', "ClearNewEventRecord", 'G', 403
+	._inspect	'F', 't', "PrepVoltStatReadData", 'G', 405
+	._inspect	'F', 't', "ResetCpuEvent_OnCheck", 'G', 408
+	._inspect	'F', 't', "RunClockErrorRecord", 'G', 411
+	._inspect	'F', 't', "PowerUpClockErrorRecord", 'G', 414
+	._inspect	'F', 't', "EepromErrorRecord", 'G', 417
+	._inspect	'F', 't', "EnergyPassZeroRecord", 'G', 420
+	._inspect	'F', 't', "SetPrimaryRecord", 'G', 423
+	._inspect	'F', 't', "EepromEventSetDefault", 'G', 426
+	._inspect	'F', 't', "EMeterPowerdownRecord", 'G', 429
+	._inspect	'F', 't', "ClearEventRecord", 'G', 430
+	._inspect	'F', 't', "ProgAEMode_NEMode1_NEMode2_Record", 'G', 431
+	._inspect	'F', 't', "OpenBoxCoverEvent_Check", 'G', 434
+	._inspect	'F', 't', "EventFlagPowerOnInit", 'G', 437
+	._inspect	'F', 't', "ProgrammeEventEnd_Check_Payment", 'G', 440
+	._inspect	'F', 't', "ProgrammeEventEnd_Check", 'G', 443
+	._inspect	'F', 't', "VoltStatisticFunc", 'G', 446
+	._inspect	'F', 't', "AdjustMeterRecord", 'G', 449
+	._inspect	'F', 't', "PrepNewFirstEventData", 'G', 450
+	._inspect	'F', 't', "Save_EventTimesANDPointer_4byte", 'G', 453
+	._inspect	'F', 't', "Prepare_For_EventLastTime", 'G', 456
+	._inspect	'F', 't', "Refresh_EventData", 'G', 458
+	._inspect	'F', 't', "Refresh_AddTime", 'G', 459
+	._inspect	'F', 't', "ClearEventDate_BatteryPowerOn", 'G', 462
+	._inspect	'F', 't', "PrepLostVoltEnergyData", 'G', 463
+	._inspect	'F', 't', "PowerAbnormalEventCheck", 'G', 466
+	._inspect	'F', 't', "ClockBatteryDisplayBattery_Event", 'G', 469
+	._inspect	'F', 't', "PdOpenCoverCheckInit", 'G', 471
+	._inspect	'F', 't', "PdOpenCoverCheck", 'G', 474
+	._inspect	'F', 't', "PdOpenCoverCheckPowerUpDeal", 'G', 477
+	._inspect	'F', 't', "ClearEventAll", 'G', 480
+	._inspect	'F', 't', "ClearEventCommDeal", 'G', 482
+	._inspect	'F', 't', "ClearEventDataPowerOn", 'G', 485
+	._inspect	'F', 't', "ClearEvent_EventBegin", 'G', 488
+	._inspect	'V', 't', "VoltCheck_N", 'G', 491
+	._inspect	'V', 't', "VoltStat", 'G', 499
+	._inspect	'V', 't', "Clearevent_ID", 'G', 500
+	._inspect	'V', 't', "pdopencovercheckdata", 'G', 502
+	._inspect	'V', 't', "eventstatusinfo", 'G', 503
+	._inspect	'F', 't', "Save_EventReportTimes", 'G', 505
+	._inspect	'F', 't', "BCD2Byte", 'G', 507
+	._inspect	'F', 't', "OB_H", 'G', 508
+	._inspect	'F', 't', "OH_B", 'G', 509
+	._inspect	'F', 't', "CheckTime", 'G', 511
+	._inspect	'F', 't', "CheckBCD", 'G', 512
+	._inspect	'F', 't', "CheckBCD_NByte", 'G', 514
+	._inspect	'F', 't', "ABS", 'G', 515
+	._inspect	'F', 't', "ten_seq", 'G', 516
+	._inspect	'F', 't', "HexToBcd", 'G', 520
+	._inspect	'F', 't', "BcdToHex", 'G', 524
+	._inspect	'F', 't', "FormatBCD", 'G', 527
+	._inspect	'F', 't', "CompareBytes", 'G', 530
+	._inspect	'F', 't', "HexToACK", 'G', 534
+	._inspect	'F', 't', "ACKToHex", 'G', 538
+	._inspect	'F', 't', "search_unit", 'G', 539
+	._inspect	'F', 't', "HexToBcdnByte", 'G', 543
+	._inspect	'F', 't', "BcdToHexnByte", 'G', 547
+	._inspect	'F', 't', "memcpy", 'G', 551
+	._inspect	'F', 't', "format_data", 'G', 552
+	._inspect	'V', 't', "CommB", 'G', 554
+	._inspect	'V', 't', "ProgramEventFlag", 'G', 3
+	._inspect	'V', 't', "JustMeterDataFlag", 'G', 489
+	._inspect	'V', 't', "JustMeterDateFlag", 'G', 564
+	._inspect	'V', 't', "JustMeterFlag", 'G', 3
+	._inspect	'V', 't', "cx", 'G', 584
+	._inspect	'V', 't', "Readdata_buff", 'G', 585
+	._inspect	'V', 't', "COMM_Curr", 'G', 586
+	._inspect	'V', 't', "COMM_Factor", 'G', 587
+	._inspect	'V', 't', "COMM_Active_power", 'G', 588
+	._inspect	'V', 't', "COMM_Reactive_power", 'G', 589
+	._inspect	'V', 't', "COMM_Visual_power", 'G', 590
+	._inspect	'V', 't', "COMM_Current_Demand", 'G', 591
+	._inspect	'V', 't', "Freeze_Flag_DayHour", 'G', 592
+	._inspect	'V', 't', "Comm_DailyOrYear_Slot", 'G', 3
+	._inspect	'V', 't', "Comm_Firrespon_SecDispos_Buff", 'G', 593
+	._inspect	'V', 't', "Comm_Firrespon_SecDispos_Uart", 'G', 594
+	._inspect	'V', 't', "GPRS_Status", 'G', 3
+	._inspect	'V', 't', "Voltage_ad_data", 'G', 595
+	._inspect	'V', 't', "Displayfinish_flag", 'G', 3
+	._inspect	'V', 't', "FullScreenTime", 'G', 18
+	._inspect	'V', 't', "ad_Flag", 'G', 3
+	._inspect	'V', 't', "ad_finish_Flag", 'G', 3
+	._inspect	'V', 't', "meter_model_ok", 'G', 7
+	._inspect	'V', 't', "fix_ad_data", 'G', 18
+	._inspect	'V', 't', "comm_plus_energy_01wh", 'G', 597
+	._inspect	'V', 't', "comm_nega_energy_01wh", 'G', 599
+	._inspect	'F', 't', "Init_Comm", 'G', 601
+	._inspect	'F', 't', "Interr_Comm_R", 'G', 603
+	._inspect	'F', 't', "Interr_Comm_W", 'G', 605
+	._inspect	'F', 't', "Communication", 'G', 607
+	._inspect	'F', 't', "FindComCommand", 'G', 608
+	._inspect	'F', 't', "AnswerComCommand", 'G', 609
+	._inspect	'F', 't', "TransferData", 'G', 612
+	._inspect	'F', 't', "GetNowTime", 'G', 614
+	._inspect	'F', 't', "GetTimeCount", 'G', 615
+	._inspect	'F', 't', "F_Ar", 'G', 616
+	._inspect	'F', 't', "ReadData", 'G', 618
+	._inspect	'F', 't', "WriteData", 'G', 621
+	._inspect	'F', 't', "BroadcastJustTime", 'G', 624
+	._inspect	'F', 't', "WriteAddress", 'G', 627
+	._inspect	'F', 't', "WriteBaud", 'G', 630
+	._inspect	'F', 't', "WritePassword", 'G', 633
+	._inspect	'F', 't', "ClearDemand", 'G', 636
+	._inspect	'F', 't', "R_W_Data", 'G', 638
+	._inspect	'F', 't', "ReadLC256", 'G', 640
+	._inspect	'F', 't', "WriteLC256", 'G', 642
+	._inspect	'F', 't', "GetRecordAddr", 'G', 643
+	._inspect	'F', 't', "Delay", 'G', 645
+	._inspect	'F', 't', "CalDay", 'G', 646
+	._inspect	'F', 't', "ComTime", 'G', 649
+	._inspect	'F', 't', "ClearDemandCommAndKey", 'G', 650
+	._inspect	'F', 't', "Clear_PasswordErr", 'G', 652
+	._inspect	'F', 't', "CheckProgramKeyState", 'G', 655
+	._inspect	'F', 't', "IC_Set_Program", 'G', 658
+	._inspect	'F', 't', "FreezeEvent_Energy", 'G', 661
+	._inspect	'F', 't', "Read_SystemTime_YMDH", 'G', 663
+	._inspect	'F', 't', "Read_SystemTime_HMS", 'G', 665
+	._inspect	'F', 't', "Set_SystemTime_YMDH", 'G', 667
+	._inspect	'F', 't', "Set_SystemTime_HMS", 'G', 669
+	._inspect	'F', 't', "Set_DemandPeriod", 'G', 671
+	._inspect	'F', 't', "Set_DemandSkipPeriod", 'G', 673
+	._inspect	'F', 't', "Set_Activem_Erengy_Mode", 'G', 675
+	._inspect	'F', 't', "Set_REActivem_Erengy_1_Mode", 'G', 677
+	._inspect	'F', 't', "Set_REActivem_Erengy_2_Mode", 'G', 679
+	._inspect	'F', 't', "Set_ActivePulseConst", 'G', 681
+	._inspect	'F', 't', "Set_Erengypoint", 'G', 683
+	._inspect	'F', 't', "Set_BILL_Day", 'G', 685
+	._inspect	'F', 't', "Set_SlotParemeter", 'G', 687
+	._inspect	'F', 't', "Set_YearSlot", 'G', 689
+	._inspect	'F', 't', "Set_ProgWeek", 'G', 691
+	._inspect	'F', 't', "Set_Holiday", 'G', 693
+	._inspect	'F', 't', "Set_DailySlot", 'G', 695
+	._inspect	'F', 't', "Set_LoadRecoedBeginTime", 'G', 697
+	._inspect	'F', 't', "Set_LoadRecoedPeriod", 'G', 699
+	._inspect	'F', 't', "Set_MeterMode", 'G', 701
+	._inspect	'F', 't', "Set_Meterlocktimes", 'G', 703
+	._inspect	'F', 't', "Set_OutputModel", 'G', 705
+	._inspect	'F', 't', "Exit_WorkRoomState", 'G', 707
+	._inspect	'F', 't', "Read_primary_energy", 'G', 709
+	._inspect	'F', 't', "Set_primary_energy", 'G', 711
+	._inspect	'F', 't', "Read_WorkRoomState", 'G', 713
+	._inspect	'F', 't', "Read_Freeze_Bit_0_data", 'G', 715
+	._inspect	'F', 't', "Read_Freeze_Bit_1_data", 'G', 717
+	._inspect	'F', 't', "Read_Freeze_Bit_2_data", 'G', 719
+	._inspect	'F', 't', "Read_Freeze_Bit_3_data", 'G', 721
+	._inspect	'F', 't', "Read_Freeze_Bit_4_data", 'G', 723
+	._inspect	'F', 't', "Read_Freeze_Bit_5_data", 'G', 725
+	._inspect	'F', 't', "Read_Freeze_Bit_6_data", 'G', 727
+	._inspect	'F', 't', "Read_Freeze_Bit_7_data", 'G', 729
+	._inspect	'F', 't', "Read_Freeze_Block_data", 'G', 731
+	._inspect	'F', 't', "Read_Meter_lock_times", 'G', 733
+	._inspect	'F', 't', "Check_Parameter_Len_IS_ok", 'G', 734
+	._inspect	'F', 't', "Pre_No_use_leaf_data", 'G', 736
+	._inspect	'F', 't', "Set_Display_Number", 'G', 738
+	._inspect	'F', 't', "Set_Commrate", 'G', 740
+	._inspect	'F', 't', "Read_Freeze_Date", 'G', 742
+	._inspect	'F', 't', "Set_CycleDisplayTime", 'G', 744
+	._inspect	'F', 't', "Read_Far_IR_Commate", 'G', 745
+	._inspect	'F', 't', "Set_CriticalVoltage", 'G', 747
+	._inspect	'F', 't', "Set_CommAddr", 'G', 749
+	._inspect	'F', 't', "Set_Show_USER_Code", 'G', 751
+	._inspect	'F', 't', "Read_Sign_Instance_Variable", 'G', 753
+	._inspect	'F', 't', "Read_Meter_Temperature", 'G', 755
+	._inspect	'F', 't', "Read_YearSlot_Table", 'G', 757
+	._inspect	'F', 't', "Read_DailySlot_Table", 'G', 759
+	._inspect	'F', 't', "Comm_Initialize_FLASH", 'G', 761
+	._inspect	'F', 't', "Read_Last_loss_voltage_start_time", 'G', 763
+	._inspect	'F', 't', "Read_Last_loss_voltage_end_time", 'G', 765
+	._inspect	'F', 't', "Set_Freeze_Period_Begin_time", 'G', 767
+	._inspect	'F', 't', "Set_Freeze_Period", 'G', 769
+	._inspect	'F', 't', "Set_TriffSwitchDate", 'G', 771
+	._inspect	'F', 't', "Set_Cycle_Key_Display", 'G', 773
+	._inspect	'F', 't', "Read_Meter_FILEDATE_VI", 'G', 775
+	._inspect	'V', 't', "CommBP", 'G', 776
+	._inspect	'V', 't', "CurrPC", 'G', 777
+	._inspect	'V', 't', "WriteDateBuff", 'G', 778
+	._inspect	'F', 't', "Set_ShowNoKeyRetTime", 'G', 780
+	._inspect	'F', 't', "CheckPasswordRight", 'G', 782
+	._inspect	'F', 't', "CheckPasswoerErr", 'G', 784
+	._inspect	'F', 't', "AppointTrasfPortBuff", 'G', 786
+	._inspect	'F', 't', "Crc16l", 'G', 788
+	._inspect	'F', 't', "Set_which_Responsion_Flag", 'G', 790
+	._inspect	'F', 't', "Set_JFPG_Triff", 'G', 792
+	._inspect	'F', 't', "Set_Meter_para_Deal", 'G', 794
+	._inspect	'F', 't', "Read_Display_Number", 'G', 796
+	._inspect	'F', 't', "Read_LostVoltEnergy", 'G', 798
+	._inspect	'F', 't', "Read_LostVolt_AllEnergy", 'G', 800
+	._inspect	'F', 't', "RTC_Init", 'G', 803
+	._inspect	'F', 't', "PowerOn_FullScreen_TimeDetection", 'G', 806
+	._inspect	'F', 't', "ReadClockBatteryVoltage", 'G', 808
+	._inspect	'F', 't', "ReadDisplayBatteryVoltage", 'G', 810
+	._inspect	'F', 't', "ReadEventReportInfo", 'G', 812
+	._inspect	'F', 't', "GetEventReportMode", 'G', 814
+	._inspect	'F', 't', "SetEventReportMode", 'G', 816
+	._inspect	'F', 't', "SetPowerOnFullScreenTime", 'G', 818
+	._inspect	'F', 't', "Set_SystemTime_YMDHHMS", 'G', 820
+	._inspect	'F', 't', "GetMeterSoftIdNumber", 'G', 822
+	._inspect	'F', 't', "SetMeterSoftIdNumber", 'G', 824
+	._inspect	'F', 't', "GetNowMonthComActiveEnergy", 'G', 826
+	._inspect	'F', 't', "GetLastMonthComActiveEnergy", 'G', 828
+	._inspect	'F', 't', "Set_Freeze_Day", 'G', 830
+	._inspect	'F', 't', "ReadEnergy01Wh", 'G', 832
+	._inspect	'F', 't', "ResetEventReportInfo", 'G', 834
+	._inspect	'F', 't', "Clear_EventReportStatus_And_Times", 'G', 935
+	._inspect	'F', 't', "Set_ResetReportTime", 'G', 937
+	._inspect	'F', 't', "Set_Read_Block_Para", 'G', 939
+	._inspect	'V', 't', "flags_reg", 'S', 18
+	._inspect	'V', 't', "cm0_saved", 'S', 3
+	._inspect	'V', 't', "cm1_saved", 'S', 3
+	._inspect	'V', 't', "pm0_saved", 'S', 3
+	._inspect	'V', 't', "pm1_saved", 'S', 3
+	._inspect	'V', 't', "prcr_saved", 'S', 3
+	._inspect	'V', 't', "fmr2_saved", 'S', 3
+	._inspect	'V', 't', "block_addresses", 'S', 940
+
+	.END
+
+;## Compile End Time Fri Apr 22 17:16:41 2016
+
+

@@ -1,0 +1,9 @@
+-c
+-finfo
+-dir "F:\work\ATM90E32\Software\ATM90E3X CODE\Release_Code\MB4_64A\Debug"
+-O3
+-WNP
+-WNUF
+-WUV
+-WCMW=6
+"F:\work\ATM90E32\Software\ATM90E3X CODE\Release_Code\MB4_64A\ATM90E3X_Meter.c"

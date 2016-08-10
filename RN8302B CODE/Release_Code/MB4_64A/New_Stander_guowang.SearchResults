@@ -1,0 +1,1050 @@
+---- -> Matches (1202 in 28 files) ----
+645_2007.c:					if(tree_node->Next_Node!=0xffff)
+645_2007.c:							node_addr=tree_node->Next_Node;
+645_2007.c:						//*node_mode=tree_node->Node_mode;
+645_2007.c:						Node_temp=tree_node->Low_Node;	
+645_2007.c:	if(node->Node_mode.bit.ID_Enable==1)/*"数据标识有效"*/
+645_2007.c:			if((id.l == node->ID)&&(node->Node_mode.bit.num==0xf)) 
+645_2007.c:			id_temp.l=node->ID;
+645_2007.c:						if((i!=node->Node_mode.bit.num)&&(i!=block))
+645_2007.c:		    Communal_Range=(const struct COMMUNAL_RANGE  *)&Protocol_Range[node->Range_ID];	
+645_2007.c:	      if(Communal_Range->ID_Start<0x100)
+645_2007.c:			  	ID_start=Communal_Range->ID_Start;
+645_2007.c:				  Ram_id_Addr=(unsigned char *)Communal_Range->ID_Start;
+645_2007.c:	      if(Communal_Range->ID_End<0x100)
+645_2007.c:				ID_end=Communal_Range->ID_End;
+645_2007.c:				  Ram_id_Addr=(unsigned char  *)Communal_Range->ID_End;
+645_2007.c:				  if((Communal_Range->ID_End) ==((unsigned int)&Max_Triff_Current))/*"根据RAM地址判断是否在抄读电量数据"*////kc debug 140807
+645_2007.c:			if(node->Node_mode.bit.mode==0)
+645_2007.c:					if(node->Node_mode.bit.num!=0xf)
+645_2007.c:						if((id.d[node->Node_mode.bit.num]>=ID_start)&&(id.d[node->Node_mode.bit.num]<=ID_end))
+645_2007.c:							ret.byte=push_zip_info(uzip,node->Node_mode.bit.num);
+645_2007.c:							if(node->Node_mode.bit.num!=0xf)
+645_2007.c:							if((id.d[node->Node_mode.bit.num]>=ID_start)&&(id.d[node->Node_mode.bit.num]<=ID_end))
+645_2007.c:										if(node->Node_mode.bit.Low_Node_Num==1)/*"下级节点有数据标识"*/
+645_2007.c:											ret.byte=push_zip_info(uzip,node->Node_mode.bit.num)	;
+645_2007.c:						if(node->Node_mode.bit.num!=0xf)
+645_2007.c:							if((id.d[node->Node_mode.bit.num]>=ID_start)&&(id.d[node->Node_mode.bit.num]<=ID_end))
+645_2007.c:										ret.byte=push_zip_info(uzip,node->Node_mode.bit.num)	;
+645_2007.c:										if(node->Node_mode.bit.Low_Node_Num==1)/*"下级节点有数据标识"*/
+645_2007.c://								ret.bit.num1=node->Node_mode.bit.num;			
+645_2007.c:		block_flag=Tree_Node->Node_mode.bit.zip;
+645_2007.c:		if(Tree_Node->Node_mode.bit.mode==0)
+645_2007.c:			Tree_Leaf=(const struct TREE_LEAF *)&Protocol_Tree_Leaf[Tree_Node->Low_Node];
+645_2007.c:			Communal_Id      =(const struct COMMUNAL_ID 			*)&Protocol_Id[Tree_Leaf->Communal_Id];
+645_2007.c:			REVISE_ID        =(const struct REVISE_ID         *)&Protocol_Revise_Id[Tree_Leaf->Communal_Addr_Id];
+645_2007.c:				Communal_Revise=(const struct COMMUNAL_REVISE *)&Protocol_Revise[REVISE_ID->Revise_Id[i]];
+645_2007.c:					i_ret=Get_Leaf_Data(Tree_Node->Low_Node,buff+getlen,formatdata,format,Revise,Revise_file,uartx);
+645_2007.c:				i_ret=Set_Leaf_Data(Tree_Node->Low_Node,buff+getlen,formatdata,format,Revise,uartx);
+645_2007.c:					i_ret=Get_Leaf_Data(Tree_Node->Low_Node,buff+getlen,formatdata,format,Revise,Revise_file,uartx);
+645_2007.c:							    *format=Communal_Id->Communal_Trans_Id;
+645_2007.c:								*format=Communal_Id->Communal_Show_Id;
+645_2007.c:					 	 	  *((unsigned int *)format)=Tree_Leaf->Communal_Showinfo_Id;
+645_2007.c:			i_ret=Traverse_Node_sub(Tree_Node->Low_Node,buff+getlen,len-getlen,mode,formatdata,format,
+645_2007.c:			ret=check_node_point(Tree_Node->Next_Node);
+645_2007.c:			node=Tree_Node->Next_Node;	
+645_2007.c:	if(tree_node->Node_mode.bit.mode==0)
+645_2007.c:			if(check_node_point(tree_node->Low_Node)==0xff)
+645_2007.c:			ret=search_leaf(tree_node->Low_Node,addr);
+645_2007.c:	Communal_Purview =(const struct COMMUNAL_PURVIEW *)&Protocol_Purview[Tree_Leaf->Communal_Purview_Id];
+645_2007.c:	Communal_Function=(const struct COMMUNAL_FUNCTION *)&Protocol_Function[Tree_Leaf->Communal_Function_Id];
+645_2007.c:	Communal_Id=(const struct COMMUNAL_ID *)&Protocol_Id[Tree_Leaf->Communal_Id];
+645_2007.c:	Communal_Save=(const struct COMMUNAL_FORMAT	*)&Protocol_Format[Communal_Id->Communal_Save_Id];
+645_2007.c:	Communal_Trans=(const struct COMMUNAL_FORMAT  *)&Protocol_Format[Communal_Id->Communal_Trans_Id];
+645_2007.c:	Communal_Show=(const struct COMMUNAL_FORMAT  *)&Protocol_Format[Communal_Id->Communal_Show_Id];
+645_2007.c:	Communal_Mathinfo=(const struct COMMUNAL_MATHINFO *)&Protocol_MATHINFO[Tree_Leaf->Communal_Math_Mode_Id];
+645_2007.c:	if(((Communal_Purview->read_mode&ctemp)&0x07)==0)
+645_2007.c:	if(Communal_Function->OnRead!=0)
+645_2007.c:				if(Communal_Function->OnRead()==-1)
+645_2007.c:	if(Communal_Mathinfo->math_mode<0x100)
+645_2007.c:				math_mode=Communal_Mathinfo->math_mode;
+645_2007.c:				Ram_Data_Addr=(unsigned char *)Communal_Mathinfo->math_mode;
+645_2007.c:	s_len=sizeof_format(Communal_Save->format);
+645_2007.c:	save_format_temp=Communal_Save->format;
+645_2007.c:	 Treeaddr.val=Tree_Leaf->addr;
+645_2007.c:			ret=Ram_math(Communal_Mathinfo->math_type,Ram_Data_Addr,(unsigned char *)&dbuf[0],math_mode,Communal_Save->format,
+645_2007.c:															Communal_Mathinfo->Ass_data_num,Communal_Mathinfo->Ass_data_addr);
+645_2007.c:			ret=Eeprom_math(Communal_Mathinfo->math_type,f_temp,(unsigned char *)&dbuf[0],math_mode,Communal_Save->format,
+645_2007.c:										Communal_Mathinfo->Ass_data_num,Communal_Mathinfo->Ass_data_addr,0);
+645_2007.c:			ret=Flash_math(Communal_Mathinfo->math_type,f_temp,(unsigned char *)&dbuf[0],math_mode,Communal_Save->format,
+645_2007.c:										Communal_Mathinfo->Ass_data_num,Communal_Mathinfo->Ass_data_addr,file_name);
+645_2007.c:		if(((Check_Data_valid(dbuf,s_len)==-1)&&(Communal_Mathinfo->math_type!=1)
+645_2007.c:		&&(!((Communal_Mathinfo->math_type==0)&&((save_format_temp==SIGNED_LONG)||(save_format_temp==SIGNED_INT)||(save_format_temp==SIGNED_CHAR)))))
+645_2007.c:			if(Communal_Trans->exp==Mauto)
+645_2007.c:    	else if(Communal_Trans->exp==Dauto)
+645_2007.c:		else if (Communal_Trans->exp==RMB_Mauto)		//payment
+645_2007.c:			  exp_temp=Communal_Trans->exp;
+645_2007.c:			format_temp=Communal_Trans->format;
+645_2007.c:			unit_temp=Communal_Trans->unit;
+645_2007.c:			if(Communal_Show->exp==Mauto)
+645_2007.c:  	 	else if(Communal_Show->exp==Dauto)
+645_2007.c:		else if (Communal_Show->exp==RMB_Mauto)		//payment	
+645_2007.c:				exp_temp=Communal_Show->exp;
+645_2007.c:		if(Communal_Show->format==0)     					
+645_2007.c:		     format_temp=Communal_Trans->format;				 
+645_2007.c:			 unit_temp=Communal_Trans->unit;
+645_2007.c:			format_temp=Communal_Show->format;				
+645_2007.c:			unit_temp=Communal_Show->unit;			
+645_2007.c:			exp_temp=Communal_Trans->exp;
+645_2007.c:	if(((Communal_Trans->exp==Dauto)||(Communal_Show->exp==Dauto))&&(Data_valid_flag==0xff))
+645_2007.c:                if(Communal_Save->format!=BCD3BYTE)
+645_2007.c:														Communal_Save->unit,unit_temp,Communal_Save->exp,exp_temp);		
+645_2007.c:	Communal_Purview =(const struct COMMUNAL_PURVIEW  *)&Protocol_Purview[Tree_Leaf->Communal_Purview_Id];
+645_2007.c:	Communal_Function=(const struct COMMUNAL_FUNCTION *)&Protocol_Function[Tree_Leaf->Communal_Function_Id];
+645_2007.c:	Communal_Id      =(const struct COMMUNAL_ID 			*)&Protocol_Id[Tree_Leaf->Communal_Id];
+645_2007.c:	Communal_Save    =(const struct COMMUNAL_FORMAT		*)&Protocol_Format[Communal_Id->Communal_Save_Id];
+645_2007.c:	Communal_Trans   =(const struct COMMUNAL_FORMAT   *)&Protocol_Format[Communal_Id->Communal_Trans_Id];
+645_2007.c:	Communal_Mathinfo=(const struct COMMUNAL_MATHINFO *)&Protocol_MATHINFO[Tree_Leaf->Communal_Math_Mode_Id];
+645_2007.c:		if(Check_Parameter_Len_IS_ok(Communal_Trans->format)==-1)  /*"在设置参数的时候对长度判读fxf 081218"*/
+645_2007.c:		if(Communal_Purview->write_mode[i]==0x00)
+645_2007.c:			if((Communal_Purview->write_mode[i]&0x01)==0x00)	
+645_2007.c:					if((Communal_Purview->write_mode[i]&0x02)==0x02)
+645_2007.c:					else if((Communal_Purview->write_mode[i]&0x04)==0x04)
+645_2007.c:					else if((Communal_Purview->write_mode[i]&0x08)==0x08)
+645_2007.c:					else if((Communal_Purview->write_mode[i]&0x10)==0x10)
+645_2007.c:					else if((Communal_Purview->write_mode[i]&0x20)==0x20)
+645_2007.c:					else if((Communal_Purview->write_mode[i]&0x40)==0x40)
+645_2007.c:		if (((Communal_Purview->write_mode[i]&0x80)!=0)&&(Far_Spec_Order_Flag!=0xFF))   //payment
+645_2007.c:	 if((Communal_Function->OnWrite_Beford!=0)&&(Iterate_Tree_Flag[uartx].Set_Prarmeter_flag==0))//FXF ADD  081115
+645_2007.c:	 	if(Communal_Function->OnWrite_Beford()==-1) /*"  写数据失败"*/
+645_2007.c:		if(Communal_Trans->exp==Mauto)/*"设置初始电量"*/
+645_2007.c:		else if (Communal_Trans->exp==RMB_Mauto)		//payment
+645_2007.c:			  exp_temp=Communal_Trans->exp;
+645_2007.c:		format_temp=Communal_Trans->format;
+645_2007.c:	ret=data_change(buff,&dbuf[0],format_temp,Communal_Save->format,
+645_2007.c:					Communal_Trans->unit,Communal_Save->unit,
+645_2007.c:					exp_temp,Communal_Save->exp);		
+645_2007.c:	switch(Tree_Leaf->addr&0xf0000000)
+645_2007.c:				Ram_Data_Addr=(unsigned char *)Tree_Leaf->addr;
+645_2007.c:				Eeprom_addr=((Tree_Leaf->addr)&0x0fffffff)+Revise;				
+645_2007.c:					s_len=sizeof_format(Communal_Save->format);
+645_2007.c:	if((Communal_Function->OnWrite_End!=0)&&(Iterate_Tree_Flag[uartx].Set_Prarmeter_flag==0))
+645_2007.c:		ret=Communal_Function->OnWrite_End();
+645_2007.c:			if(point->Demand>temp.Demand)
+645_2007.c:					temp.Demand=point->Demand;
+645_2007.c:					memcpy((unsigned char*)&temp.time[0],(unsigned char*)&point->time[0],5);
+645_2007.c:	if((REVISE->Revise_Mode&0x08)!=type)/*"文件名偏移此处不做运算做"*/
+645_2007.c:	if((REVISE->Revise_Mode&0x01)==0)
+645_2007.c:	if(REVISE->Revise_Basce<0x100)
+645_2007.c:		basce=REVISE->Revise_Basce;
+645_2007.c:		Ram_Data_Addr=(unsigned char*)REVISE->Revise_Basce;
+645_2007.c:	Revise_Max_Num=REVISE->Revise_Max_Num;
+645_2007.c:	if((REVISE->Revise_Mode&0x02)!=0)
+645_2007.c:		if((REVISE->Revise_Mode&0x04)==0)
+645_2007.c:        if((REVISE->Revise_Mode&0x10)==0)
+645_2007.c:		if((REVISE->Revise_Mode&0x04)==0)
+645_2007.c:	leaf_addr+=(num*REVISE->Revise_Size);
+645_2007.c:	Communal_Range=(const struct COMMUNAL_RANGE  *)&Protocol_Range[Tree_Node->Range_ID];
+645_2007.c:	if(Communal_Range->ID_Start<0x100)
+645_2007.c:				ID_start=Communal_Range->ID_Start;
+645_2007.c:				Ram_Id_Addr=(unsigned char *)Communal_Range->ID_Start;
+645_2007.c:	if(Communal_Range->ID_End<0x100)
+645_2007.c:			ID_end=Communal_Range->ID_End;
+645_2007.c:				  Ram_Id_Addr=(unsigned char *)Communal_Range->ID_End;
+645_2007.c:				  if((Communal_Range->ID_End) ==((unsigned int)&Max_Triff_Current))/*"根据RAM地址判断是否在抄读电量数据"*////kc debug 140807
+645_2007.c:		if(Tree_Node->Node_mode.bit.num!=0xf)
+AllVoltageLoss.C://			Read_Date_And_Time((unsigned char*)&AllVoltageLoss_DateAndTime,	//DatePointer-->struct DATEANDTIME_DEF
+AllVoltageLoss.C:	&&(((AllVoltageLoss_counter % READ_ATERNAL) == 0)))////5--->6
+Card_Data.c:			Reverse_data((unsigned char *)&(triff_data->Triff[j]),4);
+Card_Data.c:			BcdToHex(4,(unsigned char *)&(triff_data->Triff[j]),Triff_Point+j*4);
+Card_Data.c:			Reverse_data((unsigned char *)&(triff_data->Grads_Value[j]),4);
+Card_Data.c:			BcdToHex(4,(unsigned char *)&(triff_data->Grads_Value[j]),Triff_Point+j*4);
+Card_Data.c:			Reverse_data((unsigned char *)&(triff_data->Grads_Price[j]),4);
+Card_Data.c:			BcdToHex(4,(unsigned char *)&(triff_data->Grads_Price[j]),Triff_Point+j*4);
+Card_Data.c:				if (My_Memcmp(&Pre_Payment_Para.Year_BillDate[0][j].Month, (unsigned char *)&(triff_data->Bill_Date[j][0]) ,3)!=0)
+Card_Data.c:			//*(Triff_Point+j)=(unsigned char *)&(Triff_Data->Bill_Date[j]);			/*"卡赋表"*/
+Card_Data.c:			My_Memcpy(Triff_Point+j*3,(unsigned char *)&(triff_data->Bill_Date[j][0]),3);		
+Card_Data.c:			My_Memcpy(&Pre_Payment_Para.StepSwitchDate.Year,(unsigned char *)&(triff_data->Grad_Switch_Date[0]),5);		
+Card_Data.c:		Pre_Payment_Para.User_Kind = Para_Table2->User_Kind;
+Card_Data.c:		Reverse_data((unsigned char *)&(Para_Table3->Remain_Money_Alarm1_Limit),4);
+Card_Data.c:		BcdToHex(4,(unsigned char *)&(Para_Table3->Remain_Money_Alarm1_Limit),(unsigned char *)&Pre_Payment_Para.Remain_Money_Alarm1_Limit);
+Card_Data.c:		Reverse_data((unsigned char *)&(Para_Table3->Remain_Money_Alarm2_Limit),4);
+Card_Data.c:		BcdToHex(4,(unsigned char *)&(Para_Table3->Remain_Money_Alarm2_Limit),(unsigned char *)&Pre_Payment_Para.Remain_Money_Alarm2_Limit);
+Card_Data.c://		Reverse_data((unsigned char *)&(Para_Table3->Remain_Money_Hoard_Limit),4);
+Card_Data.c://		BcdToHex(4,(unsigned char *)&(Para_Table3->Remain_Money_Hoard_Limit),(unsigned char *)&Pre_Payment_Para.Remain_Money_Hoard_Limit);
+Card_Data.c://		Reverse_data((unsigned char *)&(Para_Table3->Remain_Money_Tick_Limit),4);
+Card_Data.c://		BcdToHex(4,(unsigned char *)&(Para_Table3->Remain_Money_Tick_Limit),(unsigned char *)&Pre_Payment_Para.Remain_Money_Tick_Limit);
+Card_Data.c:		Reverse_data((unsigned char *)&(Para_Table3->Current_CT[0]),3);
+Card_Data.c:		BcdToHex(3,(unsigned char *)&(Para_Table3->Current_CT[0]),(unsigned char *)&Pre_Payment_Para.C_T);
+Card_Data.c:		Reverse_data((unsigned char *)&(Para_Table3->Voltage_PT[0]),3);
+Card_Data.c:		BcdToHex(3,(unsigned char *)&(Para_Table3->Voltage_PT[0]),(unsigned char *)&Pre_Payment_Para.P_T);
+Card_Data.c:		My_Memcpy((unsigned char *)&Pre_Payment_Para.TriffSwitchDate.Year,(unsigned char *)&(Para_Table4->Triff_Switch_Time[0]),5);
+Card_Data.c:		Deal_Para_Table2((unsigned char *)&(Buy_Para_Inf_File->User_Kind),Mode);
+Card_Data.c:		Deal_Para_Table3((unsigned char *)&(Buy_Para_Inf_File->Remain_Money_Alarm1_Limit),Mode);
+Card_Data.c:	//Deal_Para_Table1((unsigned char *)&(Buy_Para_Inf_File->Meter_ID),Mode);
+Card_Data.c:	Deal_Para_Table4((unsigned char *)&(Buy_Para_Inf_File->Triff_Switch_Time),Mode);
+Card_Data.c://		My_Memcpy((unsigned char *)&Pre_Payment_Para.Para_Card_Version,(unsigned char *)&(Para_Table5->Para_Card_Version),4);
+Card_Data.c:	Deal_Para_Table2((unsigned char *)&(Set_Para_Inf_File->User_Kind),Mode);
+Card_Data.c:	Deal_Para_Table5((unsigned char *)&(Set_Para_Inf_File->Para_Card_Version),Mode);
+Card_Data.c:	Deal_Para_Table4((unsigned char *)&(Set_Para_Inf_File->Triff_Switch_Time),Mode);
+Card_Data.c:	Run_Inf_Data->User_Kind=0;
+Card_Data.c:	Get_File_Data(ESAM,ESAM_PARA_INF_FILE,CLIENT_ID_ESAM,6,&Run_Inf_Data->Client_ID[0]);
+Card_Data.c:	Get_File_Data(ESAM,ESAM_PARA_INF_FILE,METER_ID_ESAM,6,&Run_Inf_Data->Meter_ID[0]);
+Card_Data.c:	//Get_File_Data(ESAM,ESAM_PARA_INF_FILE,USER_KIND_ESAM,1,&Run_Inf_Data->User_Kind);
+Card_Data.c://	My_Memcpy(&(Run_Inf_Data->Client_ID[0]),&(Pre_Payment_Para.UserID[0]),6);
+Card_Data.c://	My_Memcpy(&(Run_Inf_Data->Meter_ID[0]),&(Pre_Payment_Para.MeterID[0]),6);
+Card_Data.c://	Run_Inf_Data->User_Kind = Pre_Payment_Para.User_Kind;
+Card_Data.c: 	My_memcpyRev((unsigned char *)&(Run_Inf_Data->Remain_Money),(unsigned char *)&Remain_Money_Temp,4);
+Card_Data.c:	My_memcpyRev((unsigned char *)&(Run_Inf_Data->Buy_Count),(unsigned char *)&UL_Temp,4);
+Card_Data.c: 	My_memcpyRev((unsigned char *)&(Run_Inf_Data->Low_Zero_Money),(unsigned char *)&UL_Temp,4);
+Card_Data.c:	My_memcpyRev((unsigned char *)&(Run_Inf_Data->Current_CT),(unsigned char *)&UL_Temp2,3);
+Card_Data.c:	My_memcpyRev((unsigned char *)&(Run_Inf_Data->Voltage_PT),(unsigned char *)&UL_Temp2,3);
+Card_Data.c:	//	Get_File_Data(ESAM,ESAM_PASSWORD_INF_FILE,0,4,Run_Inf_Data->Password_Info);
+Card_Data.c:	My_Memcpy((unsigned char *)&(Run_Inf_Data->Password_Info[0]),0,4);
+Card_Data.c: 	Run_Inf_Data->Unlawful_Card_Count[0] = 0;
+Card_Data.c: 	Run_Inf_Data->Unlawful_Card_Count[2] =(unsigned char )Temp1;
+Card_Data.c:	Run_Inf_Data->Unlawful_Card_Count[1] =(unsigned char )Temp1;
+Card_Data.c: 	My_Memcpy((unsigned char *)&(Run_Inf_Data->Return_DT[0]),(unsigned char *)(&softdate),5);
+Comm.c:					{	/*"如果大于收->发切换时间，切换到发送状态"*/
+Comm.c:				pc->All_AA_Address = 1;
+Comm.c:	                            pc->model=0;
+Comm.c:	                            pc->model=DL_PROTOCOL;
+Comm.c:	                                  pc->BroadCasrAddress=1;
+Comm.c:	                               	pc->c=p[F_Ar(i,j-1)];  //c
+Comm.c:	                             		pc->ct=p[F_Ar(i,j-1)]; //c
+Comm.c:	                             		pc->len=p[F_Ar(i,j-2)];//l
+Comm.c:	                               if((pc->c==0x11)||(pc->c==0x14))
+Comm.c:	                               		pc->id.d[0]=p[F_Ar(i,j-3)]-0x33;
+Comm.c:	                               		pc->id.d[1]=p[F_Ar(i,j-4)]-0x33;
+Comm.c:	                               		pc->id.d[2]=p[F_Ar(i,j-5)]-0x33;
+Comm.c:	                               		pc->id.d[3]=p[F_Ar(i,j-6)]-0x33;
+Comm.c:	                               		pc->addr=F_Ar(i,j-7);/*"数据起始地址"*/
+Comm.c:	                                  pc->dataaddr=p+F_Ar(i,j-7);
+Comm.c:				                else  if(pc->c==0x12)/*"后续帧序号FXF ADD"*/
+Comm.c:	                               		pc->id.d[0]=p[F_Ar(i,j-3)]-0x33;
+Comm.c:	                               		pc->id.d[1]=p[F_Ar(i,j-4)]-0x33;
+Comm.c:	                               		pc->id.d[2]=p[F_Ar(i,j-5)]-0x33;
+Comm.c:	                               		pc->id.d[3]=p[F_Ar(i,j-6)]-0x33;
+Comm.c:	                               		pc->Frame_serial=p[F_Ar(i,j-7)]-0x33;	
+Comm.c:	                               		pc->addr=F_Ar(i,j-7);/*"数据起始地址"*/										
+Comm.c:	                               		pc->id.d[0]=p[F_Ar(i,j-3)]-0x33;
+Comm.c:	                               		pc->id.d[1]=p[F_Ar(i,j-4)]-0x33;
+Comm.c:	                               		if((pc->c==0x01) || (pc->c==0x04)|| (pc->c==0x1F))//GANJP 20090701
+Comm.c:	                                 			pc->addr=F_Ar(i,j-5);/*"数据起始地址"*/
+Comm.c:	                                  		pc->dataaddr=p+F_Ar(i,j-5);
+Comm.c:	                                  	pc->addr=F_Ar(i,j-3);/*"数据起始地址"*/
+Comm.c:	                             pc->lena=0;
+Comm.c:*               1.pc->ct is set in readdata                                               *
+Comm.c:			if(((pc->c)!=0x01) && ((pc->c)!=0x02) && ((pc->c)!=0x11)&& ((pc->c)!=0x12) 
+Comm.c:                && ((pc->c) != 0x03)&& ((pc->c) != 0x13))
+Comm.c:				(pc->c)=0xff;   
+Comm.c:			if(((pc->c==0x0C)||(pc->c==0x17)))
+Comm.c:				(pc->c)=0xff;   
+Comm.c:					if((pc->c==0x05)||(pc->c==0x08)||(pc->c==0x15))
+Comm.c:					  (pc->c)=0xff;   
+Comm.c:				if(((pc->c)!=0x01) && ((pc->c)!=0x02) && ((pc->c)!=0x0A) && ((pc->c)!=0x0C)
+Comm.c:					&& ((pc->c)!=0x11) && ((pc->c)!=0x12)&& ((pc->c)!=0x13)
+Comm.c:			        	&& ((pc->c)!=0x15) && ((pc->c)!=0x17)&& ((pc->c)!=0x08)
+Comm.c:			        	&& ((pc->c)!=0x1F) && ((pc->c)!=0x9F) && ((pc->c)!=0x14))//GANJP 20090701	//payment
+Comm.c:					(pc->c)=0xff;   
+Comm.c:				if(((pc->c)==0x14) && (pc->id.l!=0x4001301)&&(pc->id.l!=0x04001503))/*"串口二没有放开设置参数的情况下允许显示在线状态和信号强度"*/
+Comm.c:						(pc->c)=0xff;  
+Comm.c:  	   		  (pc->c)=0xff;
+Comm.c:  	   		  (pc->c)=0xff;
+Comm.c:		if(pc->c!=0x12)
+Comm.c:       if((pc->c>=0x01)&&(pc->c<=0x1D)&&(pc->c!=0x03)&&(pc->c!=0x06)&&(pc->c!=0x07)&&(pc->c!=0x1C))
+Comm.c:            if(!((pc->c>=0x09)&&(pc->c<=0x10)))
+Comm.c:               if(pc->BroadCasrAddress==0)
+Comm.c:		switch(pc->c)
+Comm.c:                        switch(pc->id.l)
+Comm.c:	if(!(pc->firstreceivecomm))
+Comm.c:	   pc->firstreceivecomm=1;
+Comm.c:	if((((pc->id.i)&0x00ff)==0x00ff)
+Comm.c:	||((farinfrareddisableflag==1)&&(!((((pc->id.i)&0xff00)==0x9000)||(((pc->id.i)&0xff00)==0x9100)
+Comm.c:	||(pc->id.i==0xC010)||(pc->id.i==0xC011)||(pc->id.i==0xC221)||(pc->id.i==0xC225)||(pc->id.i==0xC226)||(pc->id.i==0xC032)))))
+Comm.c:	   pc->lena=pc->lent=0; 
+Comm.c:	   if(TransferData(pc->idt,p+12+pc->lena,0,0,&datapoint,0)<0)
+Comm.c:	   }while(pc->lena<pc->lent && pc->lena<=195 && pc->lent && (!pc->readloadrecord) && unj<250);
+Comm.c:	if(!pc->readloadrecord)
+Comm.c:		if(pc->lent)
+Comm.c:			if(pc->lena>pc->lent)
+Comm.c:			else if(pc->lena==pc->lent )
+Comm.c:				pc->havebackframe=0;
+Comm.c:				pc->havebackframe=1;
+Comm.c:				pc->lent=pc->lent-pc->lena;
+Comm.c:			pc->havebackframe=0;
+Comm.c:			if(pc->havebackframe)
+Comm.c:				pc->ct|=0xA0;
+Comm.c:				pc->havebackframe=0;
+Comm.c:				pc->ct|=0x80;
+Comm.c:			pc->ct=0xC1; 
+Comm.c:			pc->lena=1;
+Comm.c:			pc->lent=0;
+Comm.c:			pc->havebackframe=0;
+Comm.c:			pc->ct=0x81; 
+Comm.c:			pc->ct=0xC1; 
+Comm.c:			pc->lent=0;
+Comm.c:			pc->lena=1;
+Comm.c:			pc->havebackframe=0;
+Comm.c:	pc->idt.l=pc->id.l; 
+Comm.c:	if(pc->c==0x12)
+Comm.c:		if(pc->Frame_serial==0)		
+Comm.c:		else if(Iterate_Tree_Flag[uartx].Back_Flame_Serial==pc->Frame_serial)		
+Comm.c:		else if((Iterate_Tree_Flag[uartx].Back_Flame_Serial+1)!=pc->Frame_serial)				
+Comm.c:				pc->idt.l = 0x04001501;
+Comm.c:    //if((pc->idt.l>=0x04000C01)&&(pc->idt.l<=0x04000C0A))
+Comm.c:    if((farinfrareddisableflag==1)&&(!((pc->idt.l==0x04000401)||(pc->idt.l==0x04000402)||(pc->idt.l==0x04800004)
+Comm.c:    ||(pc->idt.l==0x04000101)||(pc->idt.l==0x04000102)||(pc->idt.l==0x0400010C)||(pc->idt.l==0x00900201)||(((pc->idt.l)&0xff0000ff)==0))))
+Comm.c:		if(((pc->idt.d[3]==0x00)||(pc->idt.d[3]==0x01))&&(pc->idt.d[0]==0xff)&&(pc->idt.d[1]!=0xff)&&(pc->idt.d[2]!=0xff))			
+Comm.c:				pc->idt.d[0]=uni;
+Comm.c:				i_ret+=TransferData_New(pc->idt,p+14+i_ret,F_SIZE,COMMFORMAT,&datapoint,mode,pc->len,uartx);
+Comm.c:		else if(((pc->idt.d[3]>=0x10)&&(pc->idt.d[3]<=0x20))&&(pc->idt.d[0]==0xff)&&((pc->idt.d[1]>=0x01)&&(pc->idt.d[1]<=0x35))&&(pc->idt.d[2]<=0x03))			
+Comm.c:				pc->idt.d[0]=uni;
+Comm.c:				i_ret+=TransferData_New(pc->idt,p+14+i_ret,F_SIZE,COMMFORMAT,&datapoint,mode,pc->len,uartx);
+Comm.c:			i_ret=TransferData_New(pc->idt,p+14,F_SIZE,COMMFORMAT,&datapoint,mode,pc->len,uartx);
+Comm.c:        if((0x04001501 == pc->idt.l ) && (i_ret >0))
+Comm.c:	 	pc->lena=i_ret;/*"保存取数的长度"*/  
+Comm.c:		if((Iterate_Tree_Flag[uartx].Back_Flame_Serial+1)==pc->Frame_serial) 
+Comm.c:		pc->havebackframe=1;			
+Comm.c:	       if((Iterate_Tree_Flag[uartx].Back_Flame_Serial+1)==pc->Frame_serial) 
+Comm.c:		       pc->havebackframe=1;	
+Comm.c:			pc->havebackframe=0;	
+Comm.c:		if((Iterate_Tree_Flag[uartx].Back_Flame_Serial+1)==pc->Frame_serial) 
+Comm.c:		 pc->havebackframe=1;
+Comm.c:		pc->havebackframe=0;
+Comm.c:		if(pc->havebackframe)
+Comm.c:			pc->ct|=0xA0;/*"有后续应答"*/
+Comm.c:			pc->havebackframe=0;
+Comm.c:			pc->ct|=0x80;/*"正确应答"*/
+Comm.c:	else if(!pc->readloadrecord)
+Comm.c:		pc->ct|=0xC0; /*"错误应答"*/
+Comm.c:		pc->lena=1;
+Comm.c:		pc->lent=0;
+Comm.c:		pc->havebackframe=0;
+Comm.c:	if(pc->readloadrecord && (!cx[3].lena))
+Comm.c:		pc->ct|=0x80; /*"负荷曲线错误应答"*/
+Comm.c:		pc->lena=0;
+Comm.c:		pc->havebackframe=0;   
+Comm.c://	for(uni=0;uni<pc->len-2;uni++)
+Comm.c://		*((unsigned char *)&WriteDateBuff[0]+uni)=*(p+(pc->addr))-0x33;
+Comm.c://		(pc->addr)++;
+Comm.c://		if((pc->addr)>=B_FL) (pc->addr)=0;	  
+Comm.c://	if((ok) && (TransferData(pc->id,(unsigned char *)&WriteDateBuff[4],cx[3].len-6,0,&datapoint,1)>=0) )// && Program_Key_Flag)
+Comm.c://	   if( ((pc->id.i)!=0xc712) && ((pc->id.i)!=0xc713)  && ((pc->id.i)!=0xc010) && ((pc->id.i)!=0xc011))
+Comm.c://	     ProgrammeEvent(0xFFFFFFFF,0xFFFF0000+pc->id.i);  //change by pc 081214
+Comm.c://	   //if(((pc->id.i)==0xc130) || ((pc->id.i)==0xc131) || ((pc->id.i)==0xc132))
+Comm.c://	    //  Set_show_code_list(pc->id.i);
+Comm.c://	   pc->ct=0x84;
+Comm.c://	   pc->lena=0;
+Comm.c:	   pc->ct=0xC4; 
+Comm.c:	   pc->lena=1;
+Comm.c:	for(uni=0;uni<pc->len-4;uni++)   //fxf  2->4
+Comm.c:		*((unsigned char *)&WriteDateBuff[0]+uni)=*(p+(pc->addr))-0x33;
+Comm.c:		(pc->addr)++;
+Comm.c:		if((pc->addr)>=B_FL) (pc->addr)=0;	  
+Comm.c:		*((unsigned char*)&(pc->Programer_code)+i)=WriteDateBuff[4+i];/*"操作者代码FXF"*/
+Comm.c:	pc->idt.l=pc->id.l;  
+Comm.c:	if((pc->idt.l == 0x04800001)||(pc->idt.l == 0x04800004))/*"软件版本号 软件备案号"*/
+Comm.c:	 result=Far_Password_Check(pc->idt.d,(unsigned char *)&WriteDateBuff[0],(unsigned char *)&(pc->len));
+Comm.c:	 if((result==OK)||(pc->idt.l == 0x04800001)||(pc->idt.l == 0x04800004))
+Comm.c:        if (pc->idt.l == 0x04001006) {/*"退费金额"*/
+Comm.c:            ProgrammeEvent(pc->Programer_code,pc->id.l);
+Comm.c:            pc->ct=0x94;
+Comm.c:            pc->lena=0;
+Comm.c:			if((!O1ther_Meter_Parameter.WorkRoomState)&&(pc->idt.l!=0x04001301)&&(pc->idt.l!=0x04001503))	
+Comm.c:		       if((pc->idt.l == 0x04800001)||(pc->idt.l == 0x04800004))/*"软件版本号 软件备案号"*/
+Comm.c:		if((pc->idt.l == 0x04800001)||(pc->idt.l == 0x04800004))/*"软件版本号 软件备案号"*/
+Comm.c:				i_ret=TransferData_New(pc->idt,(unsigned char *)&WriteDateBuff[8],0,COMMFORMAT,&datapoint,0x02,pc->len,uartx);
+Comm.c:	 	if((pc->id.l!=0x4001301)&&(pc->id.l!=0x0E000204)&&(pc->id.l!=0x04001503))//GANJP 20091127
+Comm.c:	     ProgrammeEvent(pc->Programer_code,pc->id.l);	
+Comm.c:       if((pc->id.l==0x04000106)||(pc->id.l==0x04000107)
+Comm.c:       ||(pc->id.l==0x04000101)||(pc->id.l==0x04000102)||(pc->id.l==0x0400010C))
+Comm.c:		 if(pc->id.l==0x4000301)
+Comm.c:    /* if(pc->id.l==0x04000106 || pc->id.l==0x04000101 ||pc->id.l==0x04000102 )
+Comm.c:	   if(pc->id.l==0x04000107 || pc->id.l==0x04000101 ||pc->id.l==0x04000102 )
+Comm.c:	   pc->ct=0x94;
+Comm.c:	   pc->lena=0;
+Comm.c:	   pc->ct=0xD4; 
+Comm.c:	   pc->lena=1;
+Comm.c:	for(uni=0;uni<pc->len;uni++)
+Comm.c:		WriteDateBuff[uni]=*(p+(pc->addr));
+Comm.c:		(pc->addr)++;
+Comm.c:		if((pc->addr)>=B_FL) (pc->addr)=0;	  
+Comm.c:	pc->id.d[1]=WriteDateBuff[0];
+Comm.c:	pc->id.d[0]=WriteDateBuff[1];
+Comm.c:	if((TransferData(pc->id,(unsigned char *)&WriteDateBuff[0],0,0,&datapoint,0)>=0))
+Comm.c:		pc->ct=0x85;
+Comm.c:			pc->lena=0;      
+Comm.c:			pc->lena=Co.c.len; 
+Comm.c:		pc->ct=0xC5;
+Comm.c:		pc->lena=1;
+Comm.c:		pc->lent=0;
+Comm.c:	if(pc->len!=0x06)  result=0;  /*"判断数据长度"*/
+Comm.c:	pc->ct=0x00;
+Comm.c:	if(pc->len!=0x00)
+Comm.c:		pc->ct=0x93;
+Comm.c:		pc->lena=6;	
+Comm.c:		pc->ct=0x00; 	
+Comm.c:	if(pc->len!=0x06)		ok=0;
+Comm.c:	   pc->ct=0x95;
+Comm.c:	   pc->lena=0;
+Comm.c:	   pc->ct=0x00; 	
+Comm.c:	if(pc->len!=0x01)  result=0xff;  /*"   判断数据长度 ADDED BY Fuxf 081218  "*/
+Comm.c:	pc->lena=1;
+Comm.c:		pc->ct=0x97;
+Comm.c:		//pc->lena=1;
+Comm.c:     		pc->ct=0xD7;
+Comm.c:	   //pc->lena=1;
+Comm.c:	if(pc->len!=0x0C)  ok=0;  /*"   判断数据长度 ADDED BY Fuxf 081218  "*/
+Comm.c:	if((id_pass.l<0x04000C01)||(id_pass.l>0x04000C0A)||(pc->len!=0x0C))
+Comm.c:		pc->ct=0x98;
+Comm.c:		pc->lena=4;
+Comm.c:	   pc->ct=0xD8;
+Comm.c:	   pc->lena=1;
+Comm.c:  WriteDateBuff[0]=CommBP[CurrPC->addr]-0x33;;
+Comm.c:  	 if((O1ther_Meter_Parameter.WorkRoomState==0xff)&&(CurrPC->len==8))
+Comm.c:			*((unsigned char*)&(CurrPC->Programer_code)+n-4)=*(CommBP+cx[3].addr)-0x33;
+Comm.c:    Clear_demand_oper_code=CurrPC->Programer_code;
+Comm.c:		CurrPC->ct=0x99;
+Comm.c:		CurrPC->lena=0; 
+Comm.c: 		CurrPC->ct=0xD9; 
+Comm.c:		CurrPC->lena=1;
+Comm.c:  WriteDateBuff[0]=CommBP[CurrPC->addr]-0x33;
+Comm.c:  	 if((O1ther_Meter_Parameter.WorkRoomState==0xff)&&(CurrPC->len==12))
+Comm.c:			*((unsigned char*)&(CurrPC->Programer_code)+n-4)=*(CommBP+cx[3].addr)-0x33;
+Comm.c:		Clear_event_oper_code=CurrPC->Programer_code;
+Comm.c:		CurrPC->ct=0x9B;
+Comm.c:		CurrPC->lena=0; 
+Comm.c:		CurrPC->ct=0xDB;
+Comm.c:		CurrPC->lena=1;
+Comm.c:  WriteDateBuff[0]=CommBP[CurrPC->addr]-0x33;;
+Comm.c:  	 if((O1ther_Meter_Parameter.WorkRoomState==0xff)&&(CurrPC->len==8))
+Comm.c:			*((unsigned char*)&(CurrPC->Programer_code)+n-4)=*(CommBP+cx[3].addr)-0x33;
+Comm.c:	Clear_all_oper_code=CurrPC->Programer_code;
+Comm.c:    CurrPC->ct=0x9A;  
+Comm.c:		CurrPC->lena=0;
+Comm.c:		CurrPC->ct=0xDA;
+Comm.c:		CurrPC->lena=1;
+Comm.c:	if(((cxp->id.d[1])&0xf0)==0xA0)
+Comm.c:	cxp->idt.i=cxp->id.i;   
+Comm.c:	switch((cxp->id.d[1])&0xf0)
+Comm.c:			if(((cxp->id.i)&0x0fff)==0x0fff)
+Comm.c:				cxp->idt.i=0x0000;//0x0010|(cxp->id.i&0xf000);
+Comm.c:				//cxp->lent=3*8*(Meter_Parameter.SlotParemeter[Meter_Parameter.WhitchSlotIsNow].TriffNumble+1)*num;
+Comm.c:				cxp->lent=0;
+Comm.c:			else if(((cxp->id.i)&0xffff)==0xB6ff)
+Comm.c:				cxp->idt.i=0xB611;
+Comm.c:				cxp->lent=3*2+3*2+4*3+4*2+4*2+2+4*2+4*3;
+Comm.c:			else if(((cxp->id.i)&0x03ff)==0x00ff)
+Comm.c:				cxp->idt.i=0x0010|(cxp->id.i&0xff00);
+Comm.c:				cxp->lent=2*(Meter_Parameter.parameter1.SlotParemeter[0].TriffNumble+1)*num;
+Comm.c:			else if(((cxp->id.i)&0x03ff)==0x01ff)
+Comm.c:				cxp->idt.i=0x0010|(cxp->id.i&0xff00);
+Comm.c:				cxp->lent=6*(Meter_Parameter.parameter1.SlotParemeter[0].TriffNumble+1)*num;
+Comm.c:			else if(((cxp->id.i)&0x03ff)==0x03ff)
+Comm.c:				cxp->idt.i=0x0010|(cxp->id.i&0xfC00);
+Comm.c:				cxp->lent=8*(Meter_Parameter.parameter1.SlotParemeter[0].TriffNumble+1)*num;
+Comm.c:			else if(((cxp->id.i)&0xB60f)==0xB60f)
+Comm.c:				num = (cxp->id.d[0])&0xf0;
+Comm.c:						cxp->idt.i=0xB600 | num |0x01;
+Comm.c:						cxp->lent=6;
+Comm.c:						cxp->idt.i=0xB600 | num;
+Comm.c:						cxp->lent=12;
+Comm.c:						cxp->idt.i=0xB600 | num;
+Comm.c:						cxp->lent=8;
+Comm.c:						cxp->idt.i=0xB600 | num;
+Comm.c:						cxp->lent=2;
+Comm.c:				switch (cxp->id.i)
+Comm.c:					cxp->idt.i=0x0000;
+Comm.c:					cxp->lent=0;  
+Comm.c:           if(((cxp->id.i)&0x000f)==0x000f)
+Comm.c:              cxp->idt.i=0x0000|(cxp->id.i&0xfff0);
+Comm.c:              cxp->lent=(Meter_Parameter.parameter1.SlotParemeter[0].TriffNumble+1)*num;
+Comm.c:	           if((cxp->id.i)==0xc01f){
+Comm.c:	           	   cxp->lent=7;
+Comm.c:	           	   cxp->idt.i=0xc010;
+Comm.c:	           if((cxp->id.i)==0xc02f){
+Comm.c:	           	   cxp->lent=21;
+Comm.c:	               cxp->idt.i=0xc020;
+Comm.c:        cxp->idd.i=cxp->idt.i;
+Comm.c:		//fxf  modified 081127 3->10
+Comm.c:        switch((cxp->idd.d[1])&0xf0)
+Comm.c:           if(((cxp->idd.i)&0xff00)==0xB600)
+Comm.c:                 if(rominstandata[num]==cxp->idd.d[0])
+Comm.c:                    cxp->idd.d[0]=rominstandata[num+1];
+Comm.c:              cxp->idt=cxp->idd; 
+Comm.c:                  (cxp->lent))
+Comm.c:                 *(P+12+cxp->lena)=0xAA;
+Comm.c:                 cxp->lent++;
+Comm.c:                 cxp->lena++;
+Comm.c:              if((cxp->idd.d[0]&0x0f)==Meter_Parameter.parameter1.SlotParemeter[0].TriffNumble)
+Comm.c:                 if(cxp->idd.d[1]&0x01)
+Comm.c:                    cxp->idd.d[0]=cxp->idd.d[0]+0x10;
+Comm.c:                 else if((cxp->idd.d[0]&0xF0)==0x10)
+Comm.c:                    cxp->idd.d[0]=cxp->idd.d[0]+0x10;
+Comm.c:                 else if((cxp->idd.d[0]&0xF0)==0x20)
+Comm.c:                    cxp->idd.d[0]=cxp->idd.d[0]-0x10;
+Comm.c:                    cxp->idd.d[1]=cxp->idd.d[1]+0x01;
+Comm.c:                 cxp->idd.d[0]=cxp->idd.d[0]&0xf0;
+Comm.c:                 if(cxp->lent)
+Comm.c:                    *(P+12+cxp->lena)=0xAA;
+Comm.c:                    cxp->lent++;
+Comm.c:                    cxp->lena++;
+Comm.c:                 cxp->idd.d[0]++;
+Comm.c:              cxp->idt=cxp->idd;
+Comm.c:           if((((cxp->idd.i)==0xC011) || ((cxp->idd.i)==0xC028)  ) &&
+Comm.c:                  (cxp->lent))
+Comm.c:                  *(P+12+cxp->lena)=0xAA;
+Comm.c:                  cxp->lent++;
+Comm.c:                  cxp->lena++;
+Comm.c:                  cxp->idd.d[0]++;
+Comm.c:                  cxp->idt=cxp->idd;
+Comm.c:	if( (pc->len==0x04)&&(farinfrareddisableflag==0))
+Comm.c:	if(pc->BroadCasrAddress==0)
+Comm.c:				pc->ct=0x96; /*"正确应答"*/
+Comm.c:	   		pc->lena=0;
+Comm.c:	   		pc->lent=0;
+Comm.c:	   		pc->havebackframe=0;	 	   
+Comm.c:				pc->ct=0xD6; /*"错误应答"*/
+Comm.c:	  		pc->lena=1;
+Comm.c:	   		pc->lent=0;
+Comm.c:		 	  pc->havebackframe=0;	   
+Comm.c:	      pc->ct=0;
+Comm.c:	      pc->lena=0;	   
+Comm.c:	if(( pc->len==0x01)&&(Output<=2)&&(farinfrareddisableflag==0))
+Comm.c:	if(pc->BroadCasrAddress==0)
+Comm.c:	   		pc->lena=1;
+Comm.c:	   		pc->lent=0;
+Comm.c:	   		pc->havebackframe=0;
+Comm.c:			pc->ct=0x9D; /*"正确应答"*/	   		
+Comm.c:			pc->ct=0xDD; /*"错误应答"*/	  		
+Comm.c:	      pc->ct=0;
+Comm.c:	      pc->lena=0;	   
+Comm.c:		if(AdjustTimeRecord(pc->Programer_code)==0)
+Comm.c:		if(AdjustTimeRecord(pc->Programer_code)==0)
+Comm.c:		if(AdjustTimeRecord(pc->Programer_code)==0)
+Comm.c:	if(pc->idt.l==0x04000303)
+Comm.c:	else  if(pc->idt.l==0x04000304)
+Comm.c:	if(ProgAEMode_NEMode1_NEMode2_Record(pc->Programer_code,*(P+Mode),Mode)==0)
+Comm.c:  if(!Send_Pulse_Constant_Data_to_Meter((pc->idt.d[0]-0x09),datat))
+Comm.c:      if(pc->id.l==0x04000B01)/*"必须设置第一结算日有效,日期最大允许设置为28,结算日不允许重复"*/
+Comm.c:      else if((pc->id.l==0x04000B02)||(pc->id.l==0x04000B03))
+Comm.c:      n=pc->id.l-0x04000B01;
+Comm.c:      if(ProgBillDayRecord(pc->Programer_code,(unsigned char *)&Meter_Parameter.parameter1.AutoBillDayHour[0])==0)
+Comm.c:      if(pc->idt.l==0x04000205)	/*" 设公共假日数 "*/
+Comm.c:            if(pc->idt.l > 0x04000200 && pc->idt.l  <0x04000206)
+Comm.c:                  SoltMarkCode = pc->idt.l&0x000000ff;
+Comm.c:      set_parameter_len=pc->len-12;
+Comm.c:      Comm_DailyProg_oper_code=pc->Programer_code;
+Comm.c:      set_parameter_len=pc->len-12;
+Comm.c:      Comm_YearProg_oper_code=pc->Programer_code;
+Comm.c:      if(ProgWeekRecord(pc->Programer_code,Meter_Parameter.parameter1.SlotParemeter[0].WeekEndTable)==0)
+Comm.c:        sort = pc->idt.d[0] - 2;
+Comm.c:      if((pc->idt.l==0x04000301))/*"设显示项目"*/
+Comm.c:      else if(pc->idt.l==0x04000305)  /*"设按键显示屏数LFY ADDED 2011-3-11"*/  //mw modified 2010-11-01
+Comm.c:      if((pc->id.l&0x04040100)==0x04040100)
+Comm.c:            Check_Show_Flash_Data(0x01,(pc->id.d[0]-1),0xff,Co.c.addr5);
+Comm.c:      else if((pc->id.l&0x04040200)==0x04040200)
+Comm.c:            Check_Show_Flash_Data(0x02,(pc->id.d[0]-1),0xff,Co.c.addr5);
+Comm.c:      if((pc->id.l==0x04000701) || (pc->id.l==0x04000705))/*"    远红外、模块通信口不能设置   "*/
+Comm.c:            if(pc->id.l==0x04000703)	
+Comm.c:            else if(pc->id.l==0x04000702)	
+Comm.c:            else if(pc->id.l==0x04000704)	
+Comm.c:      if((pc->idt.d[0])==0x01)
+Comm.c:      if((pc->idt.d[0])==0x02)
+Comm.c:      if((pc->idt.d[0])==0x03)
+Comm.c:     n=pc->id.d[1]-3;	         
+Comm.c:      unsigned int WInfoList[][4] = {/*"0->卡地址；1->数据长度;2->设备;3->即时数据保存地址"*/
+Comm.c:      set_parameter_len=pc->len-12;
+Comm.c:      if (pc->id.l==0x0E00020A)
+Comm.c:	else if ((pc->id.l==0x040501FF)||(pc->id.l==0x040502FF))		//newpay
+Comm.c:	else if ((pc->id.l==0x040604FF)||(pc->id.l==0x040605FF))
+Comm.c:      if((pc->id.l==0x0E0003FF)||(pc->id.l==0x0E0004FF)||(pc->id.l==0x0E0005FF)
+Comm.c:      ||(pc->id.l==0x0E0006FF)||(pc->id.l==0x0E0007FF)||(pc->id.l==0x0E0008FF))
+Comm.c:      if(pc->id.l==0x0400040F)
+Comm.c:      if(pc->id.l==0x0400010C)
+Comm.c:         if(pc->id.l==0x04800004) ///|| (pc->id.l==0x04001104))
+Comm.c:         else if(pc->id.l !=0x04001104)
+Comm.c:        if((pc->id.l ==0x04001503)&&(set_parameter_len!=12))
+Comm.c:	//pc->ct=0;
+Comm.c:	pc->idt.l=pc->id.l; 
+Comm.c:	if((pc->id.l !=0x04040300) || (pc->len !=0x09))
+Comm.c:	if(pc->BroadCasrAddress==0)
+Comm.c:                	pc->ct=0x91;
+Comm.c:                pc->lena=0x05;
+Comm.c:                pc->lent=0;
+Comm.c:                pc->havebackframe=0;
+Comm.c:                pc->ct=0xD1;
+Comm.c:                pc->lena=1;
+Comm.c:                pc->lent=0;
+Comm.c:	      pc->ct=0;
+Comm.c:	      pc->lena=0;
+Comm.c:          if(pc->BroadCasrAddress==0)///king chen debug
+Comm.c:		pc->ct=0xD1;
+Comm.c:                pc->lena=1;
+Comm.c:                pc->lent=0;
+Comm.c:	     	  pc->ct=0;
+Comm.c:	        pc->lena=0;
+Defdata.h:  unsigned char CurrFarImB_P;/*"52->33"*/
+Defdata.h:  unsigned char ConstantMagnet_P;/*"56->34"*/        
+Defdata.h:  unsigned char PowerAbnormal_P;/*"57->35"*/   
+Defdata.h:  unsigned char FailCurrent_A_P;/*"53->52"*/      
+Defdata.h:  unsigned char FailCurrent_B_P;/*"54->53"*/      
+Defdata.h:  unsigned char FailCurrent_C_P;/*"55->54"*/      
+Defdata.h:  unsigned char ClockBatteryEvent_P;/*"33->55"*/      
+Defdata.h:  unsigned char DisplayBatteryEvent_P;/*"34->56"*/      
+Defdata.h:  unsigned char AdjustMeterEvent_P;/*"35->57"*/    
+Defdata.h:  unsigned long CurrFarImB_Times;/*"52->33"*/
+Defdata.h:  unsigned long ConstantMagnet_Times;/*"56->34"*/
+Defdata.h:  unsigned long PowerAbnormal_Times;  /*"57->35"*/
+Defdata.h:  unsigned long FailCurrent_A_Times;/*"53->52"*/
+Defdata.h:  unsigned long FailCurrent_B_Times;/*"54->53"*/
+Defdata.h:  unsigned long FailCurrent_C_Times;/*"55->54"*/
+Defdata.h:  unsigned long ClockBatteryEvent_Times;/*"33->55"*/
+Defdata.h:  unsigned long DisplayBatteryEvent_Times;/*"34->56"*/
+Defdata.h:  unsigned long AdjustMeterEvent_Times;/*"35->57"*/
+Defdata.h:	unsigned char HolidaySlot[MAXHOLIDAYSLOT][4];  //fxf 081113 3->4 
+Defdata.h:  unsigned int        FirstPageAddress1[6];  /*"第1<--->6类最早一条存储取的数据的Page地址"*/                                             
+Defdata.h:	unsigned int        FirstByteAddress1[6];  /*"第1<--->6类最早一条存储取的数据的Byte地址"*/  
+Defdata.h:  unsigned int        LastPageAddress1[6];  /*"第1<--->6类最后一条存储取的数据的Page地址"*/                                             
+Defdata.h:	unsigned int        LastByteAddress1[6];  /*"第1<--->6类最后一条存储取的数据的Byte地址"*/  
+Defmcro.h:/*"表型-->x0:基表;x1:载波+本地;2:无线+要地;x3..."*/
+Defmcro.h:/*"全失压判断模式---->1:掉电5s后开启计量电源，读一次电流判断是否满足全失压条件
+Defmcro.h:                                           ---->0:掉电后根据全失压检测信号判断"*/
+Defmcro.h:#define MODULE_LOCAL_PAY_FLAG		0	/*"本地费控	-->1:有,无"*/
+Defmcro.h:#define MODULE_FAY_PAY_FLAG		0	/*"远程费控	-->1:有,无"*/
+Defmcro.h:#define MODULE_CARRIER_FLAG		0	/*"载波模块	-->1:有,无(双485)"*/
+Defmcro.h:#define MAXYEARSLOT             14	   //OLD VALUE=8,MODIFYIED BY LIAO DIHONG  //FUXF 12->14 081113
+Defmcro.h:#define MAXHOLIDAYSLOT          254	//FUXF 120->254 081113
+Eeprom.h:#define PARAMETER1_MBR_ADDR(member) ( PARAMETER1_ROM + (unsigned long)(&((struct PARAMETER1 *)0)->member) )
+Energy_Del.C:	                            scr_addr->crc_cal,
+Energy_Del.C:  ret_value = Check_RAM_CRC((unsigned char *)PD_Save_data, PD_Save_data->crc_cal, length-2);
+Eventnew.c:/*"Statistic->次数统计量的存储地址                       "*/
+Eventnew.c:/*"DataBuff->电压统计量缓冲区                                 "*/
+Eventnew.c:/*"FOffset->文件号偏移量                                             "*/
+Eventnew.c:/*"SignaPhase->电压统计量缓冲区         "*/
+Eventnew.c:					Dispose_clearevent_flag.byte=Event_Node1->Dispose_flag;
+Eventnew.c:							if(((Event_Node1->Times)!=NULL)&&((Event_Node1->Ticks)!=NULL)) /*"程序防护"*/
+Eventnew.c:								for(uni=0;uni<((Event_Node1->Length)/4);uni++)
+Eventnew.c:									*((Event_Node1->Times)+uni)=0;  
+Eventnew.c:									*((Event_Node1->Ticks)+uni)=0;  
+Eventnew.c:							WRLC256((Event_Node1->Times_addr),0,(Event_Node1->Length),0,0);
+Eventnew.c:							WRLC256((Event_Node1->Ticks_addr),0,(Event_Node1->Length),0,0);
+Eventnew.c:							if(((Event_Node1->Flag)!=NULL))
+Eventnew.c:								(*(Event_Node1->Flag))&=(~(Event_Node1->Offset));  //  =0
+Eventnew.c:								//(*(Event_Node1->Eventflag))&=(~(Event_Node1->Offset));  //  =0	
+Eventnew.c:						if((Event_Node1->Pointer)!=NULL)
+Eventnew.c:							*(Event_Node1->Pointer)=0;
+Eventnew.c:							WRLC256((Event_Node1->Pointer_addr),0,1,0,0);
+Eventnew.c:						//for(uni=(Event_Node1->Filename_begin);uni<=(Event_Node1->Filename_end);uni++)
+Eventnew.c:							uni=(Event_Node1->Filename_begin);
+Eventnew.c:						if((Event_Node1->Times)!=NULL)
+Eventnew.c:							*(Event_Node1->Times)=0; 
+Eventnew.c:						WRLC256((Event_Node1->Times_addr),0,4,0,0);		
+Eventnew.c:						if((Event_Node1->Ticks)!=NULL)
+Eventnew.c:							*(Event_Node1->Ticks)=0; 
+Eventnew.c:							WRLC256((Event_Node1->Ticks_addr),0,4,0,0);		
+Eventnew.c:						Temp_p=( const struct VOLTCHECK_STRU *)&VoltCheck_ABC[Event_Node1->Length];
+Eventnew.c:						mask=(Event_Node1->Offset);
+Eventnew.c:						if((Event_Node1->Flag)!=NULL)
+Eventnew.c:								(*(Event_Node1->Flag))&=(~mask);  //  =0
+Eventnew.c:						if(((Temp_p->Flag1)!=NULL)&&((Temp_p->Flag2)!=NULL))
+Eventnew.c:						*(Temp_p->Flag1)=0;  
+Eventnew.c:						*(Temp_p->Flag2)=0;  	
+Eventnew.c:						Clear_SignalPhase_VoltStatistic_Data((unsigned char*) &VoltStat[(Event_Node1->Length)]);
+Eventnew.c:						WRLC256((Event_Node1->Eeprom_addr),(unsigned char *)&VoltStat[(Event_Node1->Length)],48,0,0);
+Eventnew.c:						WRLC256((Event_Node1->Eeprom_addr),&TempEventData[0],(Event_Node1->Length),0,0);	
+Eventnew.c://				mask=(Event_Node1->Offset);
+Eventnew.c://					if((Event_Node1->EE_flash_select)==0x00)  //0x00  means Get Data from EE
+Eventnew.c://						eventaddr=(Event_Node1->EE_flash_addr)+(Event_Node1->EE_File_Offset)*und;	
+Eventnew.c://						eventaddr=(Event_Node1->EE_flash_addr)+(Event_Node1->EE_File_Offset)*und
+Eventnew.c://							+(*((Event_Node1->Pointer)+und));	
+Eventnew.c://					if(((*(Event_Node1->Flag))&mask)!=0)   /*"事件发生未结束"*/
+Eventnew.c://						(*((unsigned long *)&TempEventData[0]))+=Prepare_For_EventLastTime(eventaddr,(Event_Node1->EE_flash_select),
+Eventnew.c://							&Co.b[400],(Event_Node1->Ticks_addr)+4L*und,(((unsigned long *)(Event_Node1->Ticks))+und));
+Eventnew.c://						WRLC256((Event_Node1->Ticks_addr)+4L*und,(unsigned char*)&temp_timeadd,4,0,1);
+Eventnew.c:  if((Event_Node1->Pointer) != NULL)/*"事件指针不为空"*/
+Eventnew.c:    if((*(Event_Node1->Pointer)) == EVENT_CLAER_STATUS)/*"事件指针为清零状态，需清除事件FLASH中保存数据"*/
+Eventnew.c:      Delete_File(Event_Node1->Filename_begin);
+Eventnew.c:      *(Event_Node1->Pointer) = 0;
+Eventnew.c:      WRLC256((Event_Node1->Pointer_addr),0,1,0,0);
+Eventnew.h:							 		unsigned char *DataPointer,	//DataPointer-->Data Address to be written
+Far_pay.c:    /*" 缓冲区赋初始值pc->addr指向PA位置"*/
+Far_pay.c:	My_Memcpy_Dec_0x33(WriteDateBuff, far_data_p, pc->addr, pc->len, B_FL);
+Far_pay.c:	My_Memcpy((unsigned char*)&(pc->Programer_code), WriteDateBuff+4, 4);
+Far_pay.c:	if( pc->len == 28 ) {/*"8字节密码、操作者代码  + 20字节密文"*/
+Far_pay.c:                    My_memcpyRev(far_data_p + pc->addr + 8,receive_send_buffer + 2, 10);
+Far_pay.c:                        far_data_p[pc->addr + 8 + i] += 0x33;
+Far_pay.c:                    pc->len = 18;/*"密码、操作者代码、分项事件记录数据标识、6字节的截止日期"*/
+Far_pay.c:        if ((cmd->code != cmd_code) || expire) {
+Far_pay.c:/*" 缓冲区赋初始值pc->addr指向DI0位置"*/
+Far_pay.c:	My_Memcpy_Dec_0x33(WriteDateBuff, far_data_p,pc->addr,pc->len,B_FL);
+Far_pay.c:	My_Memcpy((unsigned char*)&(pc->Programer_code), WriteDateBuff+4, 4);
+Far_pay.c:	My_Memcpy((unsigned char*)&(pc->id.d), WriteDateBuff, 4);
+Far_pay.c:	pc->idt.l=pc->id.l;  
+Far_pay.c:        if ((pc->idt.l == 0x078003ff) || (pc->idt.l == 0x070003ff)) {
+Far_pay.c:            pc->ct=0xc3; 
+Far_pay.c:            pc->lena=2;
+Far_pay.c:            pc->ct = 0;
+Far_pay.c:    if ((pc->idt.l == 0x078003ff) || (pc->idt.l == 0x070003ff)) {
+Far_pay.c:            i_ret = Far_TransferData_New(pc->idt,WriteDateBuff,0,COMMFORMAT,mode,pc->len,uartx);
+Far_pay.c:    } else if( ( Far_Identity_Auth_Ok_Flag==0xFF ) || ( pc->idt.l == 0x70000FF )) {
+Far_pay.c:            if( ( Far_Identity_Auth_Ok_Flag == 0xFF ) && ( pc->idt.l == 0x70000FF ) ) {
+Far_pay.c:            //if (pc->All_AA_Address)
+Far_pay.c:            i_ret=Far_TransferData_New(pc->idt,WriteDateBuff,0,COMMFORMAT,mode,pc->len,uartx);
+Far_pay.c:		pc->ct=0x83; 										
+Far_pay.c:		pc->lena=Co.c.len;
+Far_pay.c:	pc->ct=0xc3; 
+Far_pay.c:	pc->lena=2;
+Far_pay.c:/*" 缓冲区赋初始值pc->addr指向PA位置"*/
+Far_pay.c:	My_Memcpy_Dec_0x33(WriteDateBuff, far_data_p,pc->addr,pc->len,B_FL);
+Far_pay.c:	My_Memcpy((unsigned char*)&(pc->Programer_code), WriteDateBuff+4, 4);
+Far_pay.c:				if( pc->len == 28 )
+Far_pay.c:		pc->ct=0x9C;
+Far_pay.c:		pc->lena=0;
+Far_pay.c:			pc->lena+=2;
+Far_pay.c:		pc->ct=0xDC;
+Far_pay.c:			pc->lena=2;			
+Far_pay.c:			pc->lena=1;
+Far_pay.c://	if( Select_File(0, *(((unsigned char *)&(Far_Read_078001FF_Format->Name))+1), (unsigned char)(Far_Read_078001FF_Format->Name)) != OK )
+Far_pay.c:	if( Far_Read_078001FF_Format->File == 0x01 )
+Far_pay.c://		if( (unsigned char)(Far_Read_078001FF_Format->Data_Start_Addr )== 0x00 )
+Far_pay.c:		if(Far_Read_Esam(0x04,Read_Binary,0x80+(unsigned char)(Far_Read_078001FF_Format->File),
+Far_pay.c:											 (unsigned char)(Far_Read_078001FF_Format->Data_Start_Addr),
+Far_pay.c:											 (unsigned char)(Far_Read_078001FF_Format->Data_Length), 
+Far_pay.c:		My_memcpyRev( far_data_p+22,receive_send_buffer,((unsigned char)(Far_Read_078001FF_Format->Data_Length)) );
+Far_pay.c:		My_memcpyRev( far_data_p+22+((unsigned char)(Far_Read_078001FF_Format->Data_Length)),receive_send_buffer+((unsigned char)(Far_Read_078001FF_Format->Data_Length)), 4);
+Far_pay.c://	Co.c.len = ((unsigned char)(Far_Read_078001FF_Format->Data_Length))+12;
+Far_pay.c:		Co.c.len = ((unsigned char)(Far_Read_078001FF_Format->Data_Length))+12;
+Far_pay.c://	My_memcpyRev( far_data_p+14,receive_send_buffer,((unsigned char)(Far_Read_078001FF_Format->Data_Length)) );
+Far_pay.c://	My_memcpyRev( far_data_p+14+((unsigned char)(Far_Read_078001FF_Format->Data_Length)),receive_send_buffer+((unsigned char)(Far_Read_078001FF_Format->Data_Length)), 4);
+Far_pay.c://	Co.c.len = ((unsigned char)(Far_Read_078001FF_Format->Data_Length))+4;
+Far_pay.c:	My_memcpyRev((unsigned char *)&(Far_Read_07810201_Format->Remain_Money), receive_send_buffer,4);
+Far_pay.c:	My_memcpyRev((unsigned char *)&(Far_Read_07810201_Format->Remain_Money_Mac[0]), receive_send_buffer+4,4);
+Far_pay.c:	My_memcpyRev((unsigned char *)&(Far_Read_07810201_Format->Buy_Count), receive_send_buffer,4);
+Far_pay.c:	My_memcpyRev((unsigned char *)&(Far_Read_07810201_Format->Buy_Count_MAC[0]), receive_send_buffer+4,4);
+Far_pay.c:    if( Get_File_Data(ESAM,ESAM_PARA_INF_FILE,CLIENT_ID_ESAM,6,(unsigned char *)&(Far_Read_07810201_Format->Client_ID[0])) != OK )
+Far_pay.c:	Reverse_data((unsigned char *)&(Far_Read_07810201_Format->Client_ID[0]),6);
+Far_pay.c:    if( Get_File_Data(ESAM,ESAM_PASSWORD_INF_FILE,0,4, (unsigned char *)&Far_Read_07810201_Format->psw_stat_word) != OK ) {
+Far_pay.c:    Reverse_data((unsigned char *)&Far_Read_07810201_Format->psw_stat_word, 4);
+Far_pay.c:	//Far_Read_07810201_Format->psw_stat_word = Pre_Payment_Para.Far_Key_StatusByte;
+Far_pay.c://	Reverse_data((unsigned char *)&(Far_Deal_070001FF_format->Identity_Limit),2)
+Far_pay.c://	Reverse_data((unsigned char *)&(Far_Deal_070001FF_format->Identity_Limit_Mac[0]),4)
+Far_pay.c:	if( Far_Deal_070001FF_format->Identity_Limit == 0 ) {
+Far_pay.c:	My_memcpyRev((unsigned char *)&(Far_Deal_07000201_format->Remain_Money), receive_send_buffer,4);
+Far_pay.c:	My_memcpyRev((unsigned char *)&(Far_Deal_07000201_format->Buy_Count), receive_send_buffer,4);
+Far_pay.c:	if( Get_File_Data(ESAM,ESAM_PARA_INF_FILE,CLIENT_ID_ESAM,6,(unsigned char *)&(Far_Deal_07000201_format->Client_ID[0])) != OK )
+Far_pay.c:	Reverse_data((unsigned char *)&(Far_Deal_07000201_format->Client_ID[0]),6);
+Far_pay.c:    //Far_Deal_07000201_format->psw_stat_word = Pre_Payment_Para.Far_Key_StatusByte;
+Far_pay.c:    //Reverse_data((unsigned char *)&(Far_Deal_07000201_format->psw_stat_word), 4);
+Far_pay.c:    if( Get_File_Data(ESAM,ESAM_PASSWORD_INF_FILE,0,4, (unsigned char *)&Far_Deal_07000201_format->psw_stat_word) != OK ) {
+Far_pay.c:    Reverse_data((unsigned char *)&Far_Deal_07000201_format->psw_stat_word, 4);
+Far_pay.c:    dat_len = CurrPC->len - LENGTH_FAR_645_FRAME_0X03 - 7;/*" 文件编号 偏移地址 MAC 合计7字节 "*/
+Far_pay.c:    dat_len = CurrPC->len - LENGTH_FAR_645_FRAME_0X03 - 7;/*" 文件编号 偏移地址 MAC 合计7字节 "*/
+Far_pay.c:        if (My_Memcmp(Far_Deal_070101FF_format->Client_ID, Client_ID, 6) != 0) {
+Far_pay.c:    if( Far_Deal_070101FF_format->Buy_Count != 0 &&  Far_Deal_070101FF_format->Buy_Count != 1) {
+Far_pay.c:    if (Far_Deal_070101FF_format->Buy_Count != Moneybag_Data.Buy_Count) {
+Far_pay.c:        if( Far_Deal_070101FF_format->Buy_Count != (Moneybag_Data.Buy_Count + 1)) {
+Far_pay.c:    	if( Judge_Remain_Money_Over( Far_Deal_070101FF_format->Remain_Money ) != OK ) {
+Far_pay.c:        Reverse_data((unsigned char *)&(Far_Deal_070101FF_format->Remain_Money), 4);
+Far_pay.c:        Reverse_data((unsigned char *)&(Far_Deal_070101FF_format->Buy_Count), 4);
+Far_pay.c:        Reverse_data((unsigned char *)&(Far_Deal_070101FF_format->BagMoney_Mac[0]), 4);
+Far_pay.c:        if( Write(0x84,Increase,0x01,0x0C,0x0C,((unsigned char *)&Far_Deal_070101FF_format->Remain_Money)) != OK) {
+Far_pay.c:        Reverse_data((unsigned char *)&(Far_Deal_070101FF_format->Remain_Money),4);
+Far_pay.c:        Reverse_data((unsigned char *)&(Far_Deal_070101FF_format->Buy_Count),4);
+Far_pay.c:        Meter_Money_And_Count_Updata(Far_Deal_070101FF_format->Remain_Money,Far_Deal_070101FF_format->Buy_Count );
+Far_pay.c:	if( Far_Write_Esam(0x04,Update_Binary,0x80+ESAM_PARA_INF_FILE,CLIENT_ID_ESAM,0x06,(Far_Deal_070101FF_format->Client_ID),0)!=OK) {
+Far_pay.c:	My_memcpyRev(Pre_Payment_Para.UserID,Far_Deal_070101FF_format->Client_ID,6);
+Far_pay.c:	Reverse_data((unsigned char *)&(Far_Deal_070102FF_format->Client_ID[0]),6);
+Far_pay.c:	if( My_Memcmp(Pre_Payment_Para.UserID,&Far_Deal_070102FF_format->Client_ID[0],6) != 0 )
+Far_pay.c:	Reverse_data((unsigned char *)&(Far_Deal_070102FF_format->Client_ID[0]),6);
+Far_pay.c:	if( Far_Write_Esam(0x04,Update_Binary,0x80+ESAM_PARA_INF_FILE,CLIENT_ID_ESAM,0x06,(Far_Deal_070102FF_format->Client_ID),0)!=OK)
+Far_pay.c:	if( Far_Deal_070102FF_format->Buy_Count == Moneybag_Data.Buy_Count)
+Far_pay.c:	if( Far_Deal_070102FF_format->Buy_Count != (Moneybag_Data.Buy_Count+1))
+Far_pay.c:	if( Judge_Remain_Money_Over(Far_Deal_070102FF_format->Remain_Money) != OK )
+Far_pay.c:	Reverse_data((unsigned char *)&(Far_Deal_070102FF_format->Remain_Money),4);
+Far_pay.c:	Reverse_data((unsigned char *)&(Far_Deal_070102FF_format->Buy_Count),4);
+Far_pay.c:	Reverse_data((unsigned char *)&(Far_Deal_070102FF_format->BagMoney_Mac[0]),4);
+Far_pay.c:	if( Write(0x84,Increase,0x01,0x0C,0x0C,((unsigned char *)&Far_Deal_070102FF_format->Remain_Money))!=OK)
+Far_pay.c:	Reverse_data((unsigned char *)&(Far_Deal_070102FF_format->Remain_Money),4);
+Far_pay.c:	Reverse_data((unsigned char *)&(Far_Deal_070102FF_format->Buy_Count),4);
+Far_pay.c:	Meter_Money_And_Count_Updata(Far_Deal_070102FF_format->Remain_Money,Far_Deal_070102FF_format->Buy_Count );
+Far_pay.c:    if (data->Buy_Count != 0) {
+Far_pay.c:    Reverse_data((unsigned char *)&(data->Remain_Money),4);
+Far_pay.c:    Reverse_data((unsigned char *)&(data->Remain_Mac1[0]),4);
+Far_pay.c:    Reverse_data((unsigned char *)&(data->Buy_Count),4);
+Far_pay.c:    Reverse_data((unsigned char *)&(data->Buy_Count_Mac[0]),4);
+Far_pay.c:    if( Write(0x04,0xDC,0x01,0x0C,0x08,((unsigned char *)&data->Remain_Money))!=OK)
+Far_pay.c:    data->Buy_Count = 0;    /*" 购电次数固定为0 "*/
+Far_pay.c:    if( Write(0x04,0xDC,0x03,0x0C,0x08,((unsigned char *)&data->Buy_Count))!=OK)
+Far_pay.c:    Reverse_data((unsigned char *)&(data->Remain_Money),4);
+Far_pay.c:    Reverse_data((unsigned char *)&(data->Buy_Count),4);        
+Far_pay.c:    Clear_all_oper_code = CurrPC->Programer_code;
+Far_pay.c:    Meter_Money_And_Count_Updata(data->Remain_Money, data->Buy_Count );
+Far_pay.c:            status = p_psw_info->status;
+Far_pay.c:        if (p_psw_info->status != status || p_psw_info->sum != Pre_Payment_Para.PassWord_Num
+Far_pay.c:            || p_psw_info->number != i) {
+Far_pay.c:        if (p_psw_info->status) {
+Far_pay.c:    if (Pre_Payment_Para.psw_status != p_psw_info->status) {
+Far_pay.c:        Pre_Payment_Para.psw_status = p_psw_info->status;
+Far_pay.c:    num_cur = (CurrPC->len - 8 - 4) / SZ_PSW_INFO; /*" 8字节的数据标识、操作者代码；4字节的MAC "*/
+Far_pay.c:    if (psw_upd_info->sum != Pre_Payment_Para.PassWord_Num) {/*"Pre_Payment_Para.PassWord_Num的初始化"*/
+Far_pay.c:		if(	(Far_645_Frame_Flag_0x03_List[i].Data_ID[0] == Far_645_Frame_0x03->Data_ID[0] )&& 
+Far_pay.c:			(Far_645_Frame_Flag_0x03_List[i].Data_ID[1] == Far_645_Frame_0x03->Data_ID[1] )&&
+Far_pay.c:			(Far_645_Frame_Flag_0x03_List[i].Data_ID[2] == Far_645_Frame_0x03->Data_ID[2] )&&
+Far_pay.c:			(Far_645_Frame_Flag_0x03_List[i].Data_ID[3] == Far_645_Frame_0x03->Data_ID[3] ) ) 
+Freeze.c:    	Freeze_Demand_Data->Plus_Active_Demand[uni]=This_Month_Data.Demand_Record.Demand.Plus_Active[uni].Demand;
+Freeze.c:    	Freeze_Demand_Data->Nega_Active_Demand[uni]=This_Month_Data.Demand_Record.Demand.Nega_Active[uni].Demand;
+Freeze.c:    		 Freeze_Demand_Data->Plus_Active_Demand_Time[uni][i]=This_Month_Data.Demand_Record.Demand.Plus_Active[uni].time[i];
+Freeze.c:    		 Freeze_Demand_Data->Nega_Active_Demand_Time[uni][i]=This_Month_Data.Demand_Record.Demand.Nega_Active[uni].time[i];
+Freeze.c:    	Freeze_Demand_Data->Plus_Active_Demand[uni]=0x00000000;
+Freeze.c:    	Freeze_Demand_Data->Nega_Active_Demand[uni]=0x00000000;
+Freeze.c:    		 Freeze_Demand_Data->Plus_Active_Demand_Time[uni][i]=0x00;
+Freeze.c:    		 Freeze_Demand_Data->Nega_Active_Demand_Time[uni][i]=0x00;
+Freeze.c:	     	Freeze_Power_Data->Active_power_t[uni]=COMM_Active_power[uni];
+Freeze.c:			Freeze_Power_Data->Reactive_power_t[uni]=COMM_Reactive_power[uni];				 
+Freeze.c:	nYear  = OB_H(rpDateTime->Year);
+Freeze.c:	nMonth = OB_H(rpDateTime->Month);
+Freeze.c:	nDay   = OB_H(rpDateTime->Day);
+Freeze.c:	*pSeconds += OB_H(rpDateTime->Hour) * 60L * 60L;
+Freeze.c:	*pSeconds += OB_H(rpDateTime->Minute) * 60L;
+Freeze.c:	*pSeconds += OB_H(rpDateTime->Second);
+Freeze.c: if(OB_H(rpDateTime->Second) > 99 || OB_H(rpDateTime->Minute) > 99
+Freeze.c:   || OB_H(rpDateTime->Hour) > 99 || OB_H(rpDateTime->Day) > 99
+Freeze.c:     || OB_H(rpDateTime->Month) > 99 || OB_H(rpDateTime->Year) > 99
+Freeze.c:	   || OB_H(rpDateTime->Week) > 7)
+Freeze.c: if(rpDateTime->Hour > 0x23 || rpDateTime->Minute > 0x59 || rpDateTime->Second > 0x59)
+Freeze.c: if(rpDateTime->Month < 1 || rpDateTime->Month > 0x12)
+Freeze.c: nMaxDay = DaysOfMonth[OB_H(rpDateTime->Month)-1]; 
+Freeze.c: if(((rpDateTime->Year & 0x13) == 0 || (rpDateTime->Year & 0x13) == 0x12) && rpDateTime->Month == 0x02) 
+Freeze.c: if((0 == rpDateTime->Day) || (OB_H(rpDateTime->Day) > nMaxDay))
+Freeze.c:	rpDate->Year = (tmp1 << 2);
+Freeze.c:	rpDate->Year += tmp1;
+Freeze.c:	rpDate->Month = i+1;
+Freeze.c:	rpDate->Day = tmp2;
+Freeze.c:	if(nFlag && rpDate->Month == 2 && (rpDate->Year & 0x03) == 0)
+Freeze.c:		rpDate->Day++;
+Freeze.c:	rpDate->Year = OH_B(rpDate->Year);
+Freeze.c:	rpDate->Month = OH_B(rpDate->Month);
+Freeze.c:	rpDate->Day = OH_B(rpDate->Day);
+Freeze.c:    rpDateTime->Year  = nDate.Year;
+Freeze.c:    rpDateTime->Month = nDate.Month;
+Freeze.c:    rpDateTime->Day   = nDate.Day;     
+Freeze.c:    rpDateTime->Week = (nDays - 6) % 7;     
+Freeze.c:    rpDateTime->Hour = nRemainSeconds / 3600L;
+Freeze.c:    rpDateTime->Minute = nRemainSeconds / 60L;
+Freeze.c:    rpDateTime->Second = nRemainSeconds % 60L;     // transform hour, minute and second to BCD
+Freeze.c:    rpDateTime->Hour = OH_B(rpDateTime->Hour);
+Freeze.c:    rpDateTime->Minute = OH_B(rpDateTime->Minute);
+Freeze.c:    rpDateTime->Second = OH_B(rpDateTime->Second);
+Freeze.c:            rpResult->Year = nDateTime.Year;
+Freeze.c:            rpResult->Month = nDateTime.Month;
+Freeze.c:            rpResult->Day = nDateTime.Day;
+Freeze.c:            rpResult->Hour = nDateTime.Hour;
+Freeze.c:            rpResult->Minute = nDateTime.Minute;
+Freeze.c:            rpResult->Second = nDateTime.Second;
+Freeze.c:            rpResult->Week = 0;
+Freeze.c:    	Freeze_Demand_Data->Plus_Active_Demand[uni]=This_Month_Data.Demand_Record.Demand.Plus_Active[uni].Demand;
+Freeze.c:    	Freeze_Demand_Data->Nega_Active_Demand[uni]=This_Month_Data.Demand_Record.Demand.Nega_Active[uni].Demand;
+Freeze.c:    		 Freeze_Demand_Data->Plus_Active_Demand_Time[uni][i]=This_Month_Data.Demand_Record.Demand.Plus_Active[uni].time[i];
+Freeze.c:    		 Freeze_Demand_Data->Nega_Active_Demand_Time[uni][i]=This_Month_Data.Demand_Record.Demand.Nega_Active[uni].time[i];
+Freeze.c:    	Freeze_Demand_Data->Plus_Active_Demand[uni]=0x00;
+Freeze.c:    	Freeze_Demand_Data->Nega_Active_Demand[uni]=0x00;
+Freeze.c:    		 Freeze_Demand_Data->Plus_Active_Demand_Time[uni][i]=0x00;
+Freeze.c:    		 Freeze_Demand_Data->Nega_Active_Demand_Time[uni][i]=0x00;
+Freeze.c:	     	///Freeze_Power_Data->Active_power_t[uni]=COMM_Active_power[uni];///king  chen mark 121214
+Freeze.c:	     	///Freeze_Power_Data->Reactive_power_t[uni]=COMM_Reactive_power[uni];
+Freeze.c:	     	Freeze_Power_Data->Active_power_t[uni]=0x00;///king chen modify 130228
+Freeze.c:	     	Freeze_Power_Data->Reactive_power_t[uni]=0x00;
+Freeze.c:if((Freeze_Node->Pointer) != NULL)/*"事件指针不为空"*/
+Freeze.c:if((*(Freeze_Node->Pointer)) == EVENT_CLAER_STATUS)/*"事件指针为清零状态，需清除事件FLASH中保存数据"*/
+Freeze.c:	Delete_File(Freeze_Node->Filename_begin);
+Freeze.c:		Delete_File(Freeze_Node->Filename_begin+32);
+Freeze.c:		Delete_File(Freeze_Node->Filename_begin+64);
+Freeze.c:	*(Freeze_Node->Pointer) = 0;
+Freeze.c:	WRLC256((Freeze_Node->Pointer_addr),0,1,0,0);
+Freeze.c:	Set_Meter_para_Deal(Freeze_Node->Pointer_addr);
+I2C_operation.C:							 		unsigned char *DataPointer,	//DataPointer-->Data Address to be written
+I2C_operation.C:							 		unsigned char *DataPointer,	//DataPointer-->Data Address to be written
+I2C_operation.C:          kind 转换方向  0 softdate --> rtcdata
+I2C_operation.C:                         1 rtcdata  --> softdata
+I2C_operation.h:							 		unsigned char *DataPointer,		//DataPointer-->Data Address to be written
+ICcard.c:/*"mode-->Card_Display_Err:		显示错误代码	"*/
+ICcard.c:	if( My_Memcmp(&(file->Meter_ID[0]),(unsigned char *)&Meter_Parameter.parameter2.BcdMeterID[0],6) )
+ICcard.c:		if( My_Memcmp(Pre_Payment_Para.UserID,file->Client_ID,6) )		//I_B  B_B	/*"I_*:开户卡步骤,B_*:用户卡步骤"*/
+ICcard.c:	Buy_Card_Kind = file->Card_Kind;
+ICcard.c:	My_Memcpy(UserID,file->Client_ID,6);			/*"Li_将客户编号复制到UserID里"*/	
+ICcard.c:	Para_Updata_Flag = file->Para_UpData_Flag;
+ICcard.h:#define  UNISSUED_ERROR_DEFINE   	7				/*"Li_未发行的卡片->明文读CPU卡文件返回6B00错误 "*/
+ICcard.h:        unsigned char GPRS_MODEL:1;			/*"无线--> 1:有;0:无"*/ 	
+ICcard.h:        unsigned char CARRIER_MODEL:1;		/*"载波--> 1:有;0:无"*/ 	
+ICcard.h:        unsigned char SWITCH_ACT_MODE:1;	/*"跳闸继电器--> 1:外置,电平方式;0:内置,脉冲方式[无继电器时选择外置]"*/ 	
+Initram.c:							 		unsigned char *DataPointer,	//DataPointer-->Data Address to be written
+Initram.c:							 		unsigned char *DataPointer,	//DataPointer-->Data Address to be written
+Initram.h:							 		unsigned char *DataPointer,	//DataPointer-->Data Address to be written
+LoadRecord.c:	BCD2Byte(rTime->Hour, &temp);
+LoadRecord.c:	BCD2Byte(rTime->Min, &temp);
+LoadRecord.c:	p = (unsigned char*)&rRecord->VA[0];
+LoadRecord.c:	FormatBCD(Freq[0]/10000, rRecord->Freq, 2);/*"原始数据为精确到0.000001HZ,4byte。但是只需要精确到0.01v,2byte"*/
+LoadRecord.c:      rRecord->ActiveFlag=temp_byte.byte&0x0f;
+LoadRecord.c:      rRecord->ReactiveFlag=temp_byte.byte>>4;
+LoadRecord.c:                  pointer2 = rRecord->PAll;
+LoadRecord.c:                   pointer2 = rRecord->RAll;
+LoadRecord.c:                   pointer2 = rRecord->PA + (i-1)*3;
+LoadRecord.c:                   pointer2 = rRecord->SALL;
+LoadRecord.c:                   pointer2 = rRecord->SA + (i-1)*3;
+LoadRecord.c:	p = &rRecord->Factor[0];
+LoadRecord.c:	rRecord->PP=This_Month_Data.Energy_Record.Plus_Active[0];
+LoadRecord.c:	rRecord->NP=This_Month_Data.Energy_Record.Nega_Active[0];	
+LoadRecord.c:	rRecord->Quad1=This_Month_Data.Energy_Record.Quad_Reactive[0][0];
+LoadRecord.c:	rRecord->Quad2=This_Month_Data.Energy_Record.Quad_Reactive[1][0];
+LoadRecord.c:	rRecord->Quad3=This_Month_Data.Energy_Record.Quad_Reactive[2][0];
+LoadRecord.c:	rRecord->Quad4=This_Month_Data.Energy_Record.Quad_Reactive[3][0];
+LoadRecord.c:	data_change((unsigned char *)&Current_Demand[0],rRecord->DemandActive,SIGNED_LONG,BCD3BYTE,0,0,-6,-4);	
+LoadRecord.c:	data_change((unsigned char *)&Current_Demand[1],rRecord->DemandReactive,SIGNED_LONG,BCD3BYTE,0,0,-6,-4);	
+LoadRecord.c:    memcpy(&req_tm.Year, &rDate->Year, 6);
+LoadRecord.c:	BCD2Byte(rDate->Month, &tmp);
+LoadRecord.c:	BCD2Byte(rDate->Day, &tmp);
+LoadRecord.c:	BCD2Byte(rDate->Hour, &tmp);
+LoadRecord.c:    BCD2Byte(rDate->Month, &tmp);
+LoadRecord.c:    BCD2Byte(rDate->Day, &tmp);
+LoadRecord.c:    BCD2Byte(rDate->Hour, &tmp);
+LoadRecord.c:    minute = OB_H(rDate->Min);
+LoadRecord.c:    minute = OB_H(rDate->Min);
+LoadRecord.c:	BCD2Byte(rDate->Month, &tmp);
+LoadRecord.c:	BCD2Byte(rDate->Day, &tmp);
+LoadRecord.c:	BCD2Byte(rDate->Hour, &tmp);
+LoadRecord.c:			if((mask&pRecord->Mode_Byte  ) != 0)
+LoadRecord.c:							temp_buf=(unsigned char *)&Record1->VA[0];
+LoadRecord.c:									temp_buf=(unsigned char *)&Record2->PAll[0];
+LoadRecord.c:									temp_buf=(unsigned char *)&Record2->PA[0];
+LoadRecord.c:									temp_buf=(unsigned char *)&Record2->RAll[0];
+LoadRecord.c:									temp_buf=(unsigned char *)&Record2->RA[0];
+LoadRecord.c:							memcpy(pBuf,(unsigned char *)&Record3->Factor[0], 8);
+LoadRecord.c:							FormatBCD(format_data(Record4->PP,0)/(10),pBuf,4);							
+LoadRecord.c:							FormatBCD(format_data(Record4->NP,0)/(10),pBuf,4);							
+LoadRecord.c:								math_Add((unsigned char *)&Record5->Quad1,(unsigned char *)&Power_temp,
+LoadRecord.c:						if((pRecord->Mode_Byte&0x08)!=0&&(pRecord->Mode_Byte&0x10)==0)
+LoadRecord.c:							memcpy(pBuf, (unsigned char *)&Record6->DemandActive[0], 6);
+LoadRecord.c:    memcpy(&tm.Year, &rDate->Year, 6);
+LoadRecord.c:        if (My_Memcmp(&Date.Year, &rDate->Year, 5) == 2)
+LoadRecord.c:	i=OB_H(rDate->Month);
+LoadRecord.c:	ndays=day_num[i-1]+OB_H(rDate->Day)-1;
+LoadRecord.c:		if(i!=((rDate->Year)+1))
+LoadRecord.c:			nyears=(rDate->Year)+1;
+LoadRecord.c:		i=OB_H(rDate->Hour);
+LoadRecord.c:	i=OB_H(rDate->Month);
+LoadRecord.c:	ndays=day_num[i-1]+OB_H(rDate->Day)-1;
+LoadRecord.c:	starthour=OB_H(rDate->Hour);
+LoadRecord.c:		if(nyears==((rDate->Year)+1))
+LoadRecord.c:		        rDate->Hour=OH_B(i);
+LoadRecord.c:    BCD2Byte(req_tm->Hour, &temp);
+LoadRecord.c:	BCD2Byte(req_tm->Min, &temp);
+LoadRecord.c:        day = OB_H(req_tm->Day);
+LoadRecord.c:        req_tm->Day = OH_B(day);
+LoadRecord.c:        //req_tm->Day++;
+LoadRecord.c:        nMaxDay = DaysOfMonth[OB_H(req_tm->Month)-1]; 
+LoadRecord.c:         if((req_tm->Year & 0x03) == 0  && req_tm->Month == 0x02) 
+LoadRecord.c:        if (req_tm->Day > OH_B(nMaxDay))
+LoadRecord.c:            req_tm->Day = 0x01;
+LoadRecord.c:            month = OB_H(req_tm->Month);
+LoadRecord.c:            req_tm->Month = OH_B(month);
+LoadRecord.c:            //req_tm->Month++;
+LoadRecord.c:            if(req_tm->Month > 0x12)
+LoadRecord.c:                req_tm->Month = 0x01;
+LoadRecord.c:                year = OB_H(req_tm->Year);
+LoadRecord.c:                req_tm->Year = OH_B(year);
+LoadRecord.c:                //req_tm->Year++;
+LoadRecord.c:    Byte2BCD(hour, &req_tm->Hour);
+LoadRecord.c:    Byte2BCD(min, &req_tm->Min);
+LoadRecord.c:    minute = OB_H(req_tm->Min);
+LoadRecord.c:    sum = (59 - OB_H(req_tm->Min)) / period + 1;
+LoadRecord.c:    read_addr = find_sort_off(sort, pRecord->Mode_Byte);
+LoadRecord.c:        temp_buf=(unsigned char *)&Record1->VA[0];
+LoadRecord.c:        temp_buf=(unsigned char *)&Record1->IA[0];
+LoadRecord.c:            memcpy(pBuf, &Record2->PAll[0], 3);/*" 3个字节的总有功功率 "*/
+LoadRecord.c:            memcpy(pBuf + 3, &Record2->PA[0], 3*3);/*"9个字节的 A,B,C相有功功率"*/
+LoadRecord.c:                memcpy(pBuf, &Record2->PAll[0], 3);
+LoadRecord.c:                temp_buf = &Record2->PA[0];
+LoadRecord.c:            memcpy(pBuf, &Record2->RAll[0], 3);/*" 3个字节的总无功功率 "*/
+LoadRecord.c:            memcpy(pBuf + 3, &Record2->RA[0], 3*3);/*"9个字节的 A,B,C相无功功率"*/
+LoadRecord.c:                memcpy(pBuf, &Record2->RAll[0], 3);
+LoadRecord.c:                temp_buf = &Record2->RA[0];
+LoadRecord.c:            memcpy(pBuf,(unsigned char *)&Record3->Factor[0], 8);
+LoadRecord.c:            temp_buf = &Record3->Factor[0];
+LoadRecord.c:    		FormatBCD(format_data(Record4->PP,0)/(10),pBuf,4);	/*"正向有功总电能"*/						
+LoadRecord.c:    		FormatBCD(format_data(Record4->NP,0)/(10),pBuf,4);	/*"反向有功总电能"*/						
+LoadRecord.c:            math_Add((unsigned char *)&Record5->Quad1,(unsigned char *)&Power_temp,
+LoadRecord.c:            math_Add((unsigned char *)&Record5->Quad1,(unsigned char *)&Power_temp,
+LoadRecord.c:            memcpy(pBuf, (unsigned char *)&Record6->DemandActive[0], 6);
+LoadRecord.c:            memcpy(pBuf, &Record6->DemandActive[0] + (di0 - 1)*3, 3);
+LoadRecord.c:  rDate->Min=0;
+LoadRecord.c:  rDate->Sec=0;
+LoadRecord.c:  rDate->Hour=0;
+LoadRecord.c:  rDate->Min=0;
+LoadRecord.c:  rDate->Sec=0;
+LoadRecord.c:    BCD2Byte(tm->Hour, &temp);
+LoadRecord.c:	BCD2Byte(tm->Min, &temp);
+LoadRecord.c:        memcpy(&tm.Year, &req_tm->Year,  6);
+LoadRecord.c:        memcpy(&req_tm->Year, &this_tm.Year, 5);
+LoadRecord.h:       unsigned int LastBlockAddress1[6];    /*"第1<--->6类最后一条存储取的数据的Block地址"*/ 
+LoadRecord.h:       unsigned int FirstBlockAddress1[6];  /*"第1<--->6类最早一条存储取的数据的Block地址"*/
+MB_Showmain.c:       conver_data0(&show_data_buf[0][0],show_buffer,0,MAX_DATA_NUM-1);				/*"9个 1->9"*/
+MB_Showmain.c:       conver_data1(&show_data_buf[1][0],show_buffer+2*(MAX_DATA_NUM-2),0,MAX_DATA_NUM+1);	/*"10个 10->19"*/
+MB_Showmain.c://	if(show_code<p_show_table_head->old_showcode||show_code>p_show_table_tail->old_showcode) 
+MB_Showmain.c://		if(show_code<p_show_table_mid->old_showcode)				/*"如果show_code比中点值小"*/
+MB_Showmain.c://		else if(show_code>p_show_table_mid->old_showcode)			/*"如果show_code比中点值大"*/
+MB_Showmain.c:			conver_data0(show_data_buf,show_buf,0,MAX_DATA_NUM-1);				/*"9个 1->9"*/
+MB_Showmain.c:			conver_data0(show_data_buf,show_buf,0,MAX_DATA_NUM-1);				/*"9个 1->9"*/
+MB_Showmain.c:			conver_data0(show_data_buf,show_buf,0,MAX_DATA_NUM-1);				/*"9个 1->9"*/
+MB_Showmain.c:			conver_data0(show_data_buf,show_buf,0,MAX_DATA_NUM-1);				/*"9个 1->9"*/
+Multi.c:	 temp_date.Sec=switchPtr->SwitchDate.Sec; 
+Multi.c:	 temp_date1=switchPtr->SwitchDate;
+Multi.c:	 if((switchPtr->SwitchDate.Month!=0x00)&&(switchPtr->SwitchDate.Month!=0x99)&&(CheckTime((unsigned char *)&temp_date1)))
+Multi.c:	    if(CompareBytes((unsigned char *)&temp_date,(unsigned char *)&(switchPtr->SwitchDate),5)>=0)
+Multi.c:	      if((switchPtr->SwitchDate.Month!=0x99)&&(switchPtr->SwitchDate.Month!=0x00))
+Multi.c:	     	   if(!switchPtr->WhitchSlotIsNow)
+Multi.c:				     switchPtr->WhitchSlotIsNow=1;
+Multi.c:		         switchPtr->WhitchSlotIsNow=0;
+Multi.c:	           *((unsigned char *)&switchPtr->SwitchDate.Year+i)=0x00; /*"切换后，必须从新设置时间才能下次切换；"*/
+Multi.c:		       ClearEvent_EventBegin((unsigned char *)&(switchPtr->FreezeData_addr),freezefilename);/*"冻结清零判断处理"*/
+Multi.c:			     FreezeDateProgram(freezefilename+(switchPtr->FreezeData_addr),1, (unsigned char *)&softdate);///king chen modify 130609
+Multi.c:		       switchPtr->FreezeData_addr=(switchPtr->FreezeData_addr+1)%MAX_NUMBER_FREEZE;
+Multi.c:			     switchPtr->WhitchSlotIsNow=0;
+Multi.c:///EventReportStatus->byte[i] = (Event_Report_Status.byte[i] & (~Event_Reported_Status.byte[i]));
+Multi.c:///Event_Reported_Status.byte[i] |= EventReportStatus->byte[i];/*"已上报状态字在上报后置1"*/           
+Multi.c:EventReportStatus->byte[i] = Event_Report_Status.byte[i] ;
+Pay_def.h:#define	RELAY_TYPE_SEL				p0_1	/*"继电器方式->0:外置,1:内置"*/ 
+Pay_For_Fun.c:        if ( ((date->Month > 0) && (date->Month <= 0x12))
+Pay_For_Fun.c:            && ((date->Day > 0) && (date->Day <= 0x28))
+Pay_For_Fun.c:            && (date->Hour <= 0x23)) {
+Pay_For_Fun.c:			Retort_New(0,(unsigned char *)&softdate);	/*"由月结算变年->月阶梯切换到年阶梯引起月度用电量转存时，同时转存当前、上1～12结算日电能"*/
+Pay_For_Fun.c:        if (date->Month == cur->Month && date->Day == cur->Day 
+Pay_For_Fun.c:            && date->Hour == cur->Hour && cur->Min == 0) {
+pay_Mac.h:        unsigned char SWITCH_PREPARE_STATE:1;	/*" 继电器准备动作的状态->1:跳闸,0:合闸"*/
+Powerdown_LDH.C:        //Event_DIS->railcover_open_detect               p2_5		//carry	//OFF
+Powerdown_LDH.C:        //A_EOU1->lowpower_battary_volt                   p2_6	//
+Powerdown_LDH.C:        //R_EOU1->clock_battary_volt                   p2_7	//
+Powerdown_LDH.C:        //SWITCH(OPEN)->relay_status    	p3_4	/*"内置继电器关/外置继电器驱动"*/	//payment
+Powerdown_LDH.C:       //NC ->mk_event        p4_2    
+Powerdown_LDH.C:        //PULSE_PWR->NC                p5_2	  /*"计量7022和脉冲电源控制"*/ 
+Powerdown_LDH.C:        //7022_CF2->NC                 p7_7
+Powerdown_LDH.C:        //NC->meter_cover_open_detect                        p8_3    //P8_3 dispose 2010-04-21
+Powerdown_LDH.C:        //DB161_CS ->CF2                p9_4   
+Powerdown_LDH.C:        //DB161_RDY->SWITCH_TOGGLE                p10_0	                                    
+Powerdown_LDH.C:        //KEY6 ->A_EOU1                    p10_2	//RAIL_COVER SENSOR                 
+Powerdown_LDH.C:        //KEY5 ->R_EOU1                    p10_3	//SEALED_COVER SENSOR               
+Powerdown_LDH.C:        //KEY2->MK_SET                     p10_5	//#S2 PUSHBUTTON                    
+Powerdown_LDH.C:        //KEY4->PULSE_PWR                     p10_7	//#S4 PUSHBUTTON(SEALED PUSHBUTTON)
+Powerdown_LDH.C:///////	IR_FAR_EN->FLASH_CS           	p0_0	//
+Powerdown_LDH.C:        //NC->MAGIC_DETECT1                       p2_1  //p2_1 dispose 2010-04-21 
+Powerdown_LDH.C:        //CAL_WP->MAGIC_DETECT2                  p2_4    //p2_4  dispose 2010-04-21 
+Powerdown_LDH.C:        //Event_DIS->RAIL_COVER_DETECT               p2_5		//carry
+Powerdown_LDH.C:        //A_EOU1-> LOWPWER_BATTARY_DETECT                  p2_6	//
+Powerdown_LDH.C:        //R_EOU1->CLOCK_BATTARY_DETECT                   p2_7	//
+Powerdown_LDH.C:        //SWITCH(OPEN) ->REALY_STATUS   	p3_4	/*"内置继电器关/外置继电器驱动"*/	//payment
+Powerdown_LDH.C:       //NC ->MK_EVENT                		p4_2    
+Powerdown_LDH.C:        //PULSE_PWR->NC                p5_2	  /*"计量7022和脉冲电源控制"*/ 
+Powerdown_LDH.C:        //7022_CF2->NC                 p7_7
+Powerdown_LDH.C:        //NC->METER_COVER_OPEN_DETECT                         p8_3    //P8_3 dispose 2010-04-21
+Powerdown_LDH.C:        //DB161_CS->CF2                 p9_4   
+Powerdown_LDH.C:        //DB161_RDY->SWITCH_TOGGLE                p10_0	                                    
+Powerdown_LDH.C:        //KEY6->A_EOU1                     p10_2	//RAIL_COVER SENSOR                 
+Powerdown_LDH.C:        //KEY5->R_EOU1                     p10_3	//SEALED_COVER SENSOR               
+Powerdown_LDH.C:        //NC->MK_SET                     p10_5	//#S2 PUSHBUTTON                    
+Powerdown_LDH.C:        //KEY4->PULSE_PWR                     p10_7	//#S4 PUSHBUTTON(SEALED PUSHBUTTON)
+PowerUpRetort.c:		if(!CheckDateTime( (TDateTime *)(address+num) ) || ( ((address+num)->Day)>0x28))
+Seg.c:        if(!Meter_Parameter.parameter1.SlotParemeter[0].HollidayNumble)//slotnumber->0 fxf 090120
+Seg.c:                  *((unsigned char *)&ddt[0]+0)=Co.b[j*4+1];// 3->4 fuxf 081209
+Seg.c:                  *((unsigned char *)&ddt[0]+1)=Co.b[j*4+2]; // 3->4 fuxf 081209
+Seg.c:                      result=Co.b[j*4];// 3->4 fuxf 081209
